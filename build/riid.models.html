@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>riid.models package &#8212; Test Project 1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="riid-models-package">
+<h1>riid.models package<a class="headerlink" href="#riid-models-package" title="Permalink to this heading">¶</a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="riid.models.losses.html">riid.models.losses package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="riid.models.losses.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="riid.models.losses.html#module-riid.models.losses.sparsemax">riid.models.losses.sparsemax module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="riid.models.losses.html#riid.models.losses.sparsemax.SparsemaxLoss"><code class="docutils literal notranslate"><span class="pre">SparsemaxLoss</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="riid.models.losses.html#riid.models.losses.sparsemax.SparsemaxLoss.call"><code class="docutils literal notranslate"><span class="pre">SparsemaxLoss.call()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="riid.models.losses.html#riid.models.losses.sparsemax.SparsemaxLoss.get_config"><code class="docutils literal notranslate"><span class="pre">SparsemaxLoss.get_config()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="riid.models.losses.html#riid.models.losses.sparsemax.sparsemax"><code class="docutils literal notranslate"><span class="pre">sparsemax()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="riid.models.losses.html#riid.models.losses.sparsemax.sparsemax_loss"><code class="docutils literal notranslate"><span class="pre">sparsemax_loss()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="riid.models.losses.html#riid.models.losses.sparsemax.sparsemax_loss_from_logits"><code class="docutils literal notranslate"><span class="pre">sparsemax_loss_from_logits()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="riid.models.losses.html#module-riid.models.losses">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="riid.models.losses.html#riid.models.losses.build_semisupervised_loss_func"><code class="docutils literal notranslate"><span class="pre">build_semisupervised_loss_func()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="riid.models.losses.html#riid.models.losses.negative_f1"><code class="docutils literal notranslate"><span class="pre">negative_f1()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="riid.models.losses.html#riid.models.losses.negative_log_f1"><code class="docutils literal notranslate"><span class="pre">negative_log_f1()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="riid.models.losses.html#riid.models.losses.normal_nll_diff"><code class="docutils literal notranslate"><span class="pre">normal_nll_diff()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="riid.models.losses.html#riid.models.losses.poisson_nll_diff"><code class="docutils literal notranslate"><span class="pre">poisson_nll_diff()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="riid.models.losses.html#riid.models.losses.reconstruction_error"><code class="docutils literal notranslate"><span class="pre">reconstruction_error()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="riid.models.losses.html#riid.models.losses.sse_diff"><code class="docutils literal notranslate"><span class="pre">sse_diff()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="riid.models.losses.html#riid.models.losses.weighted_sse_diff"><code class="docutils literal notranslate"><span class="pre">weighted_sse_diff()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="module-riid.models.bayes">
+<span id="riid-models-bayes-module"></span><h2>riid.models.bayes module<a class="headerlink" href="#module-riid.models.bayes" title="Permalink to this heading">¶</a></h2>
+<p>This module contains a Poisson-Bayes classifier.</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="riid.models.bayes.NegativeSpectrumError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">riid.models.bayes.</span></span><span class="sig-name descname"><span class="pre">NegativeSpectrumError</span></span><a class="headerlink" href="#riid.models.bayes.NegativeSpectrumError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ValueError</span></code></p>
+<p>An exception that indicates that a negative spectrum value has
+been found, which means that the model statistics cannot be calculated.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="riid.models.bayes.PoissonBayesClassifier">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">riid.models.bayes.</span></span><span class="sig-name descname"><span class="pre">PoissonBayesClassifier</span></span><a class="headerlink" href="#riid.models.bayes.PoissonBayesClassifier" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#riid.models.TFModelBase" title="riid.models.TFModelBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">TFModelBase</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.models.bayes.PoissonBayesClassifier.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seeds_ss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="riid.data.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.bayes.PoissonBayesClassifier.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructs a TF-based implementation of a poisson-bayes classifier in terms
+of the given seeds.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><dl class="simple">
+<dt>seeds_ss (SampleSet): Defines a SampleSet of <cite>n</cite> foreground</dt><dd><p>seed spectra where <cite>n</cite> &gt;= 1.</p>
+</dd>
+</dl>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: Raised when no seeds are provided.
+NegativeSpectrumError: raised if any seed spectrum has negative counts in any bin.
+ZeroTotalCountsError: raised if any seed spectrum contains zero total counts.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.models.bayes.PoissonBayesClassifier.predict">
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gross_ss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="riid.data.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bg_ss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="riid.data.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize_scores</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.bayes.PoissonBayesClassifier.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Uses the Poisson-Bayes model to output prediction
+probabilities for every spectra in gross_ss SampleSet
+(and optional background Sample Set)</p>
+<dl>
+<dt>Args:</dt><dd><p>gross_ss (SampleSet): Defines a SampleSet of <cite>n</cite> gross spectra where <cite>n</cite> &gt;= 1.
+bg_ss (SampleSet): Defines a SampleSet of <cite>n</cite> background spectra where <cite>n</cite> &gt;= 1.
+normalize_scores (bool): normalize prediction probabilities.</p>
+<blockquote>
+<div><p>When True, this makes the probabilities positive and rescales them
+by the minimum value present in given the dataset.
+While this can be helpful in terms of visualizing probabilities in log scale,
+it can adversely affects one’s ability to detect significantly anomalous signatures.</p>
+</div></blockquote>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="riid.models.bayes.ZeroTotalCountsError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">riid.models.bayes.</span></span><span class="sig-name descname"><span class="pre">ZeroTotalCountsError</span></span><a class="headerlink" href="#riid.models.bayes.ZeroTotalCountsError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ValueError</span></code></p>
+<p>An exception that indicates that a total count of zero has
+been found, which means the model statistics cannot be calculated.</p>
+</dd></dl>
+
+</section>
+<section id="module-riid.models.metrics">
+<span id="riid-models-metrics-module"></span><h2>riid.models.metrics module<a class="headerlink" href="#module-riid.models.metrics" title="Permalink to this heading">¶</a></h2>
+<p>This module provides custom model metrics.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="riid.models.metrics.RunningAverage">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">riid.models.metrics.</span></span><span class="sig-name descname"><span class="pre">RunningAverage</span></span><a class="headerlink" href="#riid.models.metrics.RunningAverage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Helper for calculating average in a rolling fashion.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.models.metrics.RunningAverage.add_sample">
+<span class="sig-name descname"><span class="pre">add_sample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.metrics.RunningAverage.add_sample" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the average.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>new_value: the new value</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="riid.models.metrics.RunningAverage.is_empty">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_empty</span></span><a class="headerlink" href="#riid.models.metrics.RunningAverage.is_empty" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="riid.models.metrics.average_precision_score">
+<span class="sig-prename descclassname"><span class="pre">riid.models.metrics.</span></span><span class="sig-name descname"><span class="pre">average_precision_score</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">precision</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recall</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.metrics.average_precision_score" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the average precision (area under the curve) for each precision/recall
+pair.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>precision (dict): return value of <cite>ctutil.evaluation.precision_recall_curve()</cite>
+recall (dict): return value of <cite>ctutil.evaluation.precision_recall_curve()</cite></p>
+</dd>
+<dt>Returns:</dt><dd><p>(dict): average precision values (float) for each label in precision/recall</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="riid.models.metrics.harmonic_mean">
+<span class="sig-prename descclassname"><span class="pre">riid.models.metrics.</span></span><span class="sig-name descname"><span class="pre">harmonic_mean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.metrics.harmonic_mean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the harmonic mean of two same-dim arrays.</p>
+<p>Used to compute F1 score:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">f1_score</span> <span class="pre">=</span> <span class="pre">harmonic_mean(precision,</span> <span class="pre">recall)</span>
+<span class="pre">`</span></code></p>
+</div></blockquote>
+<dl class="simple">
+<dt>Args:</dt><dd><p>x (array-like): numeric or array_like of numerics
+y (array-like): numeric or array_like of numerics matching the shape/type of <cite>x</cite></p>
+</dd>
+<dt>Returns:</dt><dd><p>(array-like): the harmonic mean of <cite>x</cite> and <cite>y</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="riid.models.metrics.multi_f1">
+<span class="sig-prename descclassname"><span class="pre">riid.models.metrics.</span></span><span class="sig-name descname"><span class="pre">multi_f1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y_true</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_pred</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.metrics.multi_f1" title="Permalink to this definition">¶</a></dt>
+<dd><p>This metric provides a measure of the F1 score of two tensors.
+Values for y_true and y_pred are assumed to sum to 1.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>y_true: Defines a list of ground truth.
+y_pred: Defines a list of predictions to compare against the ground truth.</p>
+</dd>
+<dt>Returns:</dt><dd><p>The custom loss score for two tensors.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="riid.models.metrics.precision_recall_curve">
+<span class="sig-prename descclassname"><span class="pre">riid.models.metrics.</span></span><span class="sig-name descname"><span class="pre">precision_recall_curve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="riid.data.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">smooth</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multiclass</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_micro</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Isotope'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minimum_contribution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.01</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.metrics.precision_recall_curve" title="Permalink to this definition">¶</a></dt>
+<dd><p>Similar to <cite>sklearn.metrics.precision_recall_curve</cite>, however, this function
+computes the precision and recall for each class, and supports both multi-class
+and multi-label problems.</p>
+<p>The reason this is necessary is that in multi-class problems, for a single sample,
+all predictions are discarded except for the argmax.</p>
+<dl>
+<dt>Args:</dt><dd><p>ss: a SampleSet that predictions were generated on
+smooth: if True, precision is smoothing is applied to make a monotonically</p>
+<blockquote>
+<div><p>decreasing precision function</p>
+</div></blockquote>
+<dl class="simple">
+<dt>multiclass: set to True if this is a multi-class (i.e. y_true is one-hot) as</dt><dd><p>opposed to multi-label (i.e. labels are not mutually exclusive). Ff True,
+predictions will be masked such that non-argmax predictions are set to zero
+(this prevents inflating the precision by continuing past a point that could
+be pragmatically useful). Furthermore, in the multiclass case the recall is
+not guaranteed to reach 1.0.</p>
+</dd>
+<dt>include_micro: if True, compute an additional precision and recall for the</dt><dd><p>micro-average across all labels and put it under entry <cite>“micro”</cite></p>
+</dd>
+<dt>target_level: true labels are extracted from <cite>ss.sources</cite> at the target column index level</dt><dd><p>(“Category”, “Isotope”, “Seed”, …)</p>
+</dd>
+<dt>minimum_contribution: threshold for a source to be considered a ground truth positive</dt><dd><p>label. if this is set to <cite>None</cite> the raw mixture ratios will be used as y_true.</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>precision (dict): a dict with keys for each label and values that are the</dt><dd><p>monotonically increasing precision values at each threshold</p>
+</dd>
+<dt>recall (dict): a dict with keys for each label and values that are the</dt><dd><p>monotonically decreasing recall values at each threshold</p>
+</dd>
+<dt>thresholds (dict): a dict with keys for each label and values that are the</dt><dd><p>monotonically increasing thresholds on the decision function used to compute
+precision and recall</p>
+</dd>
+</dl>
+</dd>
+<dt>References:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>[Precision smoothing](</dt><dd><p><a class="reference external" href="https://jonathan-hui.medium.com/map-mean-average-precision-for-object-detection-45c121a31173">https://jonathan-hui.medium.com/map-mean-average-precision-for-object-detection-45c121a31173</a>)</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="riid.models.metrics.single_f1">
+<span class="sig-prename descclassname"><span class="pre">riid.models.metrics.</span></span><span class="sig-name descname"><span class="pre">single_f1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y_true</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_pred</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.metrics.single_f1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the weighted F1 score for the maximum prediction and maximum
+ground truth. Values for y_true and y_pred are assumed to sum to 1.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>y_true: Defines a list of ground truth.
+y_pred: Defines a list of predictions to compare against the ground truth.</p>
+</dd>
+<dt>Returns:</dt><dd><p>Returns the custom loss score.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-riid.models.neural_nets">
+<span id="riid-models-neural-nets-module"></span><h2>riid.models.neural_nets module<a class="headerlink" href="#module-riid.models.neural_nets" title="Permalink to this heading">¶</a></h2>
+<p>This module contains a multi-layer perceptron classifier.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="riid.models.neural_nets.LabelProportionEstimator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">riid.models.neural_nets.</span></span><span class="sig-name descname"><span class="pre">LabelProportionEstimator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hidden_layers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">(256,)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sup_loss</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'sparsemax'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unsup_loss</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'sse'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.9</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fg_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">optimizer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'adam'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_rate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metrics</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">('mae',)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hidden_layer_activation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'relu'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l2_alpha</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.0001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activity_regularizer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Seed'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">train_history</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val_history</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">base_kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.neural_nets.LabelProportionEstimator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#riid.models.TFModelBase" title="riid.models.TFModelBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">TFModelBase</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="riid.models.neural_nets.LabelProportionEstimator.INFO_KEYS">
+<span class="sig-name descname"><span class="pre">INFO_KEYS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('model_id',</span> <span class="pre">'model_type',</span> <span class="pre">'normalization',</span> <span class="pre">'pyriid_version',</span> <span class="pre">'target_level',</span> <span class="pre">'hidden_layers',</span> <span class="pre">'optimizer_name',</span> <span class="pre">'learning_rate',</span> <span class="pre">'sup_loss',</span> <span class="pre">'unsup_loss',</span> <span class="pre">'beta',</span> <span class="pre">'metrics_names',</span> <span class="pre">'hidden_layer_activation',</span> <span class="pre">'l2_alpha',</span> <span class="pre">'activity_regularizer',</span> <span class="pre">'dropout',</span> <span class="pre">'fg_dict',</span> <span class="pre">'train_history',</span> <span class="pre">'val_history')</span></em><a class="headerlink" href="#riid.models.neural_nets.LabelProportionEstimator.INFO_KEYS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="riid.models.neural_nets.LabelProportionEstimator.METRICS">
+<span class="sig-name descname"><span class="pre">METRICS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'mae':</span> <span class="pre">&lt;class</span> <span class="pre">'keras.metrics.regression_metrics.MeanAbsoluteError'&gt;}</span></em><a class="headerlink" href="#riid.models.neural_nets.LabelProportionEstimator.METRICS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="riid.models.neural_nets.LabelProportionEstimator.SUPERVISED_LOSS_FUNCS">
+<span class="sig-name descname"><span class="pre">SUPERVISED_LOSS_FUNCS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'categorical_crossentropy':</span> <span class="pre">(&lt;class</span> <span class="pre">'keras.losses.CategoricalCrossentropy'&gt;,</span> <span class="pre">{'from_logits':</span> <span class="pre">True,</span> <span class="pre">'reduction':</span> <span class="pre">'none'},</span> <span class="pre">&lt;function</span> <span class="pre">softmax&gt;),</span> <span class="pre">'sparsemax':</span> <span class="pre">(&lt;class</span> <span class="pre">'riid.models.losses.sparsemax.SparsemaxLoss'&gt;,</span> <span class="pre">{'from_logits':</span> <span class="pre">True,</span> <span class="pre">'reduction':</span> <span class="pre">'none'},</span> <span class="pre">&lt;function</span> <span class="pre">sparsemax&gt;)}</span></em><a class="headerlink" href="#riid.models.neural_nets.LabelProportionEstimator.SUPERVISED_LOSS_FUNCS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="riid.models.neural_nets.LabelProportionEstimator.UNSUPERVISED_LOSS_FUNCS">
+<span class="sig-name descname"><span class="pre">UNSUPERVISED_LOSS_FUNCS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'normal_nll':</span> <span class="pre">&lt;function</span> <span class="pre">normal_nll_diff&gt;,</span> <span class="pre">'poisson_nll':</span> <span class="pre">&lt;function</span> <span class="pre">poisson_nll_diff&gt;,</span> <span class="pre">'sse':</span> <span class="pre">&lt;function</span> <span class="pre">sse_diff&gt;,</span> <span class="pre">'weighted_sse':</span> <span class="pre">&lt;function</span> <span class="pre">weighted_sse_diff&gt;}</span></em><a class="headerlink" href="#riid.models.neural_nets.LabelProportionEstimator.UNSUPERVISED_LOSS_FUNCS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.models.neural_nets.LabelProportionEstimator.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seeds_ss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="riid.data.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">ss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="riid.data.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epochs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validation_split</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callbacks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">patience</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">15</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">es_monitor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'val_loss'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">es_mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'min'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">es_verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Seed'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.neural_nets.LabelProportionEstimator.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fits a model to the given SampleSet(s).</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>seeds_ss: a sampleset of pure, long-collect spectra.
+ss: a SampleSet of <cite>n</cite> spectra where <cite>n</cite> &gt;= 1 and the spectra are gross.
+batch_size: the number of samples per gradient update.
+epochs: maximum number of training iterations.
+callbacks: a list of callbacks to be passed to TensorFlow Model.fit() method.
+patience: the number of epochs to wait for tf.keras.callbacks.EarlyStopping object.
+es_monitor: the quantity to be monitored for tf.keras.callbacks.EarlyStopping object.
+es_mode: mode for tf.keras.callbacks.EarlyStopping object.
+es_verbose: the verbosity level for tf.keras.callbacks.EarlyStopping object.
+target_level: The source level to target for model output.
+verbose: whether or not model training output is printed to the terminal.</p>
+</dd>
+<dt>Returns:</dt><dd><p>None</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: Raised when no spectra are provided as <cite>ss</cite> input.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.models.neural_nets.LabelProportionEstimator.get_info_as_dict">
+<span class="sig-name descname"><span class="pre">get_info_as_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.neural_nets.LabelProportionEstimator.get_info_as_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.models.neural_nets.LabelProportionEstimator.load">
+<span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">load_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.neural_nets.LabelProportionEstimator.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads the model from a file.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>file_path: Defines a string representing the file path from which to load the model.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.models.neural_nets.LabelProportionEstimator.predict">
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="riid.data.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.neural_nets.LabelProportionEstimator.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Classifies the spectra in the provided SampleSet(s).</p>
+<p>Results are stored inside the first SampleSet’s prediction-related properties.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>ss: a SampleSet of <cite>n</cite> spectra where <cite>n</cite> &gt;= 1 and the spectra are gross or fg.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.models.neural_nets.LabelProportionEstimator.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">save_path</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#riid.models.neural_nets.LabelProportionEstimator.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves the model to a file.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>file_path: Defines a string representing the file path at which to save the model.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: Raised when the given file path already exists.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="riid.models.neural_nets.MLPClassifier">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">riid.models.neural_nets.</span></span><span class="sig-name descname"><span class="pre">MLPClassifier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hidden_layers:</span> <span class="pre">tuple</span> <span class="pre">=</span> <span class="pre">(512</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activation:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'relu'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loss:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'categorical_crossentropy'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">optimizer:</span> <span class="pre">~typing.Any</span> <span class="pre">=</span> <span class="pre">&lt;keras.optimizers.legacy.adam.Adam</span> <span class="pre">object&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metrics:</span> <span class="pre">tuple</span> <span class="pre">=</span> <span class="pre">('accuracy'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'categorical_crossentropy'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;function</span> <span class="pre">multi_f1&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;function</span> <span class="pre">single_f1&gt;)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l2_alpha:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.0001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activity_regularizer=&lt;keras.regularizers.L1</span> <span class="pre">object&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropout:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_rate:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">final_activation:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'softmax'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.neural_nets.MLPClassifier" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#riid.models.TFModelBase" title="riid.models.TFModelBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">TFModelBase</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.models.neural_nets.MLPClassifier.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="riid.data.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">bg_ss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="riid.data.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ss_input_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#riid.models.ModelInput" title="riid.models.ModelInput"><span class="pre">ModelInput</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">ModelInput.GrossSpectrum</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bg_ss_input_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#riid.models.ModelInput" title="riid.models.ModelInput"><span class="pre">ModelInput</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">ModelInput.BackgroundSpectrum</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">200</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epochs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validation_split</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callbacks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val_ss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="riid.data.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val_bg_ss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="riid.data.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">patience</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">15</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">es_monitor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'val_loss'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">es_mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'min'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">es_verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Isotope'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.neural_nets.MLPClassifier.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fits a model to the given SampleSet(s).</p>
+<dl>
+<dt>Args:</dt><dd><dl class="simple">
+<dt>ss: Defines a SampleSet of <cite>n</cite> spectra where <cite>n</cite> &gt;= 1 and the spectra are either</dt><dd><p>foreground (AKA, “net”) or gross.</p>
+</dd>
+</dl>
+<p>bg_ss: Defines a SampleSet of <cite>n</cite> spectra where <cite>n</cite> &gt;= 1 and the spectra are background.
+batch_size: Defines the number of samples per gradient update.
+epochs: Defines maximum number of training iterations.
+validation_split: Defines the percentage of the training data to use as validation data.
+callbacks: Defines a list of callbacks to be passed to TensorFlow Model.fit() method.
+val_ss: Defines an optionally-provided provided validation set to be used instead of</p>
+<blockquote>
+<div><p>taking a portion of <cite>ss</cite> for validation.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>val_bg_ss: Defines an optionally-provided validation set to be used as background for</dt><dd><p>val_ss.</p>
+</dd>
+<dt>patience: Defines the number of epochs to wait for tf.keras.callbacks.EarlyStopping</dt><dd><p>object.</p>
+</dd>
+<dt>es_monitor: Defines the quantity to be monitored for tf.keras.callbacks.EarlyStopping</dt><dd><p>object.</p>
+</dd>
+</dl>
+<p>es_mode: mode for tf.keras.callbacks.EarlyStopping object.
+es_verbose: Determines verbosity level for tf.keras.callbacks.EarlyStopping object.
+target_level: The source level to target for model output.
+verbose: Determines whether or not model training output is printed to the terminal.</p>
+</dd>
+<dt>Returns:</dt><dd><p>A tf.History object.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: Raised when no spectra are provided as <cite>ss</cite> input.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.models.neural_nets.MLPClassifier.predict">
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="riid.data.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">bg_ss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="riid.data.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.neural_nets.MLPClassifier.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Classifies the spectra in the provided SampleSet(s).</p>
+<p>Results are stored inside the first SampleSet’s prediction-related properties.</p>
+<dl>
+<dt>Args:</dt><dd><dl class="simple">
+<dt>ss: Defines a SampleSet of <cite>n</cite> spectra where <cite>n</cite> &gt;= 1 and the spectra are either</dt><dd><p>foreground (AKA, “net”) or gross.</p>
+</dd>
+</dl>
+<p>bg_ss: Defines a SampleSet of <cite>n</cite> spectra where <cite>n</cite> &gt;= 1 and the spectra are background.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="riid.models.neural_nets.MultiEventClassifier">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">riid.models.neural_nets.</span></span><span class="sig-name descname"><span class="pre">MultiEventClassifier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">hidden_layers:</span> <span class="pre">tuple</span> <span class="pre">=</span> <span class="pre">(512,),</span> <span class="pre">activation:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'relu',</span> <span class="pre">loss:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'categorical_crossentropy',</span> <span class="pre">optimizer:</span> <span class="pre">~typing.Any</span> <span class="pre">=</span> <span class="pre">&lt;keras.optimizers.legacy.adam.Adam</span> <span class="pre">object&gt;,</span> <span class="pre">metrics:</span> <span class="pre">list</span> <span class="pre">=</span> <span class="pre">['accuracy',</span> <span class="pre">'categorical_crossentropy',</span> <span class="pre">&lt;function</span> <span class="pre">multi_f1&gt;,</span> <span class="pre">&lt;function</span> <span class="pre">single_f1&gt;],</span> <span class="pre">l2_alpha:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.0001,</span> <span class="pre">activity_regularizer:</span> <span class="pre">&lt;module</span> <span class="pre">'keras.api._v2.keras.regularizers'</span> <span class="pre">from</span> <span class="pre">'C:\\Users\\anbusto\\Documents\\Repos\\venv\\lib\\site-packages\\keras\\api\\_v2\\keras\\regularizers\\__init__.py'&gt;</span> <span class="pre">=</span> <span class="pre">&lt;keras.regularizers.L1</span> <span class="pre">object&gt;,</span> <span class="pre">dropout:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.0,</span> <span class="pre">learning_rate:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.01</span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.neural_nets.MultiEventClassifier" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#riid.models.TFModelBase" title="riid.models.TFModelBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">TFModelBase</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.models.neural_nets.MultiEventClassifier.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list_of_ss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="riid.data.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_contributions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">200</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epochs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validation_split</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callbacks</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val_model_ss_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="riid.data.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val_model_target_contributions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">patience</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">15</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">es_monitor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'val_loss'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">es_mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'min'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">es_verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Isotope'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.neural_nets.MultiEventClassifier.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fits a model to the given SampleSet(s).</p>
+<dl>
+<dt>Args:</dt><dd><dl class="simple">
+<dt>list_of_ss: Defines a list of SampleSets which have prediction_probas populated from</dt><dd><p>single-event classifiers.</p>
+</dd>
+<dt>target_contributions: Defines a DataFrame of the contributions for each</dt><dd><p>observation. Column titles are the desired label strings.</p>
+</dd>
+</dl>
+<p>batch_size: Defines the number of samples per gradient update.
+epochs: Defines the maximum number of training iterations.
+validation_split: Defines the percentage of the training data to use as validation data.
+callbacks: Defines a list of callbacks to be passed to TensorFlow Model.fit() method.
+val_model_ss_list: Defines an optionally-provided validation set to be used instead of</p>
+<blockquote>
+<div><p>taking a portion of <cite>ss</cite> for validation.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>val_model_target_contributions: Defines the target contributions to the model for</dt><dd><p>each sample.</p>
+</dd>
+<dt>patience: Defines the number of epochs to wait for tf.keras.callbacks.EarlyStopping</dt><dd><p>object.</p>
+</dd>
+<dt>es_monitor: Defintes the quantity to be monitored for tf.keras.callbacks.EarlyStopping</dt><dd><p>object.</p>
+</dd>
+</dl>
+<p>es_mode: Defines the mode for tf.keras.callbacks.EarlyStopping object.
+es_verbose: Determines the verbosity level for tf.keras.callbacks.EarlyStopping object.
+target_level: The source level to target for model output.
+verbose: Determines whether or not the training output is printed to the terminal.</p>
+</dd>
+<dt>Returns:</dt><dd><p>A tf.History object.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: Raised when no predictions are provided with <cite>list_of_ss</cite> input.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.models.neural_nets.MultiEventClassifier.predict">
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list_of_ss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="riid.data.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#riid.models.neural_nets.MultiEventClassifier.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Classifies the spectra in the provided SampleSet(s) based on each Sampleset’s results.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><dl class="simple">
+<dt>list_of_ss: Defines a list of SampleSets which had predictions made by</dt><dd><p>single-event models.</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><p>A DataFrame of predicted results for the Sampleset(s).</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-riid.models">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-riid.models" title="Permalink to this heading">¶</a></h2>
+<p>This module contains the base TFModel class.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="riid.models.ModelInput">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">riid.models.</span></span><span class="sig-name descname"><span class="pre">ModelInput</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.ModelInput" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>Enumerates the potential input sources for a model.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="riid.models.ModelInput.BackgroundSpectrum">
+<span class="sig-name descname"><span class="pre">BackgroundSpectrum</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#riid.models.ModelInput.BackgroundSpectrum" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="riid.models.ModelInput.ForegroundSpectrum">
+<span class="sig-name descname"><span class="pre">ForegroundSpectrum</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#riid.models.ModelInput.ForegroundSpectrum" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="riid.models.ModelInput.GrossSpectrum">
+<span class="sig-name descname"><span class="pre">GrossSpectrum</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#riid.models.ModelInput.GrossSpectrum" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="riid.models.TFModelBase">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">riid.models.</span></span><span class="sig-name descname"><span class="pre">TFModelBase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.TFModelBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Base class for TensorFlow models.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="riid.models.TFModelBase.CUSTOM_OBJECTS">
+<span class="sig-name descname"><span class="pre">CUSTOM_OBJECTS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'multi_f1':</span> <span class="pre">&lt;function</span> <span class="pre">multi_f1&gt;,</span> <span class="pre">'single_f1':</span> <span class="pre">&lt;function</span> <span class="pre">single_f1&gt;}</span></em><a class="headerlink" href="#riid.models.TFModelBase.CUSTOM_OBJECTS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.models.TFModelBase.deserialize">
+<span class="sig-name descname"><span class="pre">deserialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stream</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.TFModelBase.deserialize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Populates the current model with the give bytes object.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>stream: Defines a bytes object containing the model information.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="riid.models.TFModelBase.info">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">info</span></span><a class="headerlink" href="#riid.models.TFModelBase.info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.models.TFModelBase.initialize_info">
+<span class="sig-name descname"><span class="pre">initialize_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.TFModelBase.initialize_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initializes the model information with default values.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.models.TFModelBase.load">
+<span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.TFModelBase.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads the model from a file.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>file_path: Defines a string representing the file path from which to load the model.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="riid.models.TFModelBase.model_inputs">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">model_inputs</span></span><a class="headerlink" href="#riid.models.TFModelBase.model_inputs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="riid.models.TFModelBase.model_outputs">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">model_outputs</span></span><a class="headerlink" href="#riid.models.TFModelBase.model_outputs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.models.TFModelBase.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.TFModelBase.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves the model to a file.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>file_path: Defines a string representing the file path at which to save the model.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: Raised when the given file path already exists.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="riid.models.TFModelBase.seeds">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">seeds</span></span><a class="headerlink" href="#riid.models.TFModelBase.seeds" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.models.TFModelBase.serialize">
+<span class="sig-name descname"><span class="pre">serialize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bytes</span></span></span><a class="headerlink" href="#riid.models.TFModelBase.serialize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts the model to a bytes object.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>A bytes object representing the binary of an HDF file.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="riid.models.TFModelBase.target_level">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">target_level</span></span><a class="headerlink" href="#riid.models.TFModelBase.target_level" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.models.TFModelBase.to_tflite">
+<span class="sig-name descname"><span class="pre">to_tflite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quantize</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.TFModelBase.to_tflite" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts the model to a TFLite model and optionally saves it to a file or quantizes it.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>file_path: Defines a string for the file path to which to save the model.
+quantize: Determines whether or not to apply quantization to the TFLite model.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Test Project</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, none.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="_sources/riid.models.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
