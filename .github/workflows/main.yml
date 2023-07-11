@@ -23,7 +23,7 @@ jobs:
 
         # Run pydoctor build
         pydoctor \
-            --project-name=(visualization) \
+            --project-name=(visualization)\
             --project-url=https://github.com/$GITHUB_REPOSITORY \
             --html-viewsource-base=https://github.com/$GITHUB_REPOSITORY/tree/$GITHUB_SHA \
             --make-html \
