@@ -10,7 +10,7 @@ Welcome to PyRIID Test's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-
+   visualization
 
 Indices and tables
 ==================
