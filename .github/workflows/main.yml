@@ -1,32 +1,37 @@
-name: apidocs
+name: Build html pages
 on:
 - push
 
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
-
+  build:
+    strategy:
+      matrix:
+        python-version: ["3.8", "3.9", "3.10"]
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
     steps:
-    - uses: actions/checkout@main
-    - name: Set up Python 3.8
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.8
+      - uses: actions/checkout@v3
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: "pip"
+          cache-dependency-path: "**/pyproject.toml"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip setuptools wheel
+          python -m pip install sphinx
+          python -m pip install sphinx_bootstrap_theme
 
-    - name: Install requirements for documentation generation
-      run: |
-        python -m pip install sphinx
-        python -m pip install sphinx_bootstrap_theme
+      - name: Generate html files for github using Sphinx
+        run: |
 
-    - name: Generate html files for github using Sphinx
-      run: |
-
-        # Run shpinx build
-        cd docs
-        ls
-        pip list
+          # Run shpinx build
+          cd docs
+          ls
+          pip list
+          
+      - name: Build html files
+        run: | 
         
-    - name: Build html files
-      run: | 
-      
-        sphinx-build -b html .\build_files\ .\
+          sphinx-build -b html .\build_files\ .\
