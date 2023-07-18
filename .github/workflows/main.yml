@@ -30,4 +30,4 @@ jobs:
           cd docs
           ls
           pip list
-          sphinx-build -b html .\build_files\ .\
+          sphinx-build -b html .\build_files\ ..\
