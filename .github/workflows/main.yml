@@ -23,7 +23,7 @@ jobs:
           python -m pip install sphinx
           python -m pip install sphinx_bootstrap_theme
 
-      - name: Generate html files for github using Sphinx
+      - name: Navigate to folder
         run: |
 
           # Run shpinx build
