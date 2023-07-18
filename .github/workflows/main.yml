@@ -15,7 +15,7 @@ jobs:
 
     - name: Install requirements for documentation generation
       run: |
-        python -m pip install -U sphinx
+        python -m pip install sphinx
         python -m pip install sphinx_bootstrap_theme
 
     - name: Generate html files for github using Sphinx
@@ -24,4 +24,9 @@ jobs:
         # Run shpinx build
         cd docs
         ls
-        python -m sphinx-build -b html .\build_files\ .\
+        pip list
+        
+    - name: Build html files
+      run: | 
+      
+        sphinx-build -b html .\build_files\ .\
