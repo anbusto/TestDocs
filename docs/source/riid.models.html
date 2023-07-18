@@ -5,28 +5,34 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>riid.models package &#8212; My Awesome Project 1 documentation</title>
+    <title>riid.models package &#8212; My Awesome PyRIID Project Documentation 1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
+    
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/sphinx_highlight.js"></script>
+    
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-   
-  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
-
+    <link rel="search" title="Search" href="../search.html" /> 
   </head><body>
-  
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">My Awesome PyRIID Project Documentation 1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">riid.models package</a></li> 
+      </ul>
+    </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          
-
           <div class="body" role="main">
             
   <section id="riid-models-package">
@@ -650,30 +656,102 @@ single-event models.</p>
 </section>
 
 
+            <div class="clearer"></div>
           </div>
-          
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="../index.html">My Awesome Project</a></h1>
-
-
-
-
-
-
-
-
-<h3>Navigation</h3>
-
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="../index.html">Documentation overview</a><ul>
-  </ul></li>
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">riid.models package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-riid.models.bayes">riid.models.bayes module</a><ul>
+<li><a class="reference internal" href="#riid.models.bayes.NegativeSpectrumError"><code class="docutils literal notranslate"><span class="pre">NegativeSpectrumError</span></code></a></li>
+<li><a class="reference internal" href="#riid.models.bayes.PoissonBayesClassifier"><code class="docutils literal notranslate"><span class="pre">PoissonBayesClassifier</span></code></a><ul>
+<li><a class="reference internal" href="#riid.models.bayes.PoissonBayesClassifier.fit"><code class="docutils literal notranslate"><span class="pre">PoissonBayesClassifier.fit()</span></code></a></li>
+<li><a class="reference internal" href="#riid.models.bayes.PoissonBayesClassifier.predict"><code class="docutils literal notranslate"><span class="pre">PoissonBayesClassifier.predict()</span></code></a></li>
 </ul>
-</div>
+</li>
+<li><a class="reference internal" href="#riid.models.bayes.ZeroTotalCountsError"><code class="docutils literal notranslate"><span class="pre">ZeroTotalCountsError</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-riid.models.metrics">riid.models.metrics module</a><ul>
+<li><a class="reference internal" href="#riid.models.metrics.RunningAverage"><code class="docutils literal notranslate"><span class="pre">RunningAverage</span></code></a><ul>
+<li><a class="reference internal" href="#riid.models.metrics.RunningAverage.add_sample"><code class="docutils literal notranslate"><span class="pre">RunningAverage.add_sample()</span></code></a></li>
+<li><a class="reference internal" href="#riid.models.metrics.RunningAverage.is_empty"><code class="docutils literal notranslate"><span class="pre">RunningAverage.is_empty</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#riid.models.metrics.average_precision_score"><code class="docutils literal notranslate"><span class="pre">average_precision_score()</span></code></a></li>
+<li><a class="reference internal" href="#riid.models.metrics.harmonic_mean"><code class="docutils literal notranslate"><span class="pre">harmonic_mean()</span></code></a></li>
+<li><a class="reference internal" href="#riid.models.metrics.multi_f1"><code class="docutils literal notranslate"><span class="pre">multi_f1()</span></code></a></li>
+<li><a class="reference internal" href="#riid.models.metrics.precision_recall_curve"><code class="docutils literal notranslate"><span class="pre">precision_recall_curve()</span></code></a></li>
+<li><a class="reference internal" href="#riid.models.metrics.single_f1"><code class="docutils literal notranslate"><span class="pre">single_f1()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-riid.models.neural_nets">riid.models.neural_nets module</a><ul>
+<li><a class="reference internal" href="#riid.models.neural_nets.LabelProportionEstimator"><code class="docutils literal notranslate"><span class="pre">LabelProportionEstimator</span></code></a><ul>
+<li><a class="reference internal" href="#riid.models.neural_nets.LabelProportionEstimator.INFO_KEYS"><code class="docutils literal notranslate"><span class="pre">LabelProportionEstimator.INFO_KEYS</span></code></a></li>
+<li><a class="reference internal" href="#riid.models.neural_nets.LabelProportionEstimator.METRICS"><code class="docutils literal notranslate"><span class="pre">LabelProportionEstimator.METRICS</span></code></a></li>
+<li><a class="reference internal" href="#riid.models.neural_nets.LabelProportionEstimator.SUPERVISED_LOSS_FUNCS"><code class="docutils literal notranslate"><span class="pre">LabelProportionEstimator.SUPERVISED_LOSS_FUNCS</span></code></a></li>
+<li><a class="reference internal" href="#riid.models.neural_nets.LabelProportionEstimator.UNSUPERVISED_LOSS_FUNCS"><code class="docutils literal notranslate"><span class="pre">LabelProportionEstimator.UNSUPERVISED_LOSS_FUNCS</span></code></a></li>
+<li><a class="reference internal" href="#riid.models.neural_nets.LabelProportionEstimator.fit"><code class="docutils literal notranslate"><span class="pre">LabelProportionEstimator.fit()</span></code></a></li>
+<li><a class="reference internal" href="#riid.models.neural_nets.LabelProportionEstimator.get_info_as_dict"><code class="docutils literal notranslate"><span class="pre">LabelProportionEstimator.get_info_as_dict()</span></code></a></li>
+<li><a class="reference internal" href="#riid.models.neural_nets.LabelProportionEstimator.load"><code class="docutils literal notranslate"><span class="pre">LabelProportionEstimator.load()</span></code></a></li>
+<li><a class="reference internal" href="#riid.models.neural_nets.LabelProportionEstimator.predict"><code class="docutils literal notranslate"><span class="pre">LabelProportionEstimator.predict()</span></code></a></li>
+<li><a class="reference internal" href="#riid.models.neural_nets.LabelProportionEstimator.save"><code class="docutils literal notranslate"><span class="pre">LabelProportionEstimator.save()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#riid.models.neural_nets.MLPClassifier"><code class="docutils literal notranslate"><span class="pre">MLPClassifier</span></code></a><ul>
+<li><a class="reference internal" href="#riid.models.neural_nets.MLPClassifier.fit"><code class="docutils literal notranslate"><span class="pre">MLPClassifier.fit()</span></code></a></li>
+<li><a class="reference internal" href="#riid.models.neural_nets.MLPClassifier.predict"><code class="docutils literal notranslate"><span class="pre">MLPClassifier.predict()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#riid.models.neural_nets.MultiEventClassifier"><code class="docutils literal notranslate"><span class="pre">MultiEventClassifier</span></code></a><ul>
+<li><a class="reference internal" href="#riid.models.neural_nets.MultiEventClassifier.fit"><code class="docutils literal notranslate"><span class="pre">MultiEventClassifier.fit()</span></code></a></li>
+<li><a class="reference internal" href="#riid.models.neural_nets.MultiEventClassifier.predict"><code class="docutils literal notranslate"><span class="pre">MultiEventClassifier.predict()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-riid.models">Module contents</a><ul>
+<li><a class="reference internal" href="#riid.models.ModelInput"><code class="docutils literal notranslate"><span class="pre">ModelInput</span></code></a><ul>
+<li><a class="reference internal" href="#riid.models.ModelInput.BackgroundSpectrum"><code class="docutils literal notranslate"><span class="pre">ModelInput.BackgroundSpectrum</span></code></a></li>
+<li><a class="reference internal" href="#riid.models.ModelInput.ForegroundSpectrum"><code class="docutils literal notranslate"><span class="pre">ModelInput.ForegroundSpectrum</span></code></a></li>
+<li><a class="reference internal" href="#riid.models.ModelInput.GrossSpectrum"><code class="docutils literal notranslate"><span class="pre">ModelInput.GrossSpectrum</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#riid.models.TFModelBase"><code class="docutils literal notranslate"><span class="pre">TFModelBase</span></code></a><ul>
+<li><a class="reference internal" href="#riid.models.TFModelBase.CUSTOM_OBJECTS"><code class="docutils literal notranslate"><span class="pre">TFModelBase.CUSTOM_OBJECTS</span></code></a></li>
+<li><a class="reference internal" href="#riid.models.TFModelBase.deserialize"><code class="docutils literal notranslate"><span class="pre">TFModelBase.deserialize()</span></code></a></li>
+<li><a class="reference internal" href="#riid.models.TFModelBase.info"><code class="docutils literal notranslate"><span class="pre">TFModelBase.info</span></code></a></li>
+<li><a class="reference internal" href="#riid.models.TFModelBase.initialize_info"><code class="docutils literal notranslate"><span class="pre">TFModelBase.initialize_info()</span></code></a></li>
+<li><a class="reference internal" href="#riid.models.TFModelBase.load"><code class="docutils literal notranslate"><span class="pre">TFModelBase.load()</span></code></a></li>
+<li><a class="reference internal" href="#riid.models.TFModelBase.model_inputs"><code class="docutils literal notranslate"><span class="pre">TFModelBase.model_inputs</span></code></a></li>
+<li><a class="reference internal" href="#riid.models.TFModelBase.model_outputs"><code class="docutils literal notranslate"><span class="pre">TFModelBase.model_outputs</span></code></a></li>
+<li><a class="reference internal" href="#riid.models.TFModelBase.save"><code class="docutils literal notranslate"><span class="pre">TFModelBase.save()</span></code></a></li>
+<li><a class="reference internal" href="#riid.models.TFModelBase.seeds"><code class="docutils literal notranslate"><span class="pre">TFModelBase.seeds</span></code></a></li>
+<li><a class="reference internal" href="#riid.models.TFModelBase.serialize"><code class="docutils literal notranslate"><span class="pre">TFModelBase.serialize()</span></code></a></li>
+<li><a class="reference internal" href="#riid.models.TFModelBase.target_level"><code class="docutils literal notranslate"><span class="pre">TFModelBase.target_level</span></code></a></li>
+<li><a class="reference internal" href="#riid.models.TFModelBase.to_tflite"><code class="docutils literal notranslate"><span class="pre">TFModelBase.to_tflite()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/source/riid.models.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
 <div id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
@@ -684,32 +762,26 @@ single-event models.</p>
     </div>
 </div>
 <script>document.getElementById('searchbox').style.display = "block"</script>
-
-
-
-
-
-
-
-
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="footer">
-      &copy;2023, ANB.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.0.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
-      
-      |
-      <a href="../_sources/source/riid.models.rst.txt"
-          rel="nofollow">Page source</a>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">My Awesome PyRIID Project Documentation 1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">riid.models package</a></li> 
+      </ul>
     </div>
-
-    
-
-    
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, ANB.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
   </body>
 </html>
