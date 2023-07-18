@@ -22,7 +22,7 @@ jobs:
           python -m pip install --upgrade pip setuptools wheel
           python -m pip install sphinx==6.2.1
           python -m pip install sphinx_bootstrap_theme
-
+          python -m pip install --upgrade pip
       - name: Navigate to folder
         run: |
 
@@ -30,4 +30,6 @@ jobs:
           cd docs
           ls
           pip list
-          sphinx-build -b html .\build_files\ ..\
+          cd build_files
+          ls
+          make html
