@@ -26,4 +26,4 @@ jobs:
       - name: Navigate to folder and generate
         run: |
           cd docs
-          sphinx-build -b html .\build_files ..\docs
+          sphinx-build -b html build_files ..\docs
