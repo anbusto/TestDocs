@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>riid.data package &mdash; My Awesome PyRIID Project 1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            My Awesome PyRIID Project
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">riid.data package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-riid.data.labeling">riid.data.labeling module</a><ul>
+<li><a class="reference internal" href="#riid.data.labeling.isotope_name_is_valid"><code class="docutils literal notranslate"><span class="pre">isotope_name_is_valid()</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.labeling.label_to_index_element"><code class="docutils literal notranslate"><span class="pre">label_to_index_element()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-riid.data.sampleset">riid.data.sampleset module</a><ul>
+<li><a class="reference internal" href="#riid.data.sampleset.ChannelCountMismatchError"><code class="docutils literal notranslate"><span class="pre">ChannelCountMismatchError</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.InvalidSampleCountError"><code class="docutils literal notranslate"><span class="pre">InvalidSampleCountError</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.InvalidSampleSetFileError"><code class="docutils literal notranslate"><span class="pre">InvalidSampleSetFileError</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.RebinningCalculationError"><code class="docutils literal notranslate"><span class="pre">RebinningCalculationError</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.SampleSet"><code class="docutils literal notranslate"><span class="pre">SampleSet</span></code></a><ul>
+<li><a class="reference internal" href="#riid.data.sampleset.SampleSet.DEFAULT_BG_SEED_NAMES"><code class="docutils literal notranslate"><span class="pre">SampleSet.DEFAULT_BG_SEED_NAMES</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.SampleSet.DEFAULT_EXCLUSIONS_FROM_COMPARISON"><code class="docutils literal notranslate"><span class="pre">SampleSet.DEFAULT_EXCLUSIONS_FROM_COMPARISON</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.SampleSet.DEFAULT_INFO_COLUMNS"><code class="docutils literal notranslate"><span class="pre">SampleSet.DEFAULT_INFO_COLUMNS</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.SampleSet.ECAL_INFO_COLUMNS"><code class="docutils literal notranslate"><span class="pre">SampleSet.ECAL_INFO_COLUMNS</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.SampleSet.SOURCES_MULTI_INDEX_NAMES"><code class="docutils literal notranslate"><span class="pre">SampleSet.SOURCES_MULTI_INDEX_NAMES</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.SampleSet.SUPPORTED_STATES_FOR_ARITHMETIC"><code class="docutils literal notranslate"><span class="pre">SampleSet.SUPPORTED_STATES_FOR_ARITHMETIC</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.SampleSet.all_spectra_sum_to_one"><code class="docutils literal notranslate"><span class="pre">SampleSet.all_spectra_sum_to_one()</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.SampleSet.as_ecal"><code class="docutils literal notranslate"><span class="pre">SampleSet.as_ecal()</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.SampleSet.category_names"><code class="docutils literal notranslate"><span class="pre">SampleSet.category_names</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.SampleSet.classified_by"><code class="docutils literal notranslate"><span class="pre">SampleSet.classified_by</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.SampleSet.clip_negatives"><code class="docutils literal notranslate"><span class="pre">SampleSet.clip_negatives()</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.SampleSet.compare_to"><code class="docutils literal notranslate"><span class="pre">SampleSet.compare_to()</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.SampleSet.concat"><code class="docutils literal notranslate"><span class="pre">SampleSet.concat()</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.SampleSet.detector_info"><code class="docutils literal notranslate"><span class="pre">SampleSet.detector_info</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.SampleSet.difficulty_score"><code class="docutils literal notranslate"><span class="pre">SampleSet.difficulty_score</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.SampleSet.downsample_spectra"><code class="docutils literal notranslate"><span class="pre">SampleSet.downsample_spectra()</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.SampleSet.drop_sources"><code class="docutils literal notranslate"><span class="pre">SampleSet.drop_sources()</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.SampleSet.drop_sources_columns_with_all_zeros"><code class="docutils literal notranslate"><span class="pre">SampleSet.drop_sources_columns_with_all_zeros()</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.SampleSet.ecal"><code class="docutils literal notranslate"><span class="pre">SampleSet.ecal</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.SampleSet.extend"><code class="docutils literal notranslate"><span class="pre">SampleSet.extend()</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.SampleSet.get_all_channel_energies"><code class="docutils literal notranslate"><span class="pre">SampleSet.get_all_channel_energies()</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.SampleSet.get_channel_energies"><code class="docutils literal notranslate"><span class="pre">SampleSet.get_channel_energies()</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.SampleSet.get_labels"><code class="docutils literal notranslate"><span class="pre">SampleSet.get_labels()</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.SampleSet.get_predictions"><code class="docutils literal notranslate"><span class="pre">SampleSet.get_predictions()</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.SampleSet.get_samples"><code class="docutils literal notranslate"><span class="pre">SampleSet.get_samples()</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.SampleSet.get_source_contributions"><code class="docutils literal notranslate"><span class="pre">SampleSet.get_source_contributions()</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.SampleSet.get_spectral_distance_matrix"><code class="docutils literal notranslate"><span class="pre">SampleSet.get_spectral_distance_matrix()</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.SampleSet.info"><code class="docutils literal notranslate"><span class="pre">SampleSet.info</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.SampleSet.isotope_names"><code class="docutils literal notranslate"><span class="pre">SampleSet.isotope_names</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.SampleSet.measured_or_synthetic"><code class="docutils literal notranslate"><span class="pre">SampleSet.measured_or_synthetic</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.SampleSet.n_channels"><code class="docutils literal notranslate"><span class="pre">SampleSet.n_channels</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.SampleSet.n_samples"><code class="docutils literal notranslate"><span class="pre">SampleSet.n_samples</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.SampleSet.normalize"><code class="docutils literal notranslate"><span class="pre">SampleSet.normalize()</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.SampleSet.normalize_sources"><code class="docutils literal notranslate"><span class="pre">SampleSet.normalize_sources()</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.SampleSet.prediction_probas"><code class="docutils literal notranslate"><span class="pre">SampleSet.prediction_probas</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.SampleSet.replace_nan"><code class="docutils literal notranslate"><span class="pre">SampleSet.replace_nan()</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.SampleSet.sample"><code class="docutils literal notranslate"><span class="pre">SampleSet.sample()</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.SampleSet.seed_names"><code class="docutils literal notranslate"><span class="pre">SampleSet.seed_names</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.SampleSet.shuffle"><code class="docutils literal notranslate"><span class="pre">SampleSet.shuffle()</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.SampleSet.sources"><code class="docutils literal notranslate"><span class="pre">SampleSet.sources</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.SampleSet.sources_columns_to_dict"><code class="docutils literal notranslate"><span class="pre">SampleSet.sources_columns_to_dict()</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.SampleSet.spectra"><code class="docutils literal notranslate"><span class="pre">SampleSet.spectra</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.SampleSet.split_fg_and_bg"><code class="docutils literal notranslate"><span class="pre">SampleSet.split_fg_and_bg()</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.SampleSet.squash"><code class="docutils literal notranslate"><span class="pre">SampleSet.squash()</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.SampleSet.synthesis_info"><code class="docutils literal notranslate"><span class="pre">SampleSet.synthesis_info</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.SampleSet.to_hdf"><code class="docutils literal notranslate"><span class="pre">SampleSet.to_hdf()</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.SampleSet.to_pcf"><code class="docutils literal notranslate"><span class="pre">SampleSet.to_pcf()</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.SampleSet.update_timestamp"><code class="docutils literal notranslate"><span class="pre">SampleSet.update_timestamp()</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.SampleSet.upsample_spectra"><code class="docutils literal notranslate"><span class="pre">SampleSet.upsample_spectra()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#riid.data.sampleset.SpectraState"><code class="docutils literal notranslate"><span class="pre">SpectraState</span></code></a><ul>
+<li><a class="reference internal" href="#riid.data.sampleset.SpectraState.Counts"><code class="docutils literal notranslate"><span class="pre">SpectraState.Counts</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.SpectraState.L1Normalized"><code class="docutils literal notranslate"><span class="pre">SpectraState.L1Normalized</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.SpectraState.L2Normalized"><code class="docutils literal notranslate"><span class="pre">SpectraState.L2Normalized</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.SpectraState.Unknown"><code class="docutils literal notranslate"><span class="pre">SpectraState.Unknown</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#riid.data.sampleset.SpectraStateMismatchError"><code class="docutils literal notranslate"><span class="pre">SpectraStateMismatchError</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.read_hdf"><code class="docutils literal notranslate"><span class="pre">read_hdf()</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.sampleset.read_pcf"><code class="docutils literal notranslate"><span class="pre">read_pcf()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-riid.data">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">My Awesome PyRIID Project</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">riid.data package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/riid.data.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="riid-data-package">
+<h1>riid.data package<a class="headerlink" href="#riid-data-package" title="Permalink to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="riid.data.synthetic.html">riid.data.synthetic package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="riid.data.synthetic.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="riid.data.synthetic.html#module-riid.data.synthetic.passby">riid.data.synthetic.passby module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="riid.data.synthetic.html#riid.data.synthetic.passby.PassbySynthesizer"><code class="docutils literal notranslate"><span class="pre">PassbySynthesizer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="riid.data.synthetic.html#riid.data.synthetic.passby.PassbySynthesizer.dwell_time_function"><code class="docutils literal notranslate"><span class="pre">PassbySynthesizer.dwell_time_function</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="riid.data.synthetic.html#riid.data.synthetic.passby.PassbySynthesizer.dwell_time_function_args"><code class="docutils literal notranslate"><span class="pre">PassbySynthesizer.dwell_time_function_args</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="riid.data.synthetic.html#riid.data.synthetic.passby.PassbySynthesizer.events_per_seed"><code class="docutils literal notranslate"><span class="pre">PassbySynthesizer.events_per_seed</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="riid.data.synthetic.html#riid.data.synthetic.passby.PassbySynthesizer.fwhm_function"><code class="docutils literal notranslate"><span class="pre">PassbySynthesizer.fwhm_function</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="riid.data.synthetic.html#riid.data.synthetic.passby.PassbySynthesizer.fwhm_function_args"><code class="docutils literal notranslate"><span class="pre">PassbySynthesizer.fwhm_function_args</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="riid.data.synthetic.html#riid.data.synthetic.passby.PassbySynthesizer.generate"><code class="docutils literal notranslate"><span class="pre">PassbySynthesizer.generate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="riid.data.synthetic.html#riid.data.synthetic.passby.PassbySynthesizer.min_fraction"><code class="docutils literal notranslate"><span class="pre">PassbySynthesizer.min_fraction</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="riid.data.synthetic.html#riid.data.synthetic.passby.PassbySynthesizer.sample_interval"><code class="docutils literal notranslate"><span class="pre">PassbySynthesizer.sample_interval</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="riid.data.synthetic.html#riid.data.synthetic.passby.PassbySynthesizer.snr_function"><code class="docutils literal notranslate"><span class="pre">PassbySynthesizer.snr_function</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="riid.data.synthetic.html#riid.data.synthetic.passby.PassbySynthesizer.snr_function_args"><code class="docutils literal notranslate"><span class="pre">PassbySynthesizer.snr_function_args</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="riid.data.synthetic.html#module-riid.data.synthetic.seed">riid.data.synthetic.seed module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="riid.data.synthetic.html#riid.data.synthetic.seed.SeedMixer"><code class="docutils literal notranslate"><span class="pre">SeedMixer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="riid.data.synthetic.html#riid.data.synthetic.seed.SeedMixer.generate"><code class="docutils literal notranslate"><span class="pre">SeedMixer.generate()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="riid.data.synthetic.html#riid.data.synthetic.seed.SeedSynthesizer"><code class="docutils literal notranslate"><span class="pre">SeedSynthesizer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="riid.data.synthetic.html#riid.data.synthetic.seed.SeedSynthesizer.generate"><code class="docutils literal notranslate"><span class="pre">SeedSynthesizer.generate()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="riid.data.synthetic.html#riid.data.synthetic.seed.bidict"><code class="docutils literal notranslate"><span class="pre">bidict</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="riid.data.synthetic.html#riid.data.synthetic.seed.get_choices"><code class="docutils literal notranslate"><span class="pre">get_choices()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="riid.data.synthetic.html#module-riid.data.synthetic.static">riid.data.synthetic.static module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="riid.data.synthetic.html#riid.data.synthetic.static.NoSeedError"><code class="docutils literal notranslate"><span class="pre">NoSeedError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="riid.data.synthetic.html#riid.data.synthetic.static.StaticSynthesizer"><code class="docutils literal notranslate"><span class="pre">StaticSynthesizer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="riid.data.synthetic.html#riid.data.synthetic.static.StaticSynthesizer.generate"><code class="docutils literal notranslate"><span class="pre">StaticSynthesizer.generate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="riid.data.synthetic.html#riid.data.synthetic.static.StaticSynthesizer.live_time_function"><code class="docutils literal notranslate"><span class="pre">StaticSynthesizer.live_time_function</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="riid.data.synthetic.html#riid.data.synthetic.static.StaticSynthesizer.live_time_function_args"><code class="docutils literal notranslate"><span class="pre">StaticSynthesizer.live_time_function_args</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="riid.data.synthetic.html#riid.data.synthetic.static.StaticSynthesizer.samples_per_seed"><code class="docutils literal notranslate"><span class="pre">StaticSynthesizer.samples_per_seed</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="riid.data.synthetic.html#riid.data.synthetic.static.StaticSynthesizer.snr_function"><code class="docutils literal notranslate"><span class="pre">StaticSynthesizer.snr_function</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="riid.data.synthetic.html#riid.data.synthetic.static.StaticSynthesizer.snr_function_args"><code class="docutils literal notranslate"><span class="pre">StaticSynthesizer.snr_function_args</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="riid.data.synthetic.html#module-riid.data.synthetic">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="riid.data.synthetic.html#riid.data.synthetic.InvalidSeedError"><code class="docutils literal notranslate"><span class="pre">InvalidSeedError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="riid.data.synthetic.html#riid.data.synthetic.Synthesizer"><code class="docutils literal notranslate"><span class="pre">Synthesizer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="riid.data.synthetic.html#riid.data.synthetic.Synthesizer.SUPPORTED_SAMPLING_FUNCTIONS"><code class="docutils literal notranslate"><span class="pre">Synthesizer.SUPPORTED_SAMPLING_FUNCTIONS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="riid.data.synthetic.html#riid.data.synthetic.Synthesizer.SYNTHETIC_STR"><code class="docutils literal notranslate"><span class="pre">Synthesizer.SYNTHETIC_STR</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="riid.data.synthetic.html#riid.data.synthetic.get_bg_sample_set"><code class="docutils literal notranslate"><span class="pre">get_bg_sample_set()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="riid.data.synthetic.html#riid.data.synthetic.get_distribution_values"><code class="docutils literal notranslate"><span class="pre">get_distribution_values()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="riid.data.synthetic.html#riid.data.synthetic.get_dummy_seeds"><code class="docutils literal notranslate"><span class="pre">get_dummy_seeds()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="riid.data.synthetic.html#riid.data.synthetic.get_expected_spectra"><code class="docutils literal notranslate"><span class="pre">get_expected_spectra()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="riid.data.synthetic.html#riid.data.synthetic.get_fg_sample_set"><code class="docutils literal notranslate"><span class="pre">get_fg_sample_set()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="riid.data.synthetic.html#riid.data.synthetic.get_gross_sample_set"><code class="docutils literal notranslate"><span class="pre">get_gross_sample_set()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="riid.data.synthetic.html#riid.data.synthetic.get_merged_sources_samplewise"><code class="docutils literal notranslate"><span class="pre">get_merged_sources_samplewise()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="riid.data.synthetic.html#riid.data.synthetic.get_sample_set"><code class="docutils literal notranslate"><span class="pre">get_sample_set()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="riid.data.synthetic.html#riid.data.synthetic.get_samples_per_seed"><code class="docutils literal notranslate"><span class="pre">get_samples_per_seed()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-riid.data.labeling">
+<span id="riid-data-labeling-module"></span><h2>riid.data.labeling module<a class="headerlink" href="#module-riid.data.labeling" title="Permalink to this heading"></a></h2>
+<p>This module contains utility functions for managing ground truth information.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="riid.data.labeling.isotope_name_is_valid">
+<span class="sig-prename descclassname"><span class="pre">riid.data.labeling.</span></span><span class="sig-name descname"><span class="pre">isotope_name_is_valid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">isotope</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.data.labeling.isotope_name_is_valid" title="Permalink to this definition"></a></dt>
+<dd><p>Validates whether or not the given string contains a properly formatted
+radioisotope name.</p>
+<p>Note that this function does NOT look up a string
+to determine if the string corresponds to a
+radioisotope that actually exists, it just checks
+the format.</p>
+<p>The regular expression used by this function
+looks for the following (in order):
+- 1 capital letter
+- 0 to 1 lowercase letters
+- 1 to 3 numbers
+- an optional “m” for metastable</p>
+<p>Examples of properly formatted isotope names:
+- Y88
+- Ba133
+- Ho166m</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>isotope: a string containing the isotope name</p>
+</dd>
+<dt>Returns:</dt><dd><p>A bool representing whether or not the name string is valid.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="riid.data.labeling.label_to_index_element">
+<span class="sig-prename descclassname"><span class="pre">riid.data.labeling.</span></span><span class="sig-name descname"><span class="pre">label_to_index_element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_val</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label_level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Isotope'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#riid.data.labeling.label_to_index_element" title="Permalink to this definition"></a></dt>
+<dd><p>Tries to map a label to a tuple for use in DataFrame MultiIndex columns.</p>
+<p>Depending on the level of the label value, you will get different tuple:
+<a href="#id13"><span class="problematic" id="id14">|`label_level` |Resulting Tuple           |
+|--------------|</span></a>————————–|
+<a href="#id1"><span class="problematic" id="id2">|</span></a>Seed          <a href="#id3"><span class="problematic" id="id4">|</span></a>(Category, Isotope, Seed) |
+<a href="#id5"><span class="problematic" id="id6">|</span></a>Isotope       <a href="#id7"><span class="problematic" id="id8">|</span></a>(Category, Isotope)       |
+<a href="#id9"><span class="problematic" id="id10">|</span></a>Category      <a href="#id11"><span class="problematic" id="id12">|</span></a>(Category,)               |</p>
+<dl class="simple">
+<dt>Args:</dt><dd><dl class="simple">
+<dt>label_val: The part of the label (Category, Isotope, Seed)</dt><dd><p>from which to map the other two label values, if possible.</p>
+</dd>
+<dt>label_level: The level of the part of the label provided, e.g.</dt><dd><p>“Category”, “Isotope”, or “Seed.”</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>An n-tuple containing the Category, Isotope, Seed values identified</dt><dd><p>for the old label format.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-riid.data.sampleset">
+<span id="riid-data-sampleset-module"></span><h2>riid.data.sampleset module<a class="headerlink" href="#module-riid.data.sampleset" title="Permalink to this heading"></a></h2>
+<p>This module contains the SampleSet class and other SampleSet-related functions.</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="riid.data.sampleset.ChannelCountMismatchError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">riid.data.sampleset.</span></span><span class="sig-name descname"><span class="pre">ChannelCountMismatchError</span></span><a class="headerlink" href="#riid.data.sampleset.ChannelCountMismatchError" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>An exception indicating two SampleSets have different SpectraState values.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="riid.data.sampleset.InvalidSampleCountError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">riid.data.sampleset.</span></span><span class="sig-name descname"><span class="pre">InvalidSampleCountError</span></span><a class="headerlink" href="#riid.data.sampleset.InvalidSampleCountError" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>An exception indicating the wrong number of samples were encountered for some operation.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="riid.data.sampleset.InvalidSampleSetFileError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">riid.data.sampleset.</span></span><span class="sig-name descname"><span class="pre">InvalidSampleSetFileError</span></span><a class="headerlink" href="#riid.data.sampleset.InvalidSampleSetFileError" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>An exception indicating missing or invalid keys in a file being parsed into a SampleSet.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="riid.data.sampleset.RebinningCalculationError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">riid.data.sampleset.</span></span><span class="sig-name descname"><span class="pre">RebinningCalculationError</span></span><a class="headerlink" href="#riid.data.sampleset.RebinningCalculationError" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>An exception indicateing an issue when rebinning a sample or collection of samples.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="riid.data.sampleset.SampleSet">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">riid.data.sampleset.</span></span><span class="sig-name descname"><span class="pre">SampleSet</span></span><a class="headerlink" href="#riid.data.sampleset.SampleSet" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Container for collection of samples.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.DEFAULT_BG_SEED_NAMES">
+<span class="sig-name descname"><span class="pre">DEFAULT_BG_SEED_NAMES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('Cosmic',</span> <span class="pre">'PotassiumInSoil',</span> <span class="pre">'UraniumInSoil',</span> <span class="pre">'ThoriumInSoil')</span></em><a class="headerlink" href="#riid.data.sampleset.SampleSet.DEFAULT_BG_SEED_NAMES" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.DEFAULT_EXCLUSIONS_FROM_COMPARISON">
+<span class="sig-name descname"><span class="pre">DEFAULT_EXCLUSIONS_FROM_COMPARISON</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('timestamp',</span> <span class="pre">'description',</span> <span class="pre">'occupancy_flag',</span> <span class="pre">'tag')</span></em><a class="headerlink" href="#riid.data.sampleset.SampleSet.DEFAULT_EXCLUSIONS_FROM_COMPARISON" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.DEFAULT_INFO_COLUMNS">
+<span class="sig-name descname"><span class="pre">DEFAULT_INFO_COLUMNS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('description',</span> <span class="pre">'timestamp',</span> <span class="pre">'live_time',</span> <span class="pre">'real_time',</span> <span class="pre">'total_counts',</span> <span class="pre">'snr',</span> <span class="pre">'neutron_counts',</span> <span class="pre">'distance_cm',</span> <span class="pre">'ecal_order_0',</span> <span class="pre">'ecal_order_1',</span> <span class="pre">'ecal_order_2',</span> <span class="pre">'ecal_order_3',</span> <span class="pre">'ecal_low_e',</span> <span class="pre">'areal_density',</span> <span class="pre">'atomic_number',</span> <span class="pre">'occupancy_flag',</span> <span class="pre">'tag')</span></em><a class="headerlink" href="#riid.data.sampleset.SampleSet.DEFAULT_INFO_COLUMNS" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.ECAL_INFO_COLUMNS">
+<span class="sig-name descname"><span class="pre">ECAL_INFO_COLUMNS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('ecal_order_0',</span> <span class="pre">'ecal_order_1',</span> <span class="pre">'ecal_order_2',</span> <span class="pre">'ecal_order_3',</span> <span class="pre">'ecal_low_e')</span></em><a class="headerlink" href="#riid.data.sampleset.SampleSet.ECAL_INFO_COLUMNS" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.SOURCES_MULTI_INDEX_NAMES">
+<span class="sig-name descname"><span class="pre">SOURCES_MULTI_INDEX_NAMES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('Category',</span> <span class="pre">'Isotope',</span> <span class="pre">'Seed')</span></em><a class="headerlink" href="#riid.data.sampleset.SampleSet.SOURCES_MULTI_INDEX_NAMES" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.SUPPORTED_STATES_FOR_ARITHMETIC">
+<span class="sig-name descname"><span class="pre">SUPPORTED_STATES_FOR_ARITHMETIC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(1,</span> <span class="pre">2)</span></em><a class="headerlink" href="#riid.data.sampleset.SampleSet.SUPPORTED_STATES_FOR_ARITHMETIC" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.all_spectra_sum_to_one">
+<span class="sig-name descname"><span class="pre">all_spectra_sum_to_one</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rtol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.0001</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#riid.data.sampleset.SampleSet.all_spectra_sum_to_one" title="Permalink to this definition"></a></dt>
+<dd><p>Checks if all spectra are normalized to sum to one.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.as_ecal">
+<span class="sig-name descname"><span class="pre">as_ecal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_offset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_gain</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_quadratic</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_cubic</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_low_energy</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a></span></span><a class="headerlink" href="#riid.data.sampleset.SampleSet.as_ecal" title="Permalink to this definition"></a></dt>
+<dd><p>Re-bins spectra based on energy by interpolating the current shape from the current
+binning structure to a new one.</p>
+<p>Warning: this operation is likely to add or remove spectral information
+depending on the new energy calibration values used.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>new_offset: new gain value, i.e. the 0-th e-cal term
+new_gain: new gain value, i.e. the 1-th e-cal term
+new_quadratic: new quadratic value, i.e. the 2-th e-cal term
+new_cubic: new cubic value, i.e. the 3-th e-cal term
+new_low_energy: new low energy term</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: raised if no argument values are provided.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.category_names">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">category_names</span></span><a class="headerlink" href="#riid.data.sampleset.SampleSet.category_names" title="Permalink to this definition"></a></dt>
+<dd><p>Gets the names of the categories involved in this SampleSet.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.classified_by">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">classified_by</span></span><a class="headerlink" href="#riid.data.sampleset.SampleSet.classified_by" title="Permalink to this definition"></a></dt>
+<dd><p>Get or set the UUID of the model that classified the SampleSet.</p>
+<p>TODO: Implement as third dimension to <cite>prediction_probas</cite> DataFrame</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.clip_negatives">
+<span class="sig-name descname"><span class="pre">clip_negatives</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min_value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.data.sampleset.SampleSet.clip_negatives" title="Permalink to this definition"></a></dt>
+<dd><p>Sets negative values to min_value.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><dl class="simple">
+<dt>min_value: Determines the minimum value in spectra to which</dt><dd><p>smaller values will be clipped.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.compare_to">
+<span class="sig-name descname"><span class="pre">compare_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_bins</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">density</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#riid.data.sampleset.SampleSet.compare_to" title="Permalink to this definition"></a></dt>
+<dd><p>Compares the current sample set to another.</p>
+<p>The function only compares the selected, mutual information of
+each sampleset by computing the Jensen-Shannon distance between
+histograms of that information. The distance value can be interpreted
+as follows: closer to 0 means more similar and closer to 1 means
+more dissimilar.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>ss: The sample set we will compare to.
+n_bins: The number of bins we will sort both sample sets by.
+density: whether histograms should be in counts or density</p>
+</dd>
+<dt>Returns:</dt><dd><p>ss1_stats: dict of stats for the first sampleset.
+ss2_stats: dict of stats for the second sampleset.
+col_comparisons: dict of distance values comparing each column.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.concat">
+<span class="sig-name descname"><span class="pre">concat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ss_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.data.sampleset.SampleSet.concat" title="Permalink to this definition"></a></dt>
+<dd><p>Provides a way to vertically combine many SampleSets.</p>
+<p>Combining of non-DataFrame properties (e.g., detector_info, synthesis_info, etc.)
+is NOT performed - it is the responsiblity of the user to ensure proper bookkeeping for
+these properties when concatenating SampleSets.</p>
+<p>This method is most applicable to SampleSets containing measured data from the same
+detector which could not be made as a single SampleSet because of how measurements had to
+be taken (i.e., measurements were taken by distinct processes separated by time).
+Therefore, the user should avoid concatenating SampleSets when:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>the data is from different detectors
+(note that SampleSets are given to models for prediction, and models should be
+1-to-1 with physical detectors);</p></li>
+<li><p>a mix of synthetic and measured data would occur
+(this could make an existing <cite>synthesis_info</cite> value ambiguous, but one way to handle
+this would be to add a new column to <cite>info</cite> distinguishing between synthetic and
+measured on a per-sample basis).</p></li>
+</ul>
+</div></blockquote>
+<dl class="simple">
+<dt>Args:</dt><dd><p>ss_list: Defines the list of SampleSets to concatenate.</p>
+</dd>
+<dt>Return:</dt><dd><p>A single SampleSet object of the concatenated SampleSet data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.detector_info">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">detector_info</span></span><a class="headerlink" href="#riid.data.sampleset.SampleSet.detector_info" title="Permalink to this definition"></a></dt>
+<dd><p>Get or set the detector info on which this SampleSet is based.</p>
+<p>TODO: implement as DataFrame</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.difficulty_score">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">difficulty_score</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#riid.data.sampleset.SampleSet.difficulty_score" title="Permalink to this definition"></a></dt>
+<dd><p>Computes a metric representing the “difficulty” of the given SampleSet on a
+scale of 0 to 1, where 0 is easiest and 1 is hardest.</p>
+<p>The difficulty of a SampleSet is the mean of the individual sample difficulties.
+Each sample’s difficulty is determined by where its signal strength (SNR)
+falls on the survival function (AKA reliability function, or 1 - CDF) for a
+logistic distribution.
+The decision to use this distribution is based on empirical data showing that
+classifier performance increases in a logistic fashion as signal strength increases.</p>
+<p>The primary use of this function is for situations where ground truth is unknown
+and you want to get an idea of how “difficult” it will be for a model
+to make predictions.  Consider the following example:</p>
+<blockquote>
+<div><p>Given a SampleSet for which ground truth is unknown and the signal strength for
+each spectrum is low.
+A model considering, say, 100+ isotopes will see this SampleSet as quite
+difficult, whereas a model considering 5 isotopes will, being more specialized,
+see the SampleSet as easier.
+Of course, this makes the assumption that both models were trained to the
+isotope(s) contained in the test SampleSet.</p>
+</div></blockquote>
+<p>Based on the previous example, the unfortunate state of this function is that you
+must know how to pick means and standard deviations which properly reflect the:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>number of target isotopes</p></li>
+<li><p>amount of variation within each isotope (i.e., shielding, scattering, etc.)</p></li>
+<li><p>detector resolution</p></li>
+</ul>
+</div></blockquote>
+<p>A future goal of ours is to provide updates to this function and docstring which make
+choosing the mean and standard deviation easier/automated based on more of our findings.</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>mean: the SNR value representing the mean of the logistic distribution
+std: the standard deviation of the logistic distribution</p>
+</dd>
+<dt>Returns:</dt><dd><p>The mean of all SNR values passed through a logistic survival function.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.downsample_spectra">
+<span class="sig-name descname"><span class="pre">downsample_spectra</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_bins</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_frac</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-08</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.data.sampleset.SampleSet.downsample_spectra" title="Permalink to this definition"></a></dt>
+<dd><p>Replaces spectra with downsampled version. Uniform binning is assumed.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><dl class="simple">
+<dt>target_bins: Defines into how many channels the current spectra channels</dt><dd><p>should be combined.</p>
+</dd>
+</dl>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: Raised when binning is not a multiple of the target binning.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.drop_sources">
+<span class="sig-name descname"><span class="pre">drop_sources</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">col_names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Iterable</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">('Cosmic',</span> <span class="pre">'PotassiumInSoil',</span> <span class="pre">'UraniumInSoil',</span> <span class="pre">'ThoriumInSoil')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize_sources</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Seed'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.data.sampleset.SampleSet.drop_sources" title="Permalink to this definition"></a></dt>
+<dd><p>Drops columns from the sources DataFrame.</p>
+<dl>
+<dt>Args:</dt><dd><dl class="simple">
+<dt>col_names: the names of the sources columns to be dropped.</dt><dd><p>The names of background seeds are used by default as removing the
+ground truth for background sources when dealing with synthetic,
+gross spectra is a common operation.</p>
+</dd>
+<dt>normalize_sources: whether to normalize the sources DataFrame after dropping</dt><dd><p>the column(s).</p>
+</dd>
+</dl>
+<p>target_level: the multi-index level to which the column name(s) correspond.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.drop_sources_columns_with_all_zeros">
+<span class="sig-name descname"><span class="pre">drop_sources_columns_with_all_zeros</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#riid.data.sampleset.SampleSet.drop_sources_columns_with_all_zeros" title="Permalink to this definition"></a></dt>
+<dd><p>Removes columns from the sources DataFrame that contain only zeros.</p>
+<p>Modifications are made in-place.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.ecal">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ecal</span></span><a class="headerlink" href="#riid.data.sampleset.SampleSet.ecal" title="Permalink to this definition"></a></dt>
+<dd><p>Gets or sets the ecal terms in order:
+(ecal_order_0, ecal_order_1, ecal_order_2, ecal_order_3, ecal_low_e)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.extend">
+<span class="sig-name descname"><span class="pre">extend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spectra</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">array</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sources</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.data.sampleset.SampleSet.extend" title="Permalink to this definition"></a></dt>
+<dd><p>Extends the current SampleSet with the given data.</p>
+<p>Always verify that the data was appended in the way you expect based on what input type
+you are preferring to work with.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>spectra: Defines the spectra to append to the current spectra DataFrame.
+sources: Defines the sources to append to the current sources DataFrame.
+info: Defines the info to append to the current info DataFrame.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.get_all_channel_energies">
+<span class="sig-name descname"><span class="pre">get_all_channel_energies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fractional_energy_bins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#riid.data.sampleset.SampleSet.get_all_channel_energies" title="Permalink to this definition"></a></dt>
+<dd><p>Returns an array representing the energy (in keV) represented by the
+lower edge of each channel for all samples.</p>
+<p>See docstring for <cite>_channels_to_energies()</cite> for more details.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><dl class="simple">
+<dt>fractional_energy_bins: an array of fractions representing the spacing of</dt><dd><p>the channels. Optional; used for arbitrary channel structures (uncommon).</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><p>A 2D array of energy values in keV for all samples.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: raised if any energy calibration terms are missing.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.get_channel_energies">
+<span class="sig-name descname"><span class="pre">get_channel_energies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sample_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fractional_energy_bins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#riid.data.sampleset.SampleSet.get_channel_energies" title="Permalink to this definition"></a></dt>
+<dd><p>Returns an array representing the energy (in keV) represented by the
+lower edge of each channel for a single sample and the specified index.</p>
+<p>See docstring for <cite>_channels_to_energies()</cite> for more details.</p>
+<dl>
+<dt>Args:</dt><dd><p>sample_index: index of the specific sample for which to obtain energies
+fractional_energy_bins: an array of fractions representing the spacing of</p>
+<blockquote>
+<div><p>the channels. Optional; used for arbitrary channel structures (uncommon).</p>
+</div></blockquote>
+</dd>
+<dt>Returns:</dt><dd><p>An array of energy values in keV.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: raised if any energy calibration terms are missing.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.get_labels">
+<span class="sig-name descname"><span class="pre">get_labels</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Isotope'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level_aggregation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.data.sampleset.SampleSet.get_labels" title="Permalink to this definition"></a></dt>
+<dd><p>Gets row labels for each spectrum based on source values.</p>
+<p>See docstring for <cite>_get_row_labels()</cite> for more details.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.get_predictions">
+<span class="sig-name descname"><span class="pre">get_predictions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Isotope'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level_aggregation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.data.sampleset.SampleSet.get_predictions" title="Permalink to this definition"></a></dt>
+<dd><p>Gets row labels for each spectrum based on prediction values.</p>
+<p>See docstring for <cite>_get_row_labels()</cite> for more details.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.get_samples">
+<span class="sig-name descname"><span class="pre">get_samples</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#riid.data.sampleset.SampleSet.get_samples" title="Permalink to this definition"></a></dt>
+<dd><p>Gets only the data (spectra + extra data) within the SampleSet
+as a NumPy array ready for use in model training.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>An ndarray containing the NaN-trimmed values for spectra and
+extra data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.get_source_contributions">
+<span class="sig-name descname"><span class="pre">get_source_contributions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Isotope'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.data.sampleset.SampleSet.get_source_contributions" title="Permalink to this definition"></a></dt>
+<dd><p>Gets the 2D array of values representing the percent contributions of each source.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>An ndarray containing the source contributions for each sample (i.e., ground truth).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.get_spectral_distance_matrix">
+<span class="sig-name descname"><span class="pre">get_spectral_distance_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">distance_func=&lt;function</span> <span class="pre">jensenshannon&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_level='Seed'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#riid.data.sampleset.SampleSet.get_spectral_distance_matrix" title="Permalink to this definition"></a></dt>
+<dd><p>Computes the distance between all pairs of spectra.</p>
+<p>This method is intended for use on seed spectra (i.e., templates).
+Calling this method on large samplesets, such as those produced by the static
+synthesizer, is not recommended.
+This method only computes the upper triangle and diagonal of the matrix since the lower
+triangle would be a copy of the upper triangle.
+The diagonal is computed, for when Poisson noise is present, for two main reasons:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>the distance between the same source will effectively never be zero.</p></li>
+<li><p>there is sometimes research interest in comparing the diagonal to the upper triangle.</p></li>
+</ul>
+</div></blockquote>
+<dl class="simple">
+<dt>Args:</dt><dd><p>distance_func: the specific distance function to use. Default is Jensen-Shannon.
+target_level: the sources column level to use for the DataFrame labels.</p>
+</dd>
+<dt>Returns:</dt><dd><p>A 2-D array of distance values.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.info">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">info</span></span><a class="headerlink" href="#riid.data.sampleset.SampleSet.info" title="Permalink to this definition"></a></dt>
+<dd><p>Get or set the info DataFrame.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.isotope_names">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">isotope_names</span></span><a class="headerlink" href="#riid.data.sampleset.SampleSet.isotope_names" title="Permalink to this definition"></a></dt>
+<dd><p>Gets the names of the isotopes involved in this SampleSet.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.measured_or_synthetic">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">measured_or_synthetic</span></span><a class="headerlink" href="#riid.data.sampleset.SampleSet.measured_or_synthetic" title="Permalink to this definition"></a></dt>
+<dd><p>Get or set the value for measured_or_synthetic for the SampleSet object.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.n_channels">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">n_channels</span></span><a class="headerlink" href="#riid.data.sampleset.SampleSet.n_channels" title="Permalink to this definition"></a></dt>
+<dd><p>Gets the number of channels included in the spectra DataFrame.
+Channels may also be referred to as bins.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.n_samples">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">n_samples</span></span><a class="headerlink" href="#riid.data.sampleset.SampleSet.n_samples" title="Permalink to this definition"></a></dt>
+<dd><p>Gets the number of samples included in the spectra dataframe,
+where each row is a sample.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.normalize">
+<span class="sig-name descname"><span class="pre">normalize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clip_negatives</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.data.sampleset.SampleSet.normalize" title="Permalink to this definition"></a></dt>
+<dd><p>Normalizes spectra by L-p normalization.</p>
+<p>Default is L1 norm (p=1) can be interpreted as a forming a probability mass function (PMF).
+L2 norm (p=2) is unit energy (sum of squares == 1).</p>
+<p>Ref: “<a class="reference external" href="https://en.wikipedia.org/wiki/Parseval's_theorem">https://en.wikipedia.org/wiki/Parseval’s_theorem</a>”</p>
+<dl>
+<dt>Args:</dt><dd><p>p: Defines the exponent to which the spectra values are raised.
+clip_negatives: Determines whether or not negative values will</p>
+<blockquote>
+<div><p>be removed from the spectra and replaced with 0.</p>
+</div></blockquote>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.normalize_sources">
+<span class="sig-name descname"><span class="pre">normalize_sources</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#riid.data.sampleset.SampleSet.normalize_sources" title="Permalink to this definition"></a></dt>
+<dd><p>Converts sources to a valid probability mass function (PMF).</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.prediction_probas">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">prediction_probas</span></span><a class="headerlink" href="#riid.data.sampleset.SampleSet.prediction_probas" title="Permalink to this definition"></a></dt>
+<dd><p>Get or set the prediction_probas DataFrame.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.replace_nan">
+<span class="sig-name descname"><span class="pre">replace_nan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">replace_value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.data.sampleset.SampleSet.replace_nan" title="Permalink to this definition"></a></dt>
+<dd><p>Replaces np.nan() values with replace_value.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>replace_value: The value with which NaN will be replaced.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.sample">
+<span class="sig-name descname"><span class="pre">sample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_samples</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a></span></span><a class="headerlink" href="#riid.data.sampleset.SampleSet.sample" title="Permalink to this definition"></a></dt>
+<dd><p>Randomly samples the SampleSet.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>n_samples: the number of random samples to be returned.
+random_seed: the seed value for random number generation.</p>
+</dd>
+<dt>Returns:</dt><dd><p>A sampleset of <cite>n_samples</cite> randomly selected measurements.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.seed_names">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">seed_names</span></span><a class="headerlink" href="#riid.data.sampleset.SampleSet.seed_names" title="Permalink to this definition"></a></dt>
+<dd><p>Gets the names of the seeds involved in this SampleSet.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.shuffle">
+<span class="sig-name descname"><span class="pre">shuffle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inplace</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a></span></span><a class="headerlink" href="#riid.data.sampleset.SampleSet.shuffle" title="Permalink to this definition"></a></dt>
+<dd><p>Randomly reorders all dataframes in-place.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.sources">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sources</span></span><a class="headerlink" href="#riid.data.sampleset.SampleSet.sources" title="Permalink to this definition"></a></dt>
+<dd><p>Get or set the sources DataFrame for the SampleSet object.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.sources_columns_to_dict">
+<span class="sig-name descname"><span class="pre">sources_columns_to_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Isotope'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span></span></span><a class="headerlink" href="#riid.data.sampleset.SampleSet.sources_columns_to_dict" title="Permalink to this definition"></a></dt>
+<dd><p>Converts the MultiIndex columns of the sources DataFrame to a dictionary.</p>
+<p>Note: depending on <cite>target_level</cite> and sources columns, duplicate values are possible.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><dl class="simple">
+<dt>target_level: the level of the MultiIndex at which the dictionary should start.</dt><dd><p>If “Seed” is chosen, then a flat list will be returned.</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><p>If <cite>target_level</cite> is “Category” or “Isotope,” then a dict is returned.
+If <cite>target_level</cite> is “Seed,” then a list is returned.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: if <cite>target_level</cite> is invalid.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.spectra">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">spectra</span></span><a class="headerlink" href="#riid.data.sampleset.SampleSet.spectra" title="Permalink to this definition"></a></dt>
+<dd><p>Get or set the spectra DataFrame for the SampleSet object.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.split_fg_and_bg">
+<span class="sig-name descname"><span class="pre">split_fg_and_bg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bg_seed_names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Iterable</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">('Cosmic',</span> <span class="pre">'PotassiumInSoil',</span> <span class="pre">'UraniumInSoil',</span> <span class="pre">'ThoriumInSoil')</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#riid.data.sampleset.SampleSet.split_fg_and_bg" title="Permalink to this definition"></a></dt>
+<dd><p>Splits the current SampleSet into two new SampleSets, one containing only foreground
+sources and the other containing only background sources.</p>
+<p>Foreground sources are assumed to be anything that is not designated as a background source.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><dl class="simple">
+<dt>bg_seeds_names: the names of the seeds which are considered background sources.</dt><dd><p>This list be customized to also extract atypical background sources such as
+calibration sources.</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><p>Two SampleSets, the first containing only foregrounds and the second only
+containing backgrounds.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.squash">
+<span class="sig-name descname"><span class="pre">squash</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a></span></span><a class="headerlink" href="#riid.data.sampleset.SampleSet.squash" title="Permalink to this definition"></a></dt>
+<dd><p>Produces a 1-sample SampleSet from the given SampleSet’s data by summing vertically.</p>
+<p>All data suited for summing is summed, otherwise the info from the first
+sample is used.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>A flattened SampleSet.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.synthesis_info">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">synthesis_info</span></span><a class="headerlink" href="#riid.data.sampleset.SampleSet.synthesis_info" title="Permalink to this definition"></a></dt>
+<dd><p>Get or set the information that was used to by a synthesizer.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.to_hdf">
+<span class="sig-name descname"><span class="pre">to_hdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.data.sampleset.SampleSet.to_hdf" title="Permalink to this definition"></a></dt>
+<dd><p>Writes the sampleset to disk as a HDF file at the given path.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>path: the intended location and name of the resulting file.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.to_pcf">
+<span class="sig-name descname"><span class="pre">to_pcf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.data.sampleset.SampleSet.to_pcf" title="Permalink to this definition"></a></dt>
+<dd><p>Writes the sampleset to disk as a PCF at the given path.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>path: the intended location and name of the resulting file.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.update_timestamp">
+<span class="sig-name descname"><span class="pre">update_timestamp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#riid.data.sampleset.SampleSet.update_timestamp" title="Permalink to this definition"></a></dt>
+<dd><p>Sets the timestamp for all samples to now (UTC) in a standard format.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.upsample_spectra">
+<span class="sig-name descname"><span class="pre">upsample_spectra</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_bins</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">4096</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.data.sampleset.SampleSet.upsample_spectra" title="Permalink to this definition"></a></dt>
+<dd><p>Replaces spectra with upsampled version. Uniform binning is assumed.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><dl class="simple">
+<dt>target_bins: Defines the number of bins into which the current spectra</dt><dd><p>should be split.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="riid.data.sampleset.SpectraState">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">riid.data.sampleset.</span></span><span class="sig-name descname"><span class="pre">SpectraState</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.data.sampleset.SpectraState" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>Enumerates the potential states of spectra within a SampleSet.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="riid.data.sampleset.SpectraState.Counts">
+<span class="sig-name descname"><span class="pre">Counts</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#riid.data.sampleset.SpectraState.Counts" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="riid.data.sampleset.SpectraState.L1Normalized">
+<span class="sig-name descname"><span class="pre">L1Normalized</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#riid.data.sampleset.SpectraState.L1Normalized" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="riid.data.sampleset.SpectraState.L2Normalized">
+<span class="sig-name descname"><span class="pre">L2Normalized</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#riid.data.sampleset.SpectraState.L2Normalized" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="riid.data.sampleset.SpectraState.Unknown">
+<span class="sig-name descname"><span class="pre">Unknown</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#riid.data.sampleset.SpectraState.Unknown" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="riid.data.sampleset.SpectraStateMismatchError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">riid.data.sampleset.</span></span><span class="sig-name descname"><span class="pre">SpectraStateMismatchError</span></span><a class="headerlink" href="#riid.data.sampleset.SpectraStateMismatchError" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>An exception indicating two SampleSets have different SpectraState values.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="riid.data.sampleset.read_hdf">
+<span class="sig-prename descclassname"><span class="pre">riid.data.sampleset.</span></span><span class="sig-name descname"><span class="pre">read_hdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a></span></span><a class="headerlink" href="#riid.data.sampleset.read_hdf" title="Permalink to this definition"></a></dt>
+<dd><p>Reads the HDF file in from the given filepath and creates
+a SampleSet object with the data.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>path: Defines the path to the file to be read in.</p>
+</dd>
+<dt>Returns:</dt><dd><p>A SampleSet object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="riid.data.sampleset.read_pcf">
+<span class="sig-prename descclassname"><span class="pre">riid.data.sampleset.</span></span><span class="sig-name descname"><span class="pre">read_pcf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a></span></span><a class="headerlink" href="#riid.data.sampleset.read_pcf" title="Permalink to this definition"></a></dt>
+<dd><p>Converts pcf file to sampleset object.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>path: Defines the path to the PCF file to be read in.
+verbose: Determines whether or not to show verbose function output in terminal.</p>
+</dd>
+<dt>Returns:</dt><dd><p>A Sampleset object containing information of pcf file in sampleset format</p>
+</dd>
+<dt>Raises:</dt><dd><p>None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-riid.data">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-riid.data" title="Permalink to this heading"></a></h2>
+<p>This module just aliases the <cite>sampleset</cite> module.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Alyshia N. Bustos.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
