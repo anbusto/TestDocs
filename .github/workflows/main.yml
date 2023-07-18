@@ -25,11 +25,8 @@ jobs:
           python -m pip install --upgrade pip
       - name: Navigate to folder
         run: |
-
-          # Run shpinx build
           cd docs
-          ls
-          pip list
           cd build_files
-          ls
+      - name: Generate html files
+        run: |
           make html

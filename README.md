@@ -24,3 +24,7 @@ docs/
     /.doctrees
     /build_files
     /source
+
+
+I have made a workflow that creates the html files from a branch push, however it probably needs to push those updated files to the branch it is working on possibly or we do no workflow and we just have documentation for someone to run when we need the documentation updated.
+
