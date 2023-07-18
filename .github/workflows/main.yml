@@ -23,8 +23,7 @@ jobs:
           python -m pip install sphinx==6.2.1
           python -m pip install sphinx_bootstrap_theme
           python -m pip install --upgrade pip
-      - name: Navigate to folder and generate html
+      - name: Navigate to folder and generate
         run: |
           cd docs
-          cd build_files
-          make html
+          sphinx-build -b html .\build_files ..\docs
