@@ -9,9 +9,9 @@ import os
 import sys
 sys.path.insert(0, os.path.abspath('..'))
 
-project = 'My Awesome Project'
+project = 'My Awesome PyRIID Project Documentation'
 copyright = '2023, ANB'
-author = 'ANB'
+author = 'Alyshia Bustos'
 release = '1'
 
 # -- General configuration ---------------------------------------------------
@@ -27,5 +27,5 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'alabaster'
+html_theme = 'classic'
 html_static_path = ['_static']
