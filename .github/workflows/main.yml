@@ -15,27 +15,13 @@ jobs:
 
     - name: Install requirements for documentation generation
       run: |
-        python -m pip install --upgrade pip setuptools wheel
-        python -m pip install docutils pydoctor
+        python -m pip install -U sphinx
+        python -m pip install sphinx_bootstrap_theme
 
-    - name: Generate API documentation with pydoctor
+    - name: Generate html files for github using Sphinx
       run: |
 
-        # Run pydoctor build
-        pydoctor \
-            --project-name=visualization\
-            --project-url=https://github.com/$GITHUB_REPOSITORY \
-            --html-viewsource-base=https://github.com/$GITHUB_REPOSITORY/tree/$GITHUB_SHA \
-            --make-html \
-            --html-output=./apidocs \
-            --project-base-dir="$(pwd)" \
-            --docformat=restructuredtext \
-            --intersphinx=https://docs.python.org/3/objects.inv \
-            ./visualization
-
-    - name: Push API documentation to Github Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./apidocs
-        commit_message: "Generate API documentation"
+        # Run shpinx build
+        cd docs
+        ls
+        sphinx-build -b html .\build_files\ .
