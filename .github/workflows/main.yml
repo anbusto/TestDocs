@@ -24,4 +24,5 @@ jobs:
         # Run shpinx build
         cd docs
         ls
-        sphinx-build -b html .\build_files\ .
+        sphinx-build -b html .\build_files\ .\
+        
