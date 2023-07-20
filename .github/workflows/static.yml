@@ -39,6 +39,8 @@ jobs:
           python -m pip install --upgrade pip
       - name: Generate html pages
         run: |
+          ls
+          cd anbusto.github.io
           sphinx-apidoc -o source .\riid\
       - name: Setup Pages
         uses: actions/configure-pages@v3
