@@ -24,6 +24,7 @@ riid.data.sampleset module
 --------------------------
 
 .. automodule:: riid.data.sampleset
+.. autofunction:: square
    :members:
    :undoc-members:
    :show-inheritance:
