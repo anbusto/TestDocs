@@ -22,15 +22,15 @@ For Use
 
 To use the latest version on PyPI (note: changes are currently slower to appear here), run:
 
-```
-pip install riid
-```
+::
+    pip install riid
+
 
 **For the latest features, run:**
 
-```
-pip install git+https://github.com/sandialabs/pyriid.git@main
-```
+::
+    pip install git+https://github.com/sandialabs/pyriid.git@main
+
 
 ################
 For Development
@@ -38,12 +38,11 @@ For Development
 
 If you are developing PyRIID, clone this repository and run:
 
-```
-pip install -e ".[dev]"
-```
+::
+    pip install -e ".[dev]"
+
 
 **If you have trouble with Pylance resolving imports for an editable install, try this:**
 
-```
-pip install -e ".[dev]" --config-settings editable_mode=compat
-```
+::
+    pip install -e ".[dev]" --config-settings editable_mode=compat
