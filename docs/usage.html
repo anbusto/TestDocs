@@ -137,6 +137,31 @@
 You can verify support for your platform by checking the workflow files.</p>
 <section id="for-use">
 <h2>For Use<a class="headerlink" href="#for-use" title="Permalink to this heading">¶</a></h2>
+<p># anbusto.github.io</p>
+<p>## Requirements
+You will need to install the following:</p>
+<p>sphinx
+sphinx_bootstrap_theme</p>
+<p><a href="#id1"><span class="problematic" id="id2">``</span></a>`
+pip install -U sphinx
+pip install sphinx_bootstrap_theme</p>
+<p><a href="#id3"><span class="problematic" id="id4">``</span></a><a href="#id5"><span class="problematic" id="id6">`</span></a></p>
+<p>We will also need to set up the Github account to use the Github Pages for the PyRIID repo.
+I currnetly do not have permission to do this.</p>
+<p>We also need to add the following folders to the PyRIID project</p>
+<p>docs/</p>
+<p>source/</p>
+<p>To generate new files for updates in riid we must first redo the rst files with the following command
+in the main PyRIID folder:</p>
+<p><code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">sphinx-apidoc</span> <span class="pre">-o</span> <span class="pre">source</span> <span class="pre">.\riid\</span>
+<span class="pre">`</span></code></p>
+<p>Then we need to rebuild the html files with the following command:</p>
+<p><code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">sphinx-build</span> <span class="pre">-b</span> <span class="pre">html</span> <span class="pre">source</span> <span class="pre">docs</span>
+<span class="pre">`</span></code></p>
+<p>You can see the changes locally in your file explorer. Once you approve, once you push these files to PyRIID then you will automatically trigger the workflow that is set up eariler in Github. If that workflow succeeds then your html files will be published to the specified website.</p>
+<p>Or we just use the custom workflow that I made that generates the html pages and deploys them on any push.</p>
 </section>
 </section>
 

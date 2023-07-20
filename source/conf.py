@@ -18,12 +18,20 @@ release = '1'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ['sphinx.ext.autodoc', 'sphinx.ext.coverage', 'sphinx.ext.napoleon']
+extensions = ['sphinx.ext.autodoc', 'sphinx.ext.coverage',
+              'sphinx.ext.napoleon', 'recommonmark']
 
 templates_path = ['_templates']
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'docs', 'source', '.github']
 
+# for Sphinx-1.3
+from recommonmark.parser import CommonMarkParser
 
+source_parsers = {
+    '.md': CommonMarkParser,
+}
+
+source_suffix = ['.rst', '.md']
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
