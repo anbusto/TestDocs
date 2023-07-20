@@ -40,7 +40,7 @@ jobs:
       - name: Generate html pages
         run: |
           ls
-          sphinx-apidoc -o source .\riid\
+          sphinx-apidoc -o source riid
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
