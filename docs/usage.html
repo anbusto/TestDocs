@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>usage &#8212; PyRIID Docs 1 documentation</title>
+    <title>Usage &#8212; PyRIID Docs 1 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/bootstrap-sphinx.css" />
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
@@ -52,10 +52,9 @@
      href="index.html">Site <b class="caret"></b></a>
   <ul class="dropdown-menu globaltoc"
       role="menu"
-      aria-labelledby="dLabelGlobalToc"><p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#installation">installation</a></li>
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#installation">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="riid.html">riid package</a></li>
 </ul>
 </ul>
@@ -70,8 +69,8 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">usage</a></li>
-<li><a class="reference internal" href="#installation">installation</a></li>
+<li><a class="reference internal" href="#">Usage</a></li>
+<li><a class="reference internal" href="#installation">Installation</a></li>
 </ul>
 </ul>
 </li>
@@ -120,10 +119,37 @@
     <div class="body col-md-12 content" role="main">
       
   <section id="usage">
-<h1>usage<a class="headerlink" href="#usage" title="Permalink to this heading">¶</a></h1>
+<h1>Usage<a class="headerlink" href="#usage" title="Permalink to this heading">¶</a></h1>
+<p>Here some information about PyRIID!</p>
 </section>
 <section id="installation">
-<h1>installation<a class="headerlink" href="#installation" title="Permalink to this heading">¶</a></h1>
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">¶</a></h1>
+<p>These instructions assume you meet the following requirements:</p>
+<ul class="simple">
+<li><p>Python version: 3.8 to 3.10</p></li>
+<li><p>Operating systems: Windows, Mac, or Ubuntu</p></li>
+</ul>
+<p>A virtual environment is recommended.</p>
+<p>Tests and examples are ran via Actions on many combinations of Python version and operating system.
+You can verify support for your platform by checking the workflow files.</p>
+<p>### For Use</p>
+<p>To use the latest version on PyPI (note: changes are currently slower to appear here), run:</p>
+<p><code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">pip</span> <span class="pre">install</span> <span class="pre">riid</span>
+<span class="pre">`</span></code></p>
+<p><strong>For the latest features, run:</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">pip</span> <span class="pre">install</span> <span class="pre">git+https://github.com/sandialabs/pyriid.git&#64;main</span>
+<span class="pre">`</span></code></p>
+<p>### For Development</p>
+<p>If you are developing PyRIID, clone this repository and run:</p>
+<p><code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">&quot;.[dev]&quot;</span>
+<span class="pre">`</span></code></p>
+<p><strong>If you have trouble with Pylance resolving imports for an editable install, try this:</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">&quot;.[dev]&quot;</span> <span class="pre">--config-settings</span> <span class="pre">editable_mode=compat</span>
+<span class="pre">`</span></code></p>
 </section>
 
 

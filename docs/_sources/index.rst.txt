@@ -9,7 +9,7 @@ Welcome to PyRIID's documentation!
 This is my test PyRIID website for information on the module.
 
 Check out the :doc:`usage` section for further information, including
-how to :ref:`installation` the project.
+how to :ref:`install` the project.
 
 .. note::
 
@@ -20,7 +20,6 @@ Contents
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
 
    usage
    riid
