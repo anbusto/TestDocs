@@ -10,9 +10,9 @@ import sys
 sys.path.insert(0, os.path.abspath('..'))
 import sphinx_bootstrap_theme
 
-project = 'PyRIID'
-copyright = '2023, Alyshia B. and Tyler Morrow'
-author = 'Alyshia B. and Tyler Morrow'
+project = 'PyRIID Docs'
+copyright = '2023, author name'
+author = 'author name'
 release = '1'
 
 # -- General configuration ---------------------------------------------------
