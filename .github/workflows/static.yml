@@ -39,7 +39,8 @@ jobs:
           python -m pip install --upgrade pip
       - name: Generate html pages
         run: |
-          ls
+          sphinx-apidoc -o source .\riid\
+          sphinx-build -b html source docs
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
