@@ -13,3 +13,4 @@ class testClass():
         """Initializes an event detector object."""
 
         print("hello test")
+        return 1

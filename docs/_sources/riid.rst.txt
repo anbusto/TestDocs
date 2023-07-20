@@ -22,6 +22,22 @@ riid.anomaly module
    :undoc-members:
    :show-inheritance:
 
+riid.test module
+----------------
+
+.. automodule:: riid.test
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+riid.test copy module
+---------------------
+
+.. automodule:: riid.test copy
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 riid.visualize module
 ---------------------
 
