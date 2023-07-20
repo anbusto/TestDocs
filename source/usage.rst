@@ -20,4 +20,4 @@ You can verify support for your platform by checking the workflow files.
 For Use
 ########
 
-.. include:: ../../README.md
+.. include:: ../README.md
