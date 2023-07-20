@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>riid package &#8212; My Awesome PyRIID Project 1 documentation</title>
+    <title>riid package &#8212; PyRIID 1 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/bootstrap-sphinx.css" />
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
@@ -34,7 +34,7 @@
           <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" href="index.html">
-          My Awesome PyRIID Project</a>
+          PyRIID</a>
         <span class="navbar-text navbar-version pull-left"><b></b></span>
       </div>
 
@@ -50,10 +50,7 @@
      href="index.html">Site <b class="caret"></b></a>
   <ul class="dropdown-menu globaltoc"
       role="menu"
-      aria-labelledby="dLabelGlobalToc"><ul>
-<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
-</ul>
-</ul>
+      aria-labelledby="dLabelGlobalToc"></ul>
 </li>
               
                 <li class="dropdown">
@@ -91,7 +88,10 @@
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#riid-test-module">riid.test module</a></li>
+<li><a class="reference internal" href="#module-riid.test">riid.test module</a><ul>
+<li><a class="reference internal" href="#riid.test.testClass"><code class="docutils literal notranslate"><span class="pre">testClass</span></code></a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#module-riid.visualize">riid.visualize module</a><ul>
 <li><a class="reference internal" href="#riid.visualize.EmptyPredictionsArrayError"><code class="docutils literal notranslate"><span class="pre">EmptyPredictionsArrayError</span></code></a></li>
 <li><a class="reference internal" href="#riid.visualize.confusion_matrix"><code class="docutils literal notranslate"><span class="pre">confusion_matrix()</span></code></a></li>
@@ -373,21 +373,21 @@ I.e., this algorithm is only intended for static detector, mobile source scenari
 <dt class="sig sig-object py" id="riid.anomaly.PoissonNChannelEventDetector.add_measurement">
 <span class="sig-name descname"><span class="pre">add_measurement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">measurement_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">measurement</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">array</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">duration</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.anomaly.PoissonNChannelEventDetector.add_measurement" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds the next measurement to the event detector.</p>
-<dl>
-<dt>Args:</dt><dd><p>measurement_id: a unique identifier for the measurement.
-measurement (array-like): a 1D array-like object containing one or more</p>
-<blockquote>
-<div><p>channels of measured data.</p>
-</div></blockquote>
-<dl class="simple">
-<dt>duration: a float representing the length of time over which the</dt><dd><p>measurement was taken.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>measurement_id</strong> – a unique identifier for the measurement.</p></li>
+<li><p><strong>measurement</strong> (<em>array-like</em>) – a 1D array-like object containing one or more
+channels of measured data.</p></li>
+<li><p><strong>duration</strong> – a float representing the length of time over which the
+measurement was taken.</p></li>
+<li><p><strong>verbose</strong> – whether to print log messages.</p></li>
+</ul>
 </dd>
-</dl>
-<p>verbose: whether to print log messages.</p>
-</dd>
-<dt>Returns:</dt><dd><dl class="simple">
-<dt>if adding a spectrum concludes an event, a tuple is returned containing:</dt><dd><ul class="simple">
-<li><p>the channel-wise sum of all spectra that were part of the event</p></li>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><dl class="simple">
+<dt>the channel-wise sum of all spectra that were part of the event</dt><dd><ul>
 <li><dl class="simple">
 <dt>the channel-wise sum of all spectra in the background buffer,</dt><dd><p>normalized to match the duration of the event</p>
 </dd>
@@ -398,7 +398,13 @@ measurement (array-like): a 1D array-like object containing one or more</p>
 </ul>
 </dd>
 </dl>
+</li>
+</ul>
 <p>else if adding a spectrum does not conclude event, return None</p>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>if adding a spectrum concludes an event, a tuple is returned containing</p>
 </dd>
 </dl>
 </dd></dl>
@@ -488,9 +494,12 @@ occurs that is considered a part of the event.</p>
 <dt class="sig sig-object py" id="riid.anomaly.RunningStats.update">
 <span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">old</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.anomaly.RunningStats.update" title="Permalink to this definition">¶</a></dt>
 <dd><p>Updates the average, variance, and stddev for the RunningStats.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>new: the new probability
-old: the old probability</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>new</strong> – the new probability</p></li>
+<li><p><strong>old</strong> – the old probability</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -498,8 +507,17 @@ old: the old probability</p>
 </dd></dl>
 
 </section>
-<section id="riid-test-module">
-<h2>riid.test module<a class="headerlink" href="#riid-test-module" title="Permalink to this heading">¶</a></h2>
+<section id="module-riid.test">
+<span id="riid-test-module"></span><h2>riid.test module<a class="headerlink" href="#module-riid.test" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="riid.test.testClass">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">riid.test.</span></span><span class="sig-name descname"><span class="pre">testClass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">long_term_duration</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">120</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">short_term_duration</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pre_event_duration</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_event_duration</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">120</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">post_event_duration</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tolerable_false_alarms_per_day</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">anomaly_threshold_update_interval</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">60</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.test.testClass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This class identifies sequences of anomalous spectra.</p>
+<p>This algorithm assumes that the background environment will be consistent over known timescales.
+I.e., this algorithm is only intended for static detector, mobile source scenarios.</p>
+</dd></dl>
+
 </section>
 <section id="module-riid.visualize">
 <span id="riid-visualize-module"></span><h2>riid.visualize module<a class="headerlink" href="#module-riid.visualize" title="Permalink to this heading">¶</a></h2>
@@ -580,11 +598,10 @@ old: the old probability</p>
 <span class="sig-prename descclassname"><span class="pre">riid.visualize.</span></span><span class="sig-name descname"><span class="pre">save_or_show_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.visualize.save_or_show_plot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function decorator providing standardized handling of
 saving and/or showing matplotlib plots.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><dl class="simple">
-<dt>func: Defines the function to call that builds the plot and</dt><dd><p>returns a tuple of (Figure, Axes).</p>
-</dd>
-</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>func</strong> – Defines the function to call that builds the plot and
+returns a tuple of (Figure, Axes).</p>
 </dd>
 </dl>
 </dd></dl>
@@ -608,7 +625,7 @@ saving and/or showing matplotlib plots.</p>
       
     </p>
     <p>
-        &copy; Copyright 2023, Alyshia N. Bustos.<br/>
+        &copy; Copyright 2023, Alyshia B. and Tyler Morrow.<br/>
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.2.1.<br/>
     </p>
   </div>

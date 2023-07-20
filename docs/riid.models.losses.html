@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>riid.models.losses package &#8212; My Awesome PyRIID Project 1 documentation</title>
+    <title>riid.models.losses package &#8212; PyRIID 1 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/bootstrap-sphinx.css" />
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
@@ -34,7 +34,7 @@
           <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" href="index.html">
-          My Awesome PyRIID Project</a>
+          PyRIID</a>
         <span class="navbar-text navbar-version pull-left"><b></b></span>
       </div>
 
@@ -50,10 +50,7 @@
      href="index.html">Site <b class="caret"></b></a>
   <ul class="dropdown-menu globaltoc"
       role="menu"
-      aria-labelledby="dLabelGlobalToc"><ul>
-<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
-</ul>
-</ul>
+      aria-labelledby="dLabelGlobalToc"></ul>
 </li>
               
                 <li class="dropdown">
@@ -149,29 +146,32 @@ function.</p>
 the logits to compute the loss value, <cite>from_logits</cite> must be <cite>True</cite>.</p>
 <p>Because it computes the generalized multi-label loss, the shape of both
 <cite>y_pred</cite> and <cite>y_true</cite> must be <cite>[batch_size, num_classes]</cite>.</p>
-<dl>
-<dt>Args:</dt><dd><dl class="simple">
-<dt>from_logits: Whether <cite>y_pred</cite> is expected to be a logits tensor. Default</dt><dd><p>is <cite>True</cite>, meaning <cite>y_pred</cite> is the logits.</p>
-</dd>
-<dt>reduction: (Optional) Type of <cite>tf.keras.losses.Reduction</cite> to apply to</dt><dd><p>loss. Default value is <cite>SUM_OVER_BATCH_SIZE</cite>.</p>
-</dd>
-</dl>
-<p>name: Optional name for the op.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>from_logits</strong> – Whether <cite>y_pred</cite> is expected to be a logits tensor. Default
+is <cite>True</cite>, meaning <cite>y_pred</cite> is the logits.</p></li>
+<li><p><strong>reduction</strong> – (Optional) Type of <cite>tf.keras.losses.Reduction</cite> to apply to
+loss. Default value is <cite>SUM_OVER_BATCH_SIZE</cite>.</p></li>
+<li><p><strong>name</strong> – Optional name for the op.</p></li>
+</ul>
 </dd>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="riid.models.losses.sparsemax.SparsemaxLoss.call">
 <span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y_true</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_pred</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.losses.sparsemax.SparsemaxLoss.call" title="Permalink to this definition">¶</a></dt>
 <dd><p>Invokes the <cite>Loss</cite> instance.</p>
-<dl>
-<dt>Args:</dt><dd><dl class="simple">
-<dt>y_true: Ground truth values. shape = <cite>[batch_size, d0, .. dN]</cite>, except</dt><dd><p>sparse loss functions such as sparse categorical crossentropy where
-shape = <cite>[batch_size, d0, .. dN-1]</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>y_true</strong> – Ground truth values. shape = <cite>[batch_size, d0, .. dN]</cite>, except
+sparse loss functions such as sparse categorical crossentropy where
+shape = <cite>[batch_size, d0, .. dN-1]</cite></p></li>
+<li><p><strong>y_pred</strong> – The predicted values. shape = <cite>[batch_size, d0, .. dN]</cite></p></li>
+</ul>
 </dd>
-</dl>
-<p>y_pred: The predicted values. shape = <cite>[batch_size, d0, .. dN]</cite></p>
-</dd>
-<dt>Returns:</dt><dd><p>Loss values with the shape <cite>[batch_size, d0, .. dN-1]</cite>.</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Loss values with the shape <cite>[batch_size, d0, .. dN-1]</cite>.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -203,14 +203,19 @@ $$</p>
 <span class="go">       [0., 0., 1.]], dtype=float32)&gt;</span>
 </pre></div>
 </div>
-<dl class="simple">
-<dt>Args:</dt><dd><p>logits: A <cite>Tensor</cite>.
-axis: <cite>int</cite>, axis along which the sparsemax operation is applied.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>logits</strong> – A <cite>Tensor</cite>.</p></li>
+<li><p><strong>axis</strong> – <cite>int</cite>, axis along which the sparsemax operation is applied.</p></li>
+</ul>
 </dd>
-<dt>Returns:</dt><dd><p>A <cite>Tensor</cite>, output of sparsemax transformation. Has the same type and
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A <cite>Tensor</cite>, output of sparsemax transformation. Has the same type and
 shape as <cite>logits</cite>.</p>
 </dd>
-<dt>Raises:</dt><dd><p>ValueError: In case <cite>dim(logits) == 1</cite>.</p>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – In case <cite>dim(logits) == 1</cite>.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -225,16 +230,18 @@ function such that it uses the sparsemax probability output instead of the
 internal $  au $ variable. However, the output is identical to the original
 loss function.</p>
 <p>[1]: <a class="reference external" href="https://arxiv.org/abs/1602.02068">https://arxiv.org/abs/1602.02068</a></p>
-<dl>
-<dt>Args:</dt><dd><dl class="simple">
-<dt>logits: A <cite>Tensor</cite>. Must be one of the following types: <cite>float32</cite>,</dt><dd><p><cite>float64</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>logits</strong> – A <cite>Tensor</cite>. Must be one of the following types: <cite>float32</cite>,
+<cite>float64</cite>.</p></li>
+<li><p><strong>sparsemax</strong> – A <cite>Tensor</cite>. Must have the same type as <cite>logits</cite>.</p></li>
+<li><p><strong>labels</strong> – A <cite>Tensor</cite>. Must have the same type as <cite>logits</cite>.</p></li>
+<li><p><strong>name</strong> – A name for the operation (optional).</p></li>
+</ul>
 </dd>
-</dl>
-<p>sparsemax: A <cite>Tensor</cite>. Must have the same type as <cite>logits</cite>.
-labels: A <cite>Tensor</cite>. Must have the same type as <cite>logits</cite>.
-name: A name for the operation (optional).</p>
-</dd>
-<dt>Returns:</dt><dd><p>A <cite>Tensor</cite>. Has the same type as <cite>logits</cite>.</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A <cite>Tensor</cite>. Has the same type as <cite>logits</cite>.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -257,11 +264,15 @@ name: A name for the operation (optional).</p>
 <dt class="sig sig-object py" id="riid.models.losses.negative_f1">
 <span class="sig-prename descclassname"><span class="pre">riid.models.losses.</span></span><span class="sig-name descname"><span class="pre">negative_f1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y_true</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_pred</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.losses.negative_f1" title="Permalink to this definition">¶</a></dt>
 <dd><p>Implements custom negative F1 loss score for use in multi-isotope classifiers.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>y_true: Defines a list of ground truth.
-y_pred: Defines a list of predictions to compare against the ground truth.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>y_true</strong> – Defines a list of ground truth.</p></li>
+<li><p><strong>y_pred</strong> – Defines a list of predictions to compare against the ground truth.</p></li>
+</ul>
 </dd>
-<dt>Returns:</dt><dd><p>The custom loss score.</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The custom loss score.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -270,11 +281,15 @@ y_pred: Defines a list of predictions to compare against the ground truth.</p>
 <dt class="sig sig-object py" id="riid.models.losses.negative_log_f1">
 <span class="sig-prename descclassname"><span class="pre">riid.models.losses.</span></span><span class="sig-name descname"><span class="pre">negative_log_f1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y_true</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_pred</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.losses.negative_log_f1" title="Permalink to this definition">¶</a></dt>
 <dd><p>Implements custom negative log F1 loss score for use in multi-isotope classifiers.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>y_true: Defines a list of ground truth.
-y_pred: Defines a list of predictions to compare against the ground truth.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>y_true</strong> – Defines a list of ground truth.</p></li>
+<li><p><strong>y_pred</strong> – Defines a list of predictions to compare against the ground truth.</p></li>
+</ul>
 </dd>
-<dt>Returns:</dt><dd><p>The custom loss score on a log scale.</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The custom loss score on a log scale.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -284,12 +299,13 @@ y_pred: Defines a list of predictions to compare against the ground truth.</p>
 <span class="sig-prename descclassname"><span class="pre">riid.models.losses.</span></span><span class="sig-name descname"><span class="pre">normal_nll_diff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spectra</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reconstructed_spectra</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-08</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.losses.normal_nll_diff" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes the Normal Negative Log-Likelihood.</p>
 <p>TODO: refactor to assume spectral inputs are in the same form</p>
-<dl>
-<dt>Args:</dt><dd><p>spectra: the spectral samples, assumed to be in counts
-reconstructed_spectra: the reconstructed spectra created using a</p>
-<blockquote>
-<div><p>dictionary with label proportion estimates</p>
-</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>spectra</strong> – the spectral samples, assumed to be in counts</p></li>
+<li><p><strong>reconstructed_spectra</strong> – the reconstructed spectra created using a
+dictionary with label proportion estimates</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -299,12 +315,13 @@ reconstructed_spectra: the reconstructed spectra created using a</p>
 <span class="sig-prename descclassname"><span class="pre">riid.models.losses.</span></span><span class="sig-name descname"><span class="pre">poisson_nll_diff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spectra</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reconstructed_spectra</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-08</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.losses.poisson_nll_diff" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes the Poisson Negative Log-Likelihood.</p>
 <p>TODO: refactor to assume spectral inputs are in the same form</p>
-<dl>
-<dt>Args:</dt><dd><p>spectra: the spectral samples, assumed to be in counts
-reconstructed_spectra: the reconstructed spectra created using a</p>
-<blockquote>
-<div><p>dictionary with label proportion estimates</p>
-</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>spectra</strong> – the spectral samples, assumed to be in counts</p></li>
+<li><p><strong>reconstructed_spectra</strong> – the reconstructed spectra created using a
+dictionary with label proportion estimates</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -319,12 +336,13 @@ reconstructed_spectra: the reconstructed spectra created using a</p>
 <span class="sig-prename descclassname"><span class="pre">riid.models.losses.</span></span><span class="sig-name descname"><span class="pre">sse_diff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spectra</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reconstructed_spectra</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.losses.sse_diff" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes the sum of squares error.</p>
 <p>TODO: refactor to assume spectral inputs are in the same form</p>
-<dl>
-<dt>Args:</dt><dd><p>spectra: the spectral samples, assumed to be in counts
-reconstructed_spectra: the reconstructed spectra created using a</p>
-<blockquote>
-<div><p>dictionary with label proportion estimates</p>
-</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>spectra</strong> – the spectral samples, assumed to be in counts</p></li>
+<li><p><strong>reconstructed_spectra</strong> – the reconstructed spectra created using a
+dictionary with label proportion estimates</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -334,12 +352,13 @@ reconstructed_spectra: the reconstructed spectra created using a</p>
 <span class="sig-prename descclassname"><span class="pre">riid.models.losses.</span></span><span class="sig-name descname"><span class="pre">weighted_sse_diff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spectra</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reconstructed_spectra</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.losses.weighted_sse_diff" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes the Normal Negative Log-Likelihood under constant variance
 (this reduces to the SSE, just on a different scale).</p>
-<dl>
-<dt>Args:</dt><dd><p>spectra: the spectral samples, assumed to be in counts
-reconstructed_spectra: the reconstructed spectra created using a</p>
-<blockquote>
-<div><p>dictionary with label proportion estimates</p>
-</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>spectra</strong> – the spectral samples, assumed to be in counts</p></li>
+<li><p><strong>reconstructed_spectra</strong> – the reconstructed spectra created using a
+dictionary with label proportion estimates</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -359,7 +378,7 @@ reconstructed_spectra: the reconstructed spectra created using a</p>
       
     </p>
     <p>
-        &copy; Copyright 2023, Alyshia N. Bustos.<br/>
+        &copy; Copyright 2023, Alyshia B. and Tyler Morrow.<br/>
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.2.1.<br/>
     </p>
   </div>

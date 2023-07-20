@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>riid.data package &#8212; My Awesome PyRIID Project 1 documentation</title>
+    <title>riid.data package &#8212; PyRIID 1 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/bootstrap-sphinx.css" />
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
@@ -34,7 +34,7 @@
           <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" href="index.html">
-          My Awesome PyRIID Project</a>
+          PyRIID</a>
         <span class="navbar-text navbar-version pull-left"><b></b></span>
       </div>
 
@@ -50,10 +50,7 @@
      href="index.html">Site <b class="caret"></b></a>
   <ul class="dropdown-menu globaltoc"
       role="menu"
-      aria-labelledby="dLabelGlobalToc"><ul>
-<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
-</ul>
-</ul>
+      aria-labelledby="dLabelGlobalToc"></ul>
 </li>
               
                 <li class="dropdown">
@@ -282,10 +279,12 @@ looks for the following (in order):
 - Y88
 - Ba133
 - Ho166m</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>isotope: a string containing the isotope name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>isotope</strong> – a string containing the isotope name</p>
 </dd>
-<dt>Returns:</dt><dd><p>A bool representing whether or not the name string is valid.</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A bool representing whether or not the name string is valid.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -300,18 +299,21 @@ looks for the following (in order):
 <a href="#id1"><span class="problematic" id="id2">|</span></a>Seed          <a href="#id3"><span class="problematic" id="id4">|</span></a>(Category, Isotope, Seed) |
 <a href="#id5"><span class="problematic" id="id6">|</span></a>Isotope       <a href="#id7"><span class="problematic" id="id8">|</span></a>(Category, Isotope)       |
 <a href="#id9"><span class="problematic" id="id10">|</span></a>Category      <a href="#id11"><span class="problematic" id="id12">|</span></a>(Category,)               |</p>
-<dl class="simple">
-<dt>Args:</dt><dd><dl class="simple">
-<dt>label_val: The part of the label (Category, Isotope, Seed)</dt><dd><p>from which to map the other two label values, if possible.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>label_val</strong> – The part of the label (Category, Isotope, Seed)
+from which to map the other two label values, if possible.</p></li>
+<li><p><strong>label_level</strong> – The level of the part of the label provided, e.g.
+“Category”, “Isotope”, or “Seed.”</p></li>
+</ul>
 </dd>
-<dt>label_level: The level of the part of the label provided, e.g.</dt><dd><p>“Category”, “Isotope”, or “Seed.”</p>
-</dd>
-</dl>
-</dd>
-<dt>Returns:</dt><dd><dl class="simple">
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
 <dt>An n-tuple containing the Category, Isotope, Seed values identified</dt><dd><p>for the old label format.</p>
 </dd>
 </dl>
+</p>
 </dd>
 </dl>
 </dd></dl>
@@ -396,14 +398,18 @@ looks for the following (in order):
 binning structure to a new one.</p>
 <p>Warning: this operation is likely to add or remove spectral information
 depending on the new energy calibration values used.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>new_offset: new gain value, i.e. the 0-th e-cal term
-new_gain: new gain value, i.e. the 1-th e-cal term
-new_quadratic: new quadratic value, i.e. the 2-th e-cal term
-new_cubic: new cubic value, i.e. the 3-th e-cal term
-new_low_energy: new low energy term</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>new_offset</strong> – new gain value, i.e. the 0-th e-cal term</p></li>
+<li><p><strong>new_gain</strong> – new gain value, i.e. the 1-th e-cal term</p></li>
+<li><p><strong>new_quadratic</strong> – new quadratic value, i.e. the 2-th e-cal term</p></li>
+<li><p><strong>new_cubic</strong> – new cubic value, i.e. the 3-th e-cal term</p></li>
+<li><p><strong>new_low_energy</strong> – new low energy term</p></li>
+</ul>
 </dd>
-<dt>Raises:</dt><dd><p>ValueError: raised if no argument values are provided.</p>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – raised if no argument values are provided.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -425,11 +431,10 @@ new_low_energy: new low energy term</p>
 <dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.clip_negatives">
 <span class="sig-name descname"><span class="pre">clip_negatives</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min_value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.data.sampleset.SampleSet.clip_negatives" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets negative values to min_value.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><dl class="simple">
-<dt>min_value: Determines the minimum value in spectra to which</dt><dd><p>smaller values will be clipped.</p>
-</dd>
-</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>min_value</strong> – Determines the minimum value in spectra to which
+smaller values will be clipped.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -443,14 +448,21 @@ each sampleset by computing the Jensen-Shannon distance between
 histograms of that information. The distance value can be interpreted
 as follows: closer to 0 means more similar and closer to 1 means
 more dissimilar.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>ss: The sample set we will compare to.
-n_bins: The number of bins we will sort both sample sets by.
-density: whether histograms should be in counts or density</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ss</strong> – The sample set we will compare to.</p></li>
+<li><p><strong>n_bins</strong> – The number of bins we will sort both sample sets by.</p></li>
+<li><p><strong>density</strong> – whether histograms should be in counts or density</p></li>
+</ul>
 </dd>
-<dt>Returns:</dt><dd><p>ss1_stats: dict of stats for the first sampleset.
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict of stats for the first sampleset.
 ss2_stats: dict of stats for the second sampleset.
 col_comparisons: dict of distance values comparing each column.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ss1_stats</p>
 </dd>
 </dl>
 </dd></dl>
@@ -477,10 +489,12 @@ this would be to add a new column to <cite>info</cite> distinguishing between sy
 measured on a per-sample basis).</p></li>
 </ul>
 </div></blockquote>
-<dl class="simple">
-<dt>Args:</dt><dd><p>ss_list: Defines the list of SampleSets to concatenate.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ss_list</strong> – Defines the list of SampleSets to concatenate.</p>
 </dd>
-<dt>Return:</dt><dd><p>A single SampleSet object of the concatenated SampleSet data.</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A single SampleSet object of the concatenated SampleSet data.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -526,11 +540,15 @@ must know how to pick means and standard deviations which properly reflect the:<
 </div></blockquote>
 <p>A future goal of ours is to provide updates to this function and docstring which make
 choosing the mean and standard deviation easier/automated based on more of our findings.</p>
-<dl class="simple">
-<dt>Arguments:</dt><dd><p>mean: the SNR value representing the mean of the logistic distribution
-std: the standard deviation of the logistic distribution</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mean</strong> – the SNR value representing the mean of the logistic distribution</p></li>
+<li><p><strong>std</strong> – the standard deviation of the logistic distribution</p></li>
+</ul>
 </dd>
-<dt>Returns:</dt><dd><p>The mean of all SNR values passed through a logistic survival function.</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The mean of all SNR values passed through a logistic survival function.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -539,13 +557,13 @@ std: the standard deviation of the logistic distribution</p>
 <dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.downsample_spectra">
 <span class="sig-name descname"><span class="pre">downsample_spectra</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_bins</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_frac</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-08</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.data.sampleset.SampleSet.downsample_spectra" title="Permalink to this definition">¶</a></dt>
 <dd><p>Replaces spectra with downsampled version. Uniform binning is assumed.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><dl class="simple">
-<dt>target_bins: Defines into how many channels the current spectra channels</dt><dd><p>should be combined.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>target_bins</strong> – Defines into how many channels the current spectra channels
+should be combined.</p>
 </dd>
-</dl>
-</dd>
-<dt>Raises:</dt><dd><p>ValueError: Raised when binning is not a multiple of the target binning.</p>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – Raised when binning is not a multiple of the target binning.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -554,16 +572,17 @@ std: the standard deviation of the logistic distribution</p>
 <dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.drop_sources">
 <span class="sig-name descname"><span class="pre">drop_sources</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">col_names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Iterable</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">('Cosmic',</span> <span class="pre">'PotassiumInSoil',</span> <span class="pre">'UraniumInSoil',</span> <span class="pre">'ThoriumInSoil')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize_sources</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Seed'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.data.sampleset.SampleSet.drop_sources" title="Permalink to this definition">¶</a></dt>
 <dd><p>Drops columns from the sources DataFrame.</p>
-<dl>
-<dt>Args:</dt><dd><dl class="simple">
-<dt>col_names: the names of the sources columns to be dropped.</dt><dd><p>The names of background seeds are used by default as removing the
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>col_names</strong> – the names of the sources columns to be dropped.
+The names of background seeds are used by default as removing the
 ground truth for background sources when dealing with synthetic,
-gross spectra is a common operation.</p>
-</dd>
-<dt>normalize_sources: whether to normalize the sources DataFrame after dropping</dt><dd><p>the column(s).</p>
-</dd>
-</dl>
-<p>target_level: the multi-index level to which the column name(s) correspond.</p>
+gross spectra is a common operation.</p></li>
+<li><p><strong>normalize_sources</strong> – whether to normalize the sources DataFrame after dropping
+the column(s).</p></li>
+<li><p><strong>target_level</strong> – the multi-index level to which the column name(s) correspond.</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -588,10 +607,13 @@ gross spectra is a common operation.</p>
 <dd><p>Extends the current SampleSet with the given data.</p>
 <p>Always verify that the data was appended in the way you expect based on what input type
 you are preferring to work with.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>spectra: Defines the spectra to append to the current spectra DataFrame.
-sources: Defines the sources to append to the current sources DataFrame.
-info: Defines the info to append to the current info DataFrame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>spectra</strong> – Defines the spectra to append to the current spectra DataFrame.</p></li>
+<li><p><strong>sources</strong> – Defines the sources to append to the current sources DataFrame.</p></li>
+<li><p><strong>info</strong> – Defines the info to append to the current info DataFrame.</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -602,15 +624,16 @@ info: Defines the info to append to the current info DataFrame.</p>
 <dd><p>Returns an array representing the energy (in keV) represented by the
 lower edge of each channel for all samples.</p>
 <p>See docstring for <cite>_channels_to_energies()</cite> for more details.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><dl class="simple">
-<dt>fractional_energy_bins: an array of fractions representing the spacing of</dt><dd><p>the channels. Optional; used for arbitrary channel structures (uncommon).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>fractional_energy_bins</strong> – an array of fractions representing the spacing of
+the channels. Optional; used for arbitrary channel structures (uncommon).</p>
 </dd>
-</dl>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A 2D array of energy values in keV for all samples.</p>
 </dd>
-<dt>Returns:</dt><dd><p>A 2D array of energy values in keV for all samples.</p>
-</dd>
-<dt>Raises:</dt><dd><p>ValueError: raised if any energy calibration terms are missing.</p>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – raised if any energy calibration terms are missing.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -621,16 +644,19 @@ lower edge of each channel for all samples.</p>
 <dd><p>Returns an array representing the energy (in keV) represented by the
 lower edge of each channel for a single sample and the specified index.</p>
 <p>See docstring for <cite>_channels_to_energies()</cite> for more details.</p>
-<dl>
-<dt>Args:</dt><dd><p>sample_index: index of the specific sample for which to obtain energies
-fractional_energy_bins: an array of fractions representing the spacing of</p>
-<blockquote>
-<div><p>the channels. Optional; used for arbitrary channel structures (uncommon).</p>
-</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sample_index</strong> – index of the specific sample for which to obtain energies</p></li>
+<li><p><strong>fractional_energy_bins</strong> – an array of fractions representing the spacing of
+the channels. Optional; used for arbitrary channel structures (uncommon).</p></li>
+</ul>
 </dd>
-<dt>Returns:</dt><dd><p>An array of energy values in keV.</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An array of energy values in keV.</p>
 </dd>
-<dt>Raises:</dt><dd><p>ValueError: raised if any energy calibration terms are missing.</p>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – raised if any energy calibration terms are missing.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -654,8 +680,9 @@ fractional_energy_bins: an array of fractions representing the spacing of</p>
 <span class="sig-name descname"><span class="pre">get_samples</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#riid.data.sampleset.SampleSet.get_samples" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets only the data (spectra + extra data) within the SampleSet
 as a NumPy array ready for use in model training.</p>
-<dl class="simple">
-<dt>Returns:</dt><dd><p>An ndarray containing the NaN-trimmed values for spectra and
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>An ndarray containing the NaN-trimmed values for spectra and
 extra data.</p>
 </dd>
 </dl>
@@ -665,8 +692,9 @@ extra data.</p>
 <dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.get_source_contributions">
 <span class="sig-name descname"><span class="pre">get_source_contributions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Isotope'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.data.sampleset.SampleSet.get_source_contributions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the 2D array of values representing the percent contributions of each source.</p>
-<dl class="simple">
-<dt>Returns:</dt><dd><p>An ndarray containing the source contributions for each sample (i.e., ground truth).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>An ndarray containing the source contributions for each sample (i.e., ground truth).</p>
 </dd>
 </dl>
 </dd></dl>
@@ -687,11 +715,15 @@ The diagonal is computed, for when Poisson noise is present, for two main reason
 <li><p>there is sometimes research interest in comparing the diagonal to the upper triangle.</p></li>
 </ul>
 </div></blockquote>
-<dl class="simple">
-<dt>Args:</dt><dd><p>distance_func: the specific distance function to use. Default is Jensen-Shannon.
-target_level: the sources column level to use for the DataFrame labels.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>distance_func</strong> – the specific distance function to use. Default is Jensen-Shannon.</p></li>
+<li><p><strong>target_level</strong> – the sources column level to use for the DataFrame labels.</p></li>
+</ul>
 </dd>
-<dt>Returns:</dt><dd><p>A 2-D array of distance values.</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A 2-D array of distance values.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -735,12 +767,13 @@ where each row is a sample.</p>
 <p>Default is L1 norm (p=1) can be interpreted as a forming a probability mass function (PMF).
 L2 norm (p=2) is unit energy (sum of squares == 1).</p>
 <p>Ref: “<a class="reference external" href="https://en.wikipedia.org/wiki/Parseval's_theorem">https://en.wikipedia.org/wiki/Parseval’s_theorem</a>”</p>
-<dl>
-<dt>Args:</dt><dd><p>p: Defines the exponent to which the spectra values are raised.
-clip_negatives: Determines whether or not negative values will</p>
-<blockquote>
-<div><p>be removed from the spectra and replaced with 0.</p>
-</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> – Defines the exponent to which the spectra values are raised.</p></li>
+<li><p><strong>clip_negatives</strong> – Determines whether or not negative values will
+be removed from the spectra and replaced with 0.</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -761,8 +794,9 @@ clip_negatives: Determines whether or not negative values will</p>
 <dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.replace_nan">
 <span class="sig-name descname"><span class="pre">replace_nan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">replace_value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.data.sampleset.SampleSet.replace_nan" title="Permalink to this definition">¶</a></dt>
 <dd><p>Replaces np.nan() values with replace_value.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>replace_value: The value with which NaN will be replaced.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>replace_value</strong> – The value with which NaN will be replaced.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -771,11 +805,15 @@ clip_negatives: Determines whether or not negative values will</p>
 <dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.sample">
 <span class="sig-name descname"><span class="pre">sample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_samples</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a></span></span><a class="headerlink" href="#riid.data.sampleset.SampleSet.sample" title="Permalink to this definition">¶</a></dt>
 <dd><p>Randomly samples the SampleSet.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>n_samples: the number of random samples to be returned.
-random_seed: the seed value for random number generation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n_samples</strong> – the number of random samples to be returned.</p></li>
+<li><p><strong>random_seed</strong> – the seed value for random number generation.</p></li>
+</ul>
 </dd>
-<dt>Returns:</dt><dd><p>A sampleset of <cite>n_samples</cite> randomly selected measurements.</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A sampleset of <cite>n_samples</cite> randomly selected measurements.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -803,16 +841,17 @@ random_seed: the seed value for random number generation.</p>
 <span class="sig-name descname"><span class="pre">sources_columns_to_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Isotope'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span></span></span><a class="headerlink" href="#riid.data.sampleset.SampleSet.sources_columns_to_dict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Converts the MultiIndex columns of the sources DataFrame to a dictionary.</p>
 <p>Note: depending on <cite>target_level</cite> and sources columns, duplicate values are possible.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><dl class="simple">
-<dt>target_level: the level of the MultiIndex at which the dictionary should start.</dt><dd><p>If “Seed” is chosen, then a flat list will be returned.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>target_level</strong> – the level of the MultiIndex at which the dictionary should start.
+If “Seed” is chosen, then a flat list will be returned.</p>
 </dd>
-</dl>
-</dd>
-<dt>Returns:</dt><dd><p>If <cite>target_level</cite> is “Category” or “Isotope,” then a dict is returned.
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>If <cite>target_level</cite> is “Category” or “Isotope,” then a dict is returned.
 If <cite>target_level</cite> is “Seed,” then a list is returned.</p>
 </dd>
-<dt>Raises:</dt><dd><p>ValueError: if <cite>target_level</cite> is invalid.</p>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – if <cite>target_level</cite> is invalid.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -829,14 +868,14 @@ If <cite>target_level</cite> is “Seed,” then a list is returned.</p>
 <dd><p>Splits the current SampleSet into two new SampleSets, one containing only foreground
 sources and the other containing only background sources.</p>
 <p>Foreground sources are assumed to be anything that is not designated as a background source.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><dl class="simple">
-<dt>bg_seeds_names: the names of the seeds which are considered background sources.</dt><dd><p>This list be customized to also extract atypical background sources such as
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>bg_seeds_names</strong> – the names of the seeds which are considered background sources.
+This list be customized to also extract atypical background sources such as
 calibration sources.</p>
 </dd>
-</dl>
-</dd>
-<dt>Returns:</dt><dd><p>Two SampleSets, the first containing only foregrounds and the second only
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Two SampleSets, the first containing only foregrounds and the second only
 containing backgrounds.</p>
 </dd>
 </dl>
@@ -848,8 +887,9 @@ containing backgrounds.</p>
 <dd><p>Produces a 1-sample SampleSet from the given SampleSet’s data by summing vertically.</p>
 <p>All data suited for summing is summed, otherwise the info from the first
 sample is used.</p>
-<dl class="simple">
-<dt>Returns:</dt><dd><p>A flattened SampleSet.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A flattened SampleSet.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -864,8 +904,9 @@ sample is used.</p>
 <dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.to_hdf">
 <span class="sig-name descname"><span class="pre">to_hdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.data.sampleset.SampleSet.to_hdf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Writes the sampleset to disk as a HDF file at the given path.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>path: the intended location and name of the resulting file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> – the intended location and name of the resulting file.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -874,8 +915,9 @@ sample is used.</p>
 <dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.to_pcf">
 <span class="sig-name descname"><span class="pre">to_pcf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.data.sampleset.SampleSet.to_pcf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Writes the sampleset to disk as a PCF at the given path.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>path: the intended location and name of the resulting file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> – the intended location and name of the resulting file.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -890,11 +932,10 @@ sample is used.</p>
 <dt class="sig sig-object py" id="riid.data.sampleset.SampleSet.upsample_spectra">
 <span class="sig-name descname"><span class="pre">upsample_spectra</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_bins</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">4096</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.data.sampleset.SampleSet.upsample_spectra" title="Permalink to this definition">¶</a></dt>
 <dd><p>Replaces spectra with upsampled version. Uniform binning is assumed.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><dl class="simple">
-<dt>target_bins: Defines the number of bins into which the current spectra</dt><dd><p>should be split.</p>
-</dd>
-</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>target_bins</strong> – Defines the number of bins into which the current spectra
+should be split.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -940,10 +981,12 @@ sample is used.</p>
 <span class="sig-prename descclassname"><span class="pre">riid.data.sampleset.</span></span><span class="sig-name descname"><span class="pre">read_hdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a></span></span><a class="headerlink" href="#riid.data.sampleset.read_hdf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reads the HDF file in from the given filepath and creates
 a SampleSet object with the data.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>path: Defines the path to the file to be read in.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> – Defines the path to the file to be read in.</p>
 </dd>
-<dt>Returns:</dt><dd><p>A SampleSet object.</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A SampleSet object.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -952,13 +995,18 @@ a SampleSet object with the data.</p>
 <dt class="sig sig-object py" id="riid.data.sampleset.read_pcf">
 <span class="sig-prename descclassname"><span class="pre">riid.data.sampleset.</span></span><span class="sig-name descname"><span class="pre">read_pcf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a></span></span><a class="headerlink" href="#riid.data.sampleset.read_pcf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Converts pcf file to sampleset object.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>path: Defines the path to the PCF file to be read in.
-verbose: Determines whether or not to show verbose function output in terminal.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> – Defines the path to the PCF file to be read in.</p></li>
+<li><p><strong>verbose</strong> – Determines whether or not to show verbose function output in terminal.</p></li>
+</ul>
 </dd>
-<dt>Returns:</dt><dd><p>A Sampleset object containing information of pcf file in sampleset format</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A Sampleset object containing information of pcf file in sampleset format</p>
 </dd>
-<dt>Raises:</dt><dd><p>None.</p>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None.</strong> – </p>
 </dd>
 </dl>
 </dd></dl>
@@ -982,7 +1030,7 @@ verbose: Determines whether or not to show verbose function output in terminal.<
       
     </p>
     <p>
-        &copy; Copyright 2023, Alyshia N. Bustos.<br/>
+        &copy; Copyright 2023, Alyshia B. and Tyler Morrow.<br/>
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.2.1.<br/>
     </p>
   </div>

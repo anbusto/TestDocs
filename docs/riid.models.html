@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>riid.models package &#8212; My Awesome PyRIID Project 1 documentation</title>
+    <title>riid.models package &#8212; PyRIID 1 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/bootstrap-sphinx.css" />
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
@@ -34,7 +34,7 @@
           <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" href="index.html">
-          My Awesome PyRIID Project</a>
+          PyRIID</a>
         <span class="navbar-text navbar-version pull-left"><b></b></span>
       </div>
 
@@ -50,10 +50,7 @@
      href="index.html">Site <b class="caret"></b></a>
   <ul class="dropdown-menu globaltoc"
       role="menu"
-      aria-labelledby="dLabelGlobalToc"><ul>
-<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
-</ul>
-</ul>
+      aria-labelledby="dLabelGlobalToc"></ul>
 </li>
               
                 <li class="dropdown">
@@ -239,15 +236,17 @@ been found, which means that the model statistics cannot be calculated.</p>
 <span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seeds_ss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="riid.data.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.bayes.PoissonBayesClassifier.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Constructs a TF-based implementation of a poisson-bayes classifier in terms
 of the given seeds.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><dl class="simple">
-<dt>seeds_ss (SampleSet): Defines a SampleSet of <cite>n</cite> foreground</dt><dd><p>seed spectra where <cite>n</cite> &gt;= 1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>seeds_ss</strong> (<a class="reference internal" href="riid.data.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><em>SampleSet</em></a>) – Defines a SampleSet of <cite>n</cite> foreground
+seed spectra where <cite>n</cite> &gt;= 1.</p>
 </dd>
-</dl>
-</dd>
-<dt>Raises:</dt><dd><p>ValueError: Raised when no seeds are provided.
-NegativeSpectrumError: raised if any seed spectrum has negative counts in any bin.
-ZeroTotalCountsError: raised if any seed spectrum contains zero total counts.</p>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – Raised when no seeds are provided.</p></li>
+<li><p><a class="reference internal" href="#riid.models.bayes.NegativeSpectrumError" title="riid.models.bayes.NegativeSpectrumError"><strong>NegativeSpectrumError</strong></a> – raised if any seed spectrum has negative counts in any bin.</p></li>
+<li><p><a class="reference internal" href="#riid.models.bayes.ZeroTotalCountsError" title="riid.models.bayes.ZeroTotalCountsError"><strong>ZeroTotalCountsError</strong></a> – raised if any seed spectrum contains zero total counts.</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -258,16 +257,17 @@ ZeroTotalCountsError: raised if any seed spectrum contains zero total counts.</p
 <dd><p>Uses the Poisson-Bayes model to output prediction
 probabilities for every spectra in gross_ss SampleSet
 (and optional background Sample Set)</p>
-<dl>
-<dt>Args:</dt><dd><p>gross_ss (SampleSet): Defines a SampleSet of <cite>n</cite> gross spectra where <cite>n</cite> &gt;= 1.
-bg_ss (SampleSet): Defines a SampleSet of <cite>n</cite> background spectra where <cite>n</cite> &gt;= 1.
-normalize_scores (bool): normalize prediction probabilities.</p>
-<blockquote>
-<div><p>When True, this makes the probabilities positive and rescales them
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>gross_ss</strong> (<a class="reference internal" href="riid.data.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><em>SampleSet</em></a>) – Defines a SampleSet of <cite>n</cite> gross spectra where <cite>n</cite> &gt;= 1.</p></li>
+<li><p><strong>bg_ss</strong> (<a class="reference internal" href="riid.data.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><em>SampleSet</em></a>) – Defines a SampleSet of <cite>n</cite> background spectra where <cite>n</cite> &gt;= 1.</p></li>
+<li><p><strong>normalize_scores</strong> (<em>bool</em>) – normalize prediction probabilities.
+When True, this makes the probabilities positive and rescales them
 by the minimum value present in given the dataset.
 While this can be helpful in terms of visualizing probabilities in log scale,
-it can adversely affects one’s ability to detect significantly anomalous signatures.</p>
-</div></blockquote>
+it can adversely affects one’s ability to detect significantly anomalous signatures.</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -295,8 +295,9 @@ been found, which means the model statistics cannot be calculated.</p>
 <dt class="sig sig-object py" id="riid.models.metrics.RunningAverage.add_sample">
 <span class="sig-name descname"><span class="pre">add_sample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.metrics.RunningAverage.add_sample" title="Permalink to this definition">¶</a></dt>
 <dd><p>Updates the average.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>new_value: the new value</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>new_value</strong> – the new value</p>
 </dd>
 </dl>
 </dd></dl>
@@ -313,11 +314,18 @@ been found, which means the model statistics cannot be calculated.</p>
 <span class="sig-prename descclassname"><span class="pre">riid.models.metrics.</span></span><span class="sig-name descname"><span class="pre">average_precision_score</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">precision</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recall</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.metrics.average_precision_score" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes the average precision (area under the curve) for each precision/recall
 pair.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>precision (dict): return value of <cite>ctutil.evaluation.precision_recall_curve()</cite>
-recall (dict): return value of <cite>ctutil.evaluation.precision_recall_curve()</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>precision</strong> (<em>dict</em>) – return value of <cite>ctutil.evaluation.precision_recall_curve()</cite></p></li>
+<li><p><strong>recall</strong> (<em>dict</em>) – return value of <cite>ctutil.evaluation.precision_recall_curve()</cite></p></li>
+</ul>
 </dd>
-<dt>Returns:</dt><dd><p>(dict): average precision values (float) for each label in precision/recall</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>average precision values (float) for each label in precision/recall</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(dict)</p>
 </dd>
 </dl>
 </dd></dl>
@@ -332,11 +340,18 @@ recall (dict): return value of <cite>ctutil.evaluation.precision_recall_curve()<
 <span class="pre">f1_score</span> <span class="pre">=</span> <span class="pre">harmonic_mean(precision,</span> <span class="pre">recall)</span>
 <span class="pre">`</span></code></p>
 </div></blockquote>
-<dl class="simple">
-<dt>Args:</dt><dd><p>x (array-like): numeric or array_like of numerics
-y (array-like): numeric or array_like of numerics matching the shape/type of <cite>x</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>array-like</em>) – numeric or array_like of numerics</p></li>
+<li><p><strong>y</strong> (<em>array-like</em>) – numeric or array_like of numerics matching the shape/type of <cite>x</cite></p></li>
+</ul>
 </dd>
-<dt>Returns:</dt><dd><p>(array-like): the harmonic mean of <cite>x</cite> and <cite>y</cite></p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the harmonic mean of <cite>x</cite> and <cite>y</cite></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(array-like)</p>
 </dd>
 </dl>
 </dd></dl>
@@ -346,11 +361,15 @@ y (array-like): numeric or array_like of numerics matching the shape/type of <ci
 <span class="sig-prename descclassname"><span class="pre">riid.models.metrics.</span></span><span class="sig-name descname"><span class="pre">multi_f1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y_true</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_pred</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.metrics.multi_f1" title="Permalink to this definition">¶</a></dt>
 <dd><p>This metric provides a measure of the F1 score of two tensors.
 Values for y_true and y_pred are assumed to sum to 1.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>y_true: Defines a list of ground truth.
-y_pred: Defines a list of predictions to compare against the ground truth.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>y_true</strong> – Defines a list of ground truth.</p></li>
+<li><p><strong>y_pred</strong> – Defines a list of predictions to compare against the ground truth.</p></li>
+</ul>
 </dd>
-<dt>Returns:</dt><dd><p>The custom loss score for two tensors.</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The custom loss score for two tensors.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -363,29 +382,29 @@ computes the precision and recall for each class, and supports both multi-class
 and multi-label problems.</p>
 <p>The reason this is necessary is that in multi-class problems, for a single sample,
 all predictions are discarded except for the argmax.</p>
-<dl>
-<dt>Args:</dt><dd><p>ss: a SampleSet that predictions were generated on
-smooth: if True, precision is smoothing is applied to make a monotonically</p>
-<blockquote>
-<div><p>decreasing precision function</p>
-</div></blockquote>
-<dl class="simple">
-<dt>multiclass: set to True if this is a multi-class (i.e. y_true is one-hot) as</dt><dd><p>opposed to multi-label (i.e. labels are not mutually exclusive). Ff True,
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ss</strong> – a SampleSet that predictions were generated on</p></li>
+<li><p><strong>smooth</strong> – if True, precision is smoothing is applied to make a monotonically
+decreasing precision function</p></li>
+<li><p><strong>multiclass</strong> – set to True if this is a multi-class (i.e. y_true is one-hot) as
+opposed to multi-label (i.e. labels are not mutually exclusive). Ff True,
 predictions will be masked such that non-argmax predictions are set to zero
 (this prevents inflating the precision by continuing past a point that could
 be pragmatically useful). Furthermore, in the multiclass case the recall is
-not guaranteed to reach 1.0.</p>
+not guaranteed to reach 1.0.</p></li>
+<li><p><strong>include_micro</strong> – if True, compute an additional precision and recall for the
+micro-average across all labels and put it under entry <cite>“micro”</cite></p></li>
+<li><p><strong>target_level</strong> – true labels are extracted from <cite>ss.sources</cite> at the target column index level
+(“Category”, “Isotope”, “Seed”, …)</p></li>
+<li><p><strong>minimum_contribution</strong> – threshold for a source to be considered a ground truth positive
+label. if this is set to <cite>None</cite> the raw mixture ratios will be used as y_true.</p></li>
+</ul>
 </dd>
-<dt>include_micro: if True, compute an additional precision and recall for the</dt><dd><p>micro-average across all labels and put it under entry <cite>“micro”</cite></p>
-</dd>
-<dt>target_level: true labels are extracted from <cite>ss.sources</cite> at the target column index level</dt><dd><p>(“Category”, “Isotope”, “Seed”, …)</p>
-</dd>
-<dt>minimum_contribution: threshold for a source to be considered a ground truth positive</dt><dd><p>label. if this is set to <cite>None</cite> the raw mixture ratios will be used as y_true.</p>
-</dd>
-</dl>
-</dd>
-<dt>Returns:</dt><dd><dl class="simple">
-<dt>precision (dict): a dict with keys for each label and values that are the</dt><dd><p>monotonically increasing precision values at each threshold</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>a dict with keys for each label and values that are the</dt><dd><p>monotonically increasing precision values at each threshold</p>
 </dd>
 <dt>recall (dict): a dict with keys for each label and values that are the</dt><dd><p>monotonically decreasing recall values at each threshold</p>
 </dd>
@@ -393,16 +412,20 @@ not guaranteed to reach 1.0.</p>
 precision and recall</p>
 </dd>
 </dl>
+</p>
 </dd>
-<dt>References:</dt><dd><ul class="simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>precision (dict)</p>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<ul class="simple">
 <li><dl class="simple">
 <dt>[Precision smoothing](</dt><dd><p><a class="reference external" href="https://jonathan-hui.medium.com/map-mean-average-precision-for-object-detection-45c121a31173">https://jonathan-hui.medium.com/map-mean-average-precision-for-object-detection-45c121a31173</a>)</p>
 </dd>
 </dl>
 </li>
 </ul>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py function">
@@ -410,11 +433,15 @@ precision and recall</p>
 <span class="sig-prename descclassname"><span class="pre">riid.models.metrics.</span></span><span class="sig-name descname"><span class="pre">single_f1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y_true</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_pred</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.metrics.single_f1" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes the weighted F1 score for the maximum prediction and maximum
 ground truth. Values for y_true and y_pred are assumed to sum to 1.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>y_true: Defines a list of ground truth.
-y_pred: Defines a list of predictions to compare against the ground truth.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>y_true</strong> – Defines a list of ground truth.</p></li>
+<li><p><strong>y_pred</strong> – Defines a list of predictions to compare against the ground truth.</p></li>
+</ul>
 </dd>
-<dt>Returns:</dt><dd><p>Returns the custom loss score.</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns the custom loss score.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -451,22 +478,27 @@ y_pred: Defines a list of predictions to compare against the ground truth.</p>
 <dt class="sig sig-object py" id="riid.models.neural_nets.LabelProportionEstimator.fit">
 <span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seeds_ss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="riid.data.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">ss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="riid.data.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epochs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validation_split</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callbacks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">patience</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">15</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">es_monitor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'val_loss'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">es_mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'min'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">es_verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Seed'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.neural_nets.LabelProportionEstimator.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fits a model to the given SampleSet(s).</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>seeds_ss: a sampleset of pure, long-collect spectra.
-ss: a SampleSet of <cite>n</cite> spectra where <cite>n</cite> &gt;= 1 and the spectra are gross.
-batch_size: the number of samples per gradient update.
-epochs: maximum number of training iterations.
-callbacks: a list of callbacks to be passed to TensorFlow Model.fit() method.
-patience: the number of epochs to wait for tf.keras.callbacks.EarlyStopping object.
-es_monitor: the quantity to be monitored for tf.keras.callbacks.EarlyStopping object.
-es_mode: mode for tf.keras.callbacks.EarlyStopping object.
-es_verbose: the verbosity level for tf.keras.callbacks.EarlyStopping object.
-target_level: The source level to target for model output.
-verbose: whether or not model training output is printed to the terminal.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>seeds_ss</strong> – a sampleset of pure, long-collect spectra.</p></li>
+<li><p><strong>ss</strong> – a SampleSet of <cite>n</cite> spectra where <cite>n</cite> &gt;= 1 and the spectra are gross.</p></li>
+<li><p><strong>batch_size</strong> – the number of samples per gradient update.</p></li>
+<li><p><strong>epochs</strong> – maximum number of training iterations.</p></li>
+<li><p><strong>callbacks</strong> – a list of callbacks to be passed to TensorFlow Model.fit() method.</p></li>
+<li><p><strong>patience</strong> – the number of epochs to wait for tf.keras.callbacks.EarlyStopping object.</p></li>
+<li><p><strong>es_monitor</strong> – the quantity to be monitored for tf.keras.callbacks.EarlyStopping object.</p></li>
+<li><p><strong>es_mode</strong> – mode for tf.keras.callbacks.EarlyStopping object.</p></li>
+<li><p><strong>es_verbose</strong> – the verbosity level for tf.keras.callbacks.EarlyStopping object.</p></li>
+<li><p><strong>target_level</strong> – The source level to target for model output.</p></li>
+<li><p><strong>verbose</strong> – whether or not model training output is printed to the terminal.</p></li>
+</ul>
 </dd>
-<dt>Returns:</dt><dd><p>None</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
 </dd>
-<dt>Raises:</dt><dd><p>ValueError: Raised when no spectra are provided as <cite>ss</cite> input.</p>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – Raised when no spectra are provided as <cite>ss</cite> input.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -480,8 +512,9 @@ verbose: whether or not model training output is printed to the terminal.</p>
 <dt class="sig sig-object py" id="riid.models.neural_nets.LabelProportionEstimator.load">
 <span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">load_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.neural_nets.LabelProportionEstimator.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Loads the model from a file.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>file_path: Defines a string representing the file path from which to load the model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file_path</strong> – Defines a string representing the file path from which to load the model.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -491,8 +524,9 @@ verbose: whether or not model training output is printed to the terminal.</p>
 <span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="riid.data.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.neural_nets.LabelProportionEstimator.predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Classifies the spectra in the provided SampleSet(s).</p>
 <p>Results are stored inside the first SampleSet’s prediction-related properties.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>ss: a SampleSet of <cite>n</cite> spectra where <cite>n</cite> &gt;= 1 and the spectra are gross or fg.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ss</strong> – a SampleSet of <cite>n</cite> spectra where <cite>n</cite> &gt;= 1 and the spectra are gross or fg.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -501,10 +535,12 @@ verbose: whether or not model training output is printed to the terminal.</p>
 <dt class="sig sig-object py" id="riid.models.neural_nets.LabelProportionEstimator.save">
 <span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">save_path</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#riid.models.neural_nets.LabelProportionEstimator.save" title="Permalink to this definition">¶</a></dt>
 <dd><p>Saves the model to a file.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>file_path: Defines a string representing the file path at which to save the model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file_path</strong> – Defines a string representing the file path at which to save the model.</p>
 </dd>
-<dt>Raises:</dt><dd><p>ValueError: Raised when the given file path already exists.</p>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – Raised when the given file path already exists.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -519,36 +555,35 @@ verbose: whether or not model training output is printed to the terminal.</p>
 <dt class="sig sig-object py" id="riid.models.neural_nets.MLPClassifier.fit">
 <span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="riid.data.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">bg_ss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="riid.data.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ss_input_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#riid.models.ModelInput" title="riid.models.ModelInput"><span class="pre">ModelInput</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">ModelInput.GrossSpectrum</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bg_ss_input_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#riid.models.ModelInput" title="riid.models.ModelInput"><span class="pre">ModelInput</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">ModelInput.BackgroundSpectrum</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">200</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epochs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validation_split</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callbacks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val_ss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="riid.data.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val_bg_ss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="riid.data.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">patience</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">15</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">es_monitor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'val_loss'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">es_mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'min'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">es_verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Isotope'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.neural_nets.MLPClassifier.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fits a model to the given SampleSet(s).</p>
-<dl>
-<dt>Args:</dt><dd><dl class="simple">
-<dt>ss: Defines a SampleSet of <cite>n</cite> spectra where <cite>n</cite> &gt;= 1 and the spectra are either</dt><dd><p>foreground (AKA, “net”) or gross.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ss</strong> – Defines a SampleSet of <cite>n</cite> spectra where <cite>n</cite> &gt;= 1 and the spectra are either
+foreground (AKA, “net”) or gross.</p></li>
+<li><p><strong>bg_ss</strong> – Defines a SampleSet of <cite>n</cite> spectra where <cite>n</cite> &gt;= 1 and the spectra are background.</p></li>
+<li><p><strong>batch_size</strong> – Defines the number of samples per gradient update.</p></li>
+<li><p><strong>epochs</strong> – Defines maximum number of training iterations.</p></li>
+<li><p><strong>validation_split</strong> – Defines the percentage of the training data to use as validation data.</p></li>
+<li><p><strong>callbacks</strong> – Defines a list of callbacks to be passed to TensorFlow Model.fit() method.</p></li>
+<li><p><strong>val_ss</strong> – Defines an optionally-provided provided validation set to be used instead of
+taking a portion of <cite>ss</cite> for validation.</p></li>
+<li><p><strong>val_bg_ss</strong> – Defines an optionally-provided validation set to be used as background for
+val_ss.</p></li>
+<li><p><strong>patience</strong> – Defines the number of epochs to wait for tf.keras.callbacks.EarlyStopping
+object.</p></li>
+<li><p><strong>es_monitor</strong> – Defines the quantity to be monitored for tf.keras.callbacks.EarlyStopping
+object.</p></li>
+<li><p><strong>es_mode</strong> – mode for tf.keras.callbacks.EarlyStopping object.</p></li>
+<li><p><strong>es_verbose</strong> – Determines verbosity level for tf.keras.callbacks.EarlyStopping object.</p></li>
+<li><p><strong>target_level</strong> – The source level to target for model output.</p></li>
+<li><p><strong>verbose</strong> – Determines whether or not model training output is printed to the terminal.</p></li>
+</ul>
 </dd>
-</dl>
-<p>bg_ss: Defines a SampleSet of <cite>n</cite> spectra where <cite>n</cite> &gt;= 1 and the spectra are background.
-batch_size: Defines the number of samples per gradient update.
-epochs: Defines maximum number of training iterations.
-validation_split: Defines the percentage of the training data to use as validation data.
-callbacks: Defines a list of callbacks to be passed to TensorFlow Model.fit() method.
-val_ss: Defines an optionally-provided provided validation set to be used instead of</p>
-<blockquote>
-<div><p>taking a portion of <cite>ss</cite> for validation.</p>
-</div></blockquote>
-<dl class="simple">
-<dt>val_bg_ss: Defines an optionally-provided validation set to be used as background for</dt><dd><p>val_ss.</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A tf.History object.</p>
 </dd>
-<dt>patience: Defines the number of epochs to wait for tf.keras.callbacks.EarlyStopping</dt><dd><p>object.</p>
-</dd>
-<dt>es_monitor: Defines the quantity to be monitored for tf.keras.callbacks.EarlyStopping</dt><dd><p>object.</p>
-</dd>
-</dl>
-<p>es_mode: mode for tf.keras.callbacks.EarlyStopping object.
-es_verbose: Determines verbosity level for tf.keras.callbacks.EarlyStopping object.
-target_level: The source level to target for model output.
-verbose: Determines whether or not model training output is printed to the terminal.</p>
-</dd>
-<dt>Returns:</dt><dd><p>A tf.History object.</p>
-</dd>
-<dt>Raises:</dt><dd><p>ValueError: Raised when no spectra are provided as <cite>ss</cite> input.</p>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – Raised when no spectra are provided as <cite>ss</cite> input.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -558,12 +593,13 @@ verbose: Determines whether or not model training output is printed to the termi
 <span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="riid.data.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">bg_ss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="riid.data.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.neural_nets.MLPClassifier.predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Classifies the spectra in the provided SampleSet(s).</p>
 <p>Results are stored inside the first SampleSet’s prediction-related properties.</p>
-<dl>
-<dt>Args:</dt><dd><dl class="simple">
-<dt>ss: Defines a SampleSet of <cite>n</cite> spectra where <cite>n</cite> &gt;= 1 and the spectra are either</dt><dd><p>foreground (AKA, “net”) or gross.</p>
-</dd>
-</dl>
-<p>bg_ss: Defines a SampleSet of <cite>n</cite> spectra where <cite>n</cite> &gt;= 1 and the spectra are background.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ss</strong> – Defines a SampleSet of <cite>n</cite> spectra where <cite>n</cite> &gt;= 1 and the spectra are either
+foreground (AKA, “net”) or gross.</p></li>
+<li><p><strong>bg_ss</strong> – Defines a SampleSet of <cite>n</cite> spectra where <cite>n</cite> &gt;= 1 and the spectra are background.</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -578,37 +614,36 @@ verbose: Determines whether or not model training output is printed to the termi
 <dt class="sig sig-object py" id="riid.models.neural_nets.MultiEventClassifier.fit">
 <span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list_of_ss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="riid.data.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_contributions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">200</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epochs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validation_split</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callbacks</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val_model_ss_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="riid.data.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val_model_target_contributions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">patience</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">15</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">es_monitor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'val_loss'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">es_mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'min'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">es_verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Isotope'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.neural_nets.MultiEventClassifier.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fits a model to the given SampleSet(s).</p>
-<dl>
-<dt>Args:</dt><dd><dl class="simple">
-<dt>list_of_ss: Defines a list of SampleSets which have prediction_probas populated from</dt><dd><p>single-event classifiers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>list_of_ss</strong> – Defines a list of SampleSets which have prediction_probas populated from
+single-event classifiers.</p></li>
+<li><p><strong>target_contributions</strong> – Defines a DataFrame of the contributions for each
+observation. Column titles are the desired label strings.</p></li>
+<li><p><strong>batch_size</strong> – Defines the number of samples per gradient update.</p></li>
+<li><p><strong>epochs</strong> – Defines the maximum number of training iterations.</p></li>
+<li><p><strong>validation_split</strong> – Defines the percentage of the training data to use as validation data.</p></li>
+<li><p><strong>callbacks</strong> – Defines a list of callbacks to be passed to TensorFlow Model.fit() method.</p></li>
+<li><p><strong>val_model_ss_list</strong> – Defines an optionally-provided validation set to be used instead of
+taking a portion of <cite>ss</cite> for validation.</p></li>
+<li><p><strong>val_model_target_contributions</strong> – Defines the target contributions to the model for
+each sample.</p></li>
+<li><p><strong>patience</strong> – Defines the number of epochs to wait for tf.keras.callbacks.EarlyStopping
+object.</p></li>
+<li><p><strong>es_monitor</strong> – Defintes the quantity to be monitored for tf.keras.callbacks.EarlyStopping
+object.</p></li>
+<li><p><strong>es_mode</strong> – Defines the mode for tf.keras.callbacks.EarlyStopping object.</p></li>
+<li><p><strong>es_verbose</strong> – Determines the verbosity level for tf.keras.callbacks.EarlyStopping object.</p></li>
+<li><p><strong>target_level</strong> – The source level to target for model output.</p></li>
+<li><p><strong>verbose</strong> – Determines whether or not the training output is printed to the terminal.</p></li>
+</ul>
 </dd>
-<dt>target_contributions: Defines a DataFrame of the contributions for each</dt><dd><p>observation. Column titles are the desired label strings.</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A tf.History object.</p>
 </dd>
-</dl>
-<p>batch_size: Defines the number of samples per gradient update.
-epochs: Defines the maximum number of training iterations.
-validation_split: Defines the percentage of the training data to use as validation data.
-callbacks: Defines a list of callbacks to be passed to TensorFlow Model.fit() method.
-val_model_ss_list: Defines an optionally-provided validation set to be used instead of</p>
-<blockquote>
-<div><p>taking a portion of <cite>ss</cite> for validation.</p>
-</div></blockquote>
-<dl class="simple">
-<dt>val_model_target_contributions: Defines the target contributions to the model for</dt><dd><p>each sample.</p>
-</dd>
-<dt>patience: Defines the number of epochs to wait for tf.keras.callbacks.EarlyStopping</dt><dd><p>object.</p>
-</dd>
-<dt>es_monitor: Defintes the quantity to be monitored for tf.keras.callbacks.EarlyStopping</dt><dd><p>object.</p>
-</dd>
-</dl>
-<p>es_mode: Defines the mode for tf.keras.callbacks.EarlyStopping object.
-es_verbose: Determines the verbosity level for tf.keras.callbacks.EarlyStopping object.
-target_level: The source level to target for model output.
-verbose: Determines whether or not the training output is printed to the terminal.</p>
-</dd>
-<dt>Returns:</dt><dd><p>A tf.History object.</p>
-</dd>
-<dt>Raises:</dt><dd><p>ValueError: Raised when no predictions are provided with <cite>list_of_ss</cite> input.</p>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – Raised when no predictions are provided with <cite>list_of_ss</cite> input.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -617,13 +652,13 @@ verbose: Determines whether or not the training output is printed to the termina
 <dt class="sig sig-object py" id="riid.models.neural_nets.MultiEventClassifier.predict">
 <span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list_of_ss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="riid.data.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#riid.models.neural_nets.MultiEventClassifier.predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Classifies the spectra in the provided SampleSet(s) based on each Sampleset’s results.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><dl class="simple">
-<dt>list_of_ss: Defines a list of SampleSets which had predictions made by</dt><dd><p>single-event models.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>list_of_ss</strong> – Defines a list of SampleSets which had predictions made by
+single-event models.</p>
 </dd>
-</dl>
-</dd>
-<dt>Returns:</dt><dd><p>A DataFrame of predicted results for the Sampleset(s).</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A DataFrame of predicted results for the Sampleset(s).</p>
 </dd>
 </dl>
 </dd></dl>
@@ -670,8 +705,9 @@ verbose: Determines whether or not the training output is printed to the termina
 <dt class="sig sig-object py" id="riid.models.TFModelBase.deserialize">
 <span class="sig-name descname"><span class="pre">deserialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stream</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.TFModelBase.deserialize" title="Permalink to this definition">¶</a></dt>
 <dd><p>Populates the current model with the give bytes object.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>stream: Defines a bytes object containing the model information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>stream</strong> – Defines a bytes object containing the model information.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -691,8 +727,9 @@ verbose: Determines whether or not the training output is printed to the termina
 <dt class="sig sig-object py" id="riid.models.TFModelBase.load">
 <span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.TFModelBase.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Loads the model from a file.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>file_path: Defines a string representing the file path from which to load the model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file_path</strong> – Defines a string representing the file path from which to load the model.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -711,10 +748,12 @@ verbose: Determines whether or not the training output is printed to the termina
 <dt class="sig sig-object py" id="riid.models.TFModelBase.save">
 <span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.TFModelBase.save" title="Permalink to this definition">¶</a></dt>
 <dd><p>Saves the model to a file.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>file_path: Defines a string representing the file path at which to save the model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file_path</strong> – Defines a string representing the file path at which to save the model.</p>
 </dd>
-<dt>Raises:</dt><dd><p>ValueError: Raised when the given file path already exists.</p>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – Raised when the given file path already exists.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -728,8 +767,9 @@ verbose: Determines whether or not the training output is printed to the termina
 <dt class="sig sig-object py" id="riid.models.TFModelBase.serialize">
 <span class="sig-name descname"><span class="pre">serialize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bytes</span></span></span><a class="headerlink" href="#riid.models.TFModelBase.serialize" title="Permalink to this definition">¶</a></dt>
 <dd><p>Converts the model to a bytes object.</p>
-<dl class="simple">
-<dt>Returns:</dt><dd><p>A bytes object representing the binary of an HDF file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A bytes object representing the binary of an HDF file.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -743,9 +783,12 @@ verbose: Determines whether or not the training output is printed to the termina
 <dt class="sig sig-object py" id="riid.models.TFModelBase.to_tflite">
 <span class="sig-name descname"><span class="pre">to_tflite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quantize</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.TFModelBase.to_tflite" title="Permalink to this definition">¶</a></dt>
 <dd><p>Converts the model to a TFLite model and optionally saves it to a file or quantizes it.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>file_path: Defines a string for the file path to which to save the model.
-quantize: Determines whether or not to apply quantization to the TFLite model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_path</strong> – Defines a string for the file path to which to save the model.</p></li>
+<li><p><strong>quantize</strong> – Determines whether or not to apply quantization to the TFLite model.</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -767,7 +810,7 @@ quantize: Determines whether or not to apply quantization to the TFLite model.</
       
     </p>
     <p>
-        &copy; Copyright 2023, Alyshia N. Bustos.<br/>
+        &copy; Copyright 2023, Alyshia B. and Tyler Morrow.<br/>
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.2.1.<br/>
     </p>
   </div>
