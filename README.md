@@ -1,6 +1,3 @@
-# anbusto.github.io
-
-
 ## Requirements
 You will need to install the following:
 
@@ -10,7 +7,7 @@ sphinx_bootstrap_theme
 ```
 pip install -U sphinx
 pip install sphinx_bootstrap_theme  
-pip install myst-parser    
+pip install recommonmark   
 
 ```
 

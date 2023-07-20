@@ -22,4 +22,4 @@ Contents
    :maxdepth: 2
 
    usage
-   riid
+   modules
