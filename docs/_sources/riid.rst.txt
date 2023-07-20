@@ -14,32 +14,11 @@ Subpackages
 Submodules
 ----------
 
-riid.anomaly module
--------------------
+.. toctree::
+   :maxdepth: 4
 
-.. automodule:: riid.anomaly
-   :members:
-   :undoc-members:
-   :inherited-members:
-   :show-inheritance:
-
-riid.test module
-----------------
-
-.. automodule:: riid.test
-   :members:
-   :undoc-members:
-   :inherited-members:
-   :show-inheritance:
-
-riid.visualize module
----------------------
-
-.. automodule:: riid.visualize
-   :members:
-   :undoc-members:
-   :inherited-members:
-   :show-inheritance:
+   riid.anomaly
+   riid.visualize
 
 Module contents
 ---------------
@@ -47,5 +26,4 @@ Module contents
 .. automodule:: riid
    :members:
    :undoc-members:
-   :inherited-members:
    :show-inheritance:

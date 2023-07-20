@@ -4,21 +4,11 @@ riid.gadras package
 Submodules
 ----------
 
-riid.gadras.api module
-----------------------
+.. toctree::
+   :maxdepth: 4
 
-.. automodule:: riid.gadras.api
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-riid.gadras.pcf module
-----------------------
-
-.. automodule:: riid.gadras.pcf
-   :members:
-   :undoc-members:
-   :show-inheritance:
+   riid.gadras.api
+   riid.gadras.pcf
 
 Module contents
 ---------------

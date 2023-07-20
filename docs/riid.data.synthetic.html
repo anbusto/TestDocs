@@ -13,7 +13,7 @@
     <script src="_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="riid.gadras package" href="riid.gadras.html" />
+    <link rel="next" title="riid.data.synthetic.passby module" href="riid.data.synthetic.passby.html" />
     <link rel="prev" title="riid.data package" href="riid.data.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -71,48 +71,6 @@
       aria-labelledby="dLabelLocalToc"><ul>
 <li><a class="reference internal" href="#">riid.data.synthetic package</a><ul>
 <li><a class="reference internal" href="#submodules">Submodules</a></li>
-<li><a class="reference internal" href="#module-riid.data.synthetic.passby">riid.data.synthetic.passby module</a><ul>
-<li><a class="reference internal" href="#riid.data.synthetic.passby.PassbySynthesizer"><code class="docutils literal notranslate"><span class="pre">PassbySynthesizer</span></code></a><ul>
-<li><a class="reference internal" href="#riid.data.synthetic.passby.PassbySynthesizer.dwell_time_function"><code class="docutils literal notranslate"><span class="pre">PassbySynthesizer.dwell_time_function</span></code></a></li>
-<li><a class="reference internal" href="#riid.data.synthetic.passby.PassbySynthesizer.dwell_time_function_args"><code class="docutils literal notranslate"><span class="pre">PassbySynthesizer.dwell_time_function_args</span></code></a></li>
-<li><a class="reference internal" href="#riid.data.synthetic.passby.PassbySynthesizer.events_per_seed"><code class="docutils literal notranslate"><span class="pre">PassbySynthesizer.events_per_seed</span></code></a></li>
-<li><a class="reference internal" href="#riid.data.synthetic.passby.PassbySynthesizer.fwhm_function"><code class="docutils literal notranslate"><span class="pre">PassbySynthesizer.fwhm_function</span></code></a></li>
-<li><a class="reference internal" href="#riid.data.synthetic.passby.PassbySynthesizer.fwhm_function_args"><code class="docutils literal notranslate"><span class="pre">PassbySynthesizer.fwhm_function_args</span></code></a></li>
-<li><a class="reference internal" href="#riid.data.synthetic.passby.PassbySynthesizer.generate"><code class="docutils literal notranslate"><span class="pre">PassbySynthesizer.generate()</span></code></a></li>
-<li><a class="reference internal" href="#riid.data.synthetic.passby.PassbySynthesizer.min_fraction"><code class="docutils literal notranslate"><span class="pre">PassbySynthesizer.min_fraction</span></code></a></li>
-<li><a class="reference internal" href="#riid.data.synthetic.passby.PassbySynthesizer.sample_interval"><code class="docutils literal notranslate"><span class="pre">PassbySynthesizer.sample_interval</span></code></a></li>
-<li><a class="reference internal" href="#riid.data.synthetic.passby.PassbySynthesizer.snr_function"><code class="docutils literal notranslate"><span class="pre">PassbySynthesizer.snr_function</span></code></a></li>
-<li><a class="reference internal" href="#riid.data.synthetic.passby.PassbySynthesizer.snr_function_args"><code class="docutils literal notranslate"><span class="pre">PassbySynthesizer.snr_function_args</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-riid.data.synthetic.seed">riid.data.synthetic.seed module</a><ul>
-<li><a class="reference internal" href="#riid.data.synthetic.seed.SeedMixer"><code class="docutils literal notranslate"><span class="pre">SeedMixer</span></code></a><ul>
-<li><a class="reference internal" href="#riid.data.synthetic.seed.SeedMixer.generate"><code class="docutils literal notranslate"><span class="pre">SeedMixer.generate()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#riid.data.synthetic.seed.SeedSynthesizer"><code class="docutils literal notranslate"><span class="pre">SeedSynthesizer</span></code></a><ul>
-<li><a class="reference internal" href="#riid.data.synthetic.seed.SeedSynthesizer.generate"><code class="docutils literal notranslate"><span class="pre">SeedSynthesizer.generate()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#riid.data.synthetic.seed.bidict"><code class="docutils literal notranslate"><span class="pre">bidict</span></code></a></li>
-<li><a class="reference internal" href="#riid.data.synthetic.seed.get_choices"><code class="docutils literal notranslate"><span class="pre">get_choices()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-riid.data.synthetic.static">riid.data.synthetic.static module</a><ul>
-<li><a class="reference internal" href="#riid.data.synthetic.static.NoSeedError"><code class="docutils literal notranslate"><span class="pre">NoSeedError</span></code></a></li>
-<li><a class="reference internal" href="#riid.data.synthetic.static.StaticSynthesizer"><code class="docutils literal notranslate"><span class="pre">StaticSynthesizer</span></code></a><ul>
-<li><a class="reference internal" href="#riid.data.synthetic.static.StaticSynthesizer.generate"><code class="docutils literal notranslate"><span class="pre">StaticSynthesizer.generate()</span></code></a></li>
-<li><a class="reference internal" href="#riid.data.synthetic.static.StaticSynthesizer.live_time_function"><code class="docutils literal notranslate"><span class="pre">StaticSynthesizer.live_time_function</span></code></a></li>
-<li><a class="reference internal" href="#riid.data.synthetic.static.StaticSynthesizer.live_time_function_args"><code class="docutils literal notranslate"><span class="pre">StaticSynthesizer.live_time_function_args</span></code></a></li>
-<li><a class="reference internal" href="#riid.data.synthetic.static.StaticSynthesizer.samples_per_seed"><code class="docutils literal notranslate"><span class="pre">StaticSynthesizer.samples_per_seed</span></code></a></li>
-<li><a class="reference internal" href="#riid.data.synthetic.static.StaticSynthesizer.snr_function"><code class="docutils literal notranslate"><span class="pre">StaticSynthesizer.snr_function</span></code></a></li>
-<li><a class="reference internal" href="#riid.data.synthetic.static.StaticSynthesizer.snr_function_args"><code class="docutils literal notranslate"><span class="pre">StaticSynthesizer.snr_function_args</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
 <li><a class="reference internal" href="#module-riid.data.synthetic">Module contents</a><ul>
 <li><a class="reference internal" href="#riid.data.synthetic.InvalidSeedError"><code class="docutils literal notranslate"><span class="pre">InvalidSeedError</span></code></a></li>
 <li><a class="reference internal" href="#riid.data.synthetic.Synthesizer"><code class="docutils literal notranslate"><span class="pre">Synthesizer</span></code></a><ul>
@@ -146,7 +104,7 @@
     </a>
   </li>
   <li>
-    <a href="riid.gadras.html" title="Next Chapter: riid.gadras package"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">riid.gadras package &raquo;</span>
+    <a href="riid.data.synthetic.passby.html" title="Next Chapter: riid.data.synthetic.passby module"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">riid.data.syn... &raquo;</span>
     </a>
   </li>
               
@@ -184,315 +142,52 @@
 <h1>riid.data.synthetic package<a class="headerlink" href="#riid-data-synthetic-package" title="Permalink to this heading">¶</a></h1>
 <section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">¶</a></h2>
-</section>
-<section id="module-riid.data.synthetic.passby">
-<span id="riid-data-synthetic-passby-module"></span><h2>riid.data.synthetic.passby module<a class="headerlink" href="#module-riid.data.synthetic.passby" title="Permalink to this heading">¶</a></h2>
-<p>This modules contains utilities for synthesizing gamma spectra for a source moving past a
-detector.</p>
-<dl class="py class">
-<dt class="sig sig-object py" id="riid.data.synthetic.passby.PassbySynthesizer">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">riid.data.synthetic.passby.</span></span><span class="sig-name descname"><span class="pre">PassbySynthesizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">events_per_seed:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_interval:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.125</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dwell_time_function:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'uniform'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dwell_time_function_args=(0.25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">8.0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fwhm_function:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'discrete'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fwhm_function_args=(1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">snr_function:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'uniform'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">snr_function_args=(1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">10.0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_fraction:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.005</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize_sources:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bg_cps:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">300.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">apply_poisson_noise:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_fg:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_bg:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_gross:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rng:</span> <span class="pre">~numpy.random._generator.Generator</span> <span class="pre">=</span> <span class="pre">Generator(PCG64)</span> <span class="pre">at</span> <span class="pre">0x23F14F14C80</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.data.synthetic.passby.PassbySynthesizer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#riid.data.synthetic.Synthesizer" title="riid.data.synthetic.Synthesizer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Synthesizer</span></code></a></p>
-<p>Creates synthetic pass-by events as sequences of gamma spectra.</p>
-<dl class="py property">
-<dt class="sig sig-object py" id="riid.data.synthetic.passby.PassbySynthesizer.dwell_time_function">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dwell_time_function</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#riid.data.synthetic.passby.PassbySynthesizer.dwell_time_function" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get or set the function used to randomly sample the desired dwell time space.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Raises<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – Raised when an unsupported function type is provided.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="riid.data.synthetic.passby.PassbySynthesizer.dwell_time_function_args">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dwell_time_function_args</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span></em><a class="headerlink" href="#riid.data.synthetic.passby.PassbySynthesizer.dwell_time_function_args" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get or set the dwell time space to be randomly sampled.</p>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="riid.data.synthetic.passby.PassbySynthesizer.events_per_seed">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">events_per_seed</span></span><a class="headerlink" href="#riid.data.synthetic.passby.PassbySynthesizer.events_per_seed" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get or set the number of samples to create per seed (excluding the background seed).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Raises<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>TypeError</strong> – Raised when provided _events_per_seed value is not of type int or dict.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="riid.data.synthetic.passby.PassbySynthesizer.fwhm_function">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fwhm_function</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#riid.data.synthetic.passby.PassbySynthesizer.fwhm_function" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get or set the function used to randomly sample the desired full-width-half-max (FWHM)
-ratio space.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Raises<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – Raised when an unsupported function type is provided.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="riid.data.synthetic.passby.PassbySynthesizer.fwhm_function_args">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fwhm_function_args</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span></em><a class="headerlink" href="#riid.data.synthetic.passby.PassbySynthesizer.fwhm_function_args" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get or set the full-width-half-max (FWHM) space to be randomly sampled.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="riid.data.synthetic.passby.PassbySynthesizer.generate">
-<span class="sig-name descname"><span class="pre">generate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fg_seeds_ss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="riid.data.sampleset.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">bg_seeds_ss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="riid.data.sampleset.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="riid.data.sampleset.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="riid.data.sampleset.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="riid.data.sampleset.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#riid.data.synthetic.passby.PassbySynthesizer.generate" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generate a list of sample sets where each SampleSets represents a pass-by as a
-sequence of spectra.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>fg_seeds_ss</strong> – spectra normalized by total counts to be used
-as the source component(s) of spectra.</p></li>
-<li><p><strong>bg_seeds_ss</strong> – spectra normalized by total counts to be used
-as the background components of gross spectra.</p></li>
-<li><p><strong>verbose</strong> – whether to display output from synthesis.</p></li>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="riid.data.synthetic.passby.html">riid.data.synthetic.passby module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="riid.data.synthetic.passby.html#riid.data.synthetic.passby.PassbySynthesizer"><code class="docutils literal notranslate"><span class="pre">PassbySynthesizer</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="riid.data.synthetic.passby.html#riid.data.synthetic.passby.PassbySynthesizer.dwell_time_function"><code class="docutils literal notranslate"><span class="pre">PassbySynthesizer.dwell_time_function</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="riid.data.synthetic.passby.html#riid.data.synthetic.passby.PassbySynthesizer.dwell_time_function_args"><code class="docutils literal notranslate"><span class="pre">PassbySynthesizer.dwell_time_function_args</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="riid.data.synthetic.passby.html#riid.data.synthetic.passby.PassbySynthesizer.events_per_seed"><code class="docutils literal notranslate"><span class="pre">PassbySynthesizer.events_per_seed</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="riid.data.synthetic.passby.html#riid.data.synthetic.passby.PassbySynthesizer.fwhm_function"><code class="docutils literal notranslate"><span class="pre">PassbySynthesizer.fwhm_function</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="riid.data.synthetic.passby.html#riid.data.synthetic.passby.PassbySynthesizer.fwhm_function_args"><code class="docutils literal notranslate"><span class="pre">PassbySynthesizer.fwhm_function_args</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="riid.data.synthetic.passby.html#riid.data.synthetic.passby.PassbySynthesizer.generate"><code class="docutils literal notranslate"><span class="pre">PassbySynthesizer.generate()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="riid.data.synthetic.passby.html#riid.data.synthetic.passby.PassbySynthesizer.min_fraction"><code class="docutils literal notranslate"><span class="pre">PassbySynthesizer.min_fraction</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="riid.data.synthetic.passby.html#riid.data.synthetic.passby.PassbySynthesizer.sample_interval"><code class="docutils literal notranslate"><span class="pre">PassbySynthesizer.sample_interval</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="riid.data.synthetic.passby.html#riid.data.synthetic.passby.PassbySynthesizer.snr_function"><code class="docutils literal notranslate"><span class="pre">PassbySynthesizer.snr_function</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="riid.data.synthetic.passby.html#riid.data.synthetic.passby.PassbySynthesizer.snr_function_args"><code class="docutils literal notranslate"><span class="pre">PassbySynthesizer.snr_function_args</span></code></a></li>
 </ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>A list of tuples of SampleSets where each tuple represents a pass-by event
-captured in any or all of three ways: foreground, background, or gross.</p>
-</dd>
-<dt class="field-odd">Raises<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>None.</strong> – </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="riid.data.synthetic.passby.PassbySynthesizer.min_fraction">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">min_fraction</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#riid.data.synthetic.passby.PassbySynthesizer.min_fraction" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get or set the percentage of the peak amplitude to exclude.</p>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="riid.data.synthetic.passby.PassbySynthesizer.sample_interval">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sample_interval</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#riid.data.synthetic.passby.PassbySynthesizer.sample_interval" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get or set the sample interval (in seconds) at which the events are simulated.</p>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="riid.data.synthetic.passby.PassbySynthesizer.snr_function">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">snr_function</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#riid.data.synthetic.passby.PassbySynthesizer.snr_function" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get or set the function used to randomly sample the desired signal-to-noise
-(SNR) ratio space.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Raises<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – Raised when an unsupported function type is provided.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="riid.data.synthetic.passby.PassbySynthesizer.snr_function_args">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">snr_function_args</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span></em><a class="headerlink" href="#riid.data.synthetic.passby.PassbySynthesizer.snr_function_args" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get or set the signal-to-noise (SNR) space to be randomly sampled.</p>
-</dd></dl>
-
-</dd></dl>
-
-</section>
-<section id="module-riid.data.synthetic.seed">
-<span id="riid-data-synthetic-seed-module"></span><h2>riid.data.synthetic.seed module<a class="headerlink" href="#module-riid.data.synthetic.seed" title="Permalink to this heading">¶</a></h2>
-<p>This modules contains utilities for generating synthetic gamma spectrum templates from GADRAS.</p>
-<dl class="py class">
-<dt class="sig sig-object py" id="riid.data.synthetic.seed.SeedMixer">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">riid.data.synthetic.seed.</span></span><span class="sig-name descname"><span class="pre">SeedMixer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seeds_ss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="riid.data.sampleset.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">mixture_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dirichlet_alpha</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restricted_isotope_pairs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.data.synthetic.seed.SeedMixer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="riid.data.synthetic.seed.SeedMixer.generate">
-<span class="sig-name descname"><span class="pre">generate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_samples</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="riid.data.sampleset.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a></span></span><a class="headerlink" href="#riid.data.synthetic.seed.SeedMixer.generate" title="Permalink to this definition">¶</a></dt>
-<dd><p>Computes random mixtures of seeds at the isotope level.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="riid.data.synthetic.seed.SeedSynthesizer">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">riid.data.synthetic.seed.</span></span><span class="sig-name descname"><span class="pre">SeedSynthesizer</span></span><a class="headerlink" href="#riid.data.synthetic.seed.SeedSynthesizer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="riid.data.synthetic.seed.SeedSynthesizer.generate">
-<span class="sig-name descname"><span class="pre">generate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize_sources</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dry_run</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="riid.data.sampleset.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a></span></span><a class="headerlink" href="#riid.data.synthetic.seed.SeedSynthesizer.generate" title="Permalink to this definition">¶</a></dt>
-<dd><p>Produces a SampleSet containing foreground and/or background seeds using GADRAS based
-on the given inject configuration.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>config</strong> – a dictionary is treated as the actual config containing the needed information
-to perform injects via the GADRAS API, while a string is treated as a path to a YAML
-file which deserialized as a dictionary.</p></li>
-<li><p><strong>normalize_sources</strong> – whether to divide each row of the SampleSet’s sources
-DataFrame by its sum. Defaults to True.</p></li>
-<li><p><strong>dry_run</strong> – when False, actually performs inject(s), otherwise simply reports info about
-what would happen.  Defaults to False.</p></li>
-<li><p><strong>verbose</strong> – when True, displays extra output.</p></li>
+</li>
 </ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>A SampleSet containing foreground and/or background seeds generated by GADRAS.</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="riid.data.synthetic.seed.bidict">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">riid.data.synthetic.seed.</span></span><span class="sig-name descname"><span class="pre">bidict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.data.synthetic.seed.bidict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></p>
-<p>Bi-directional hash table to perform efficient reverse lookups.</p>
-<p>Source: <a class="reference external" href="https://stackoverflow.com/a/21894086">https://stackoverflow.com/a/21894086</a></p>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="riid.data.synthetic.seed.get_choices">
-<span class="sig-prename descclassname"><span class="pre">riid.data.synthetic.seed.</span></span><span class="sig-name descname"><span class="pre">get_choices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">choices_so_far</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options_probas</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restricted_pairs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="riid.data.synthetic.seed.html#riid.data.synthetic.seed.bidict" title="riid.data.synthetic.seed.bidict"><span class="pre">bidict</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_choices_remaining</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rng</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Generator</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.data.synthetic.seed.get_choices" title="Permalink to this definition">¶</a></dt>
-<dd><dl>
-<dt>Makes a random choice from the given options until the desired number of choices</dt><dd><p>is reached.</p>
-<p>After a choice is made, future options are adjusted as follows:
-- The current choice itself is excluded
-- If the current choice is not allowed to co-exist with other options,</p>
-<blockquote>
-<div><p>those options are also exclude</p>
-</div></blockquote>
-</dd>
-</dl>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>choices_so_far</strong> – the list being build up over time with random choices from <cite>options</cite></p></li>
-<li><p><strong>options</strong> – the list being reduced over time as choices and restricted choices are removed</p></li>
-<li><p><strong>options_probas</strong> – the probability assigned to each option</p></li>
-<li><p><strong>restricted_pairs</strong> – a bi-directional hash table allowing us to quickly find restrictions
-regardless of the order in which the pair has been specified</p></li>
-<li><p><strong>n_choices_remaining</strong> – the number of choices remaining</p></li>
-<li><p><strong>rng</strong> – a NumPy random number generator, useful for experiment repeatability</p></li>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="riid.data.synthetic.seed.html">riid.data.synthetic.seed module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="riid.data.synthetic.seed.html#riid.data.synthetic.seed.SeedMixer"><code class="docutils literal notranslate"><span class="pre">SeedMixer</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="riid.data.synthetic.seed.html#riid.data.synthetic.seed.SeedMixer.generate"><code class="docutils literal notranslate"><span class="pre">SeedMixer.generate()</span></code></a></li>
 </ul>
-</dd>
-<dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>ValueError</strong> – if the number of choices desired exceeds the number of options available</p>
-</dd>
-</dl>
-</dd></dl>
-
-</section>
-<section id="module-riid.data.synthetic.static">
-<span id="riid-data-synthetic-static-module"></span><h2>riid.data.synthetic.static module<a class="headerlink" href="#module-riid.data.synthetic.static" title="Permalink to this heading">¶</a></h2>
-<p>This modules contains utilities for synthesizing gamma spectra as static collections.</p>
-<dl class="py exception">
-<dt class="sig sig-object py" id="riid.data.synthetic.static.NoSeedError">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">riid.data.synthetic.static.</span></span><span class="sig-name descname"><span class="pre">NoSeedError</span></span><a class="headerlink" href="#riid.data.synthetic.static.NoSeedError" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="riid.data.synthetic.static.StaticSynthesizer">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">riid.data.synthetic.static.</span></span><span class="sig-name descname"><span class="pre">StaticSynthesizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">samples_per_seed:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">live_time_function:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'uniform'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">live_time_function_args=(0.25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">8.0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">snr_function:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'uniform'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">snr_function_args=(0.01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">100.0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bg_cps:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">300.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">apply_poisson_noise:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize_sources:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_fg:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_bg:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_gross:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rng:</span> <span class="pre">~numpy.random._generator.Generator</span> <span class="pre">=</span> <span class="pre">Generator(PCG64)</span> <span class="pre">at</span> <span class="pre">0x23F619B4F20</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.data.synthetic.static.StaticSynthesizer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#riid.data.synthetic.Synthesizer" title="riid.data.synthetic.Synthesizer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Synthesizer</span></code></a></p>
-<p>Creates a set of synthetic gamma spectra from seed templates.</p>
-<p>The “seed” templates are count-normalized spectra representing signature shapes of interest.
-The static synthesizer takes the seeds you have chosen and scales them up in terms of three
-components:
-- live time (the amount of time over which the spectrum was collected/integrated)
-- signal-to-noise ratio (SNR) (source counts divided by the square root of background counts,</p>
-<blockquote>
-<div><p>i.e., the number of standard deviations above background)</p>
-</div></blockquote>
-<ul class="simple">
-<li><p>a fixed background rate (as a reference point)</p></li>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="riid.data.synthetic.seed.html#riid.data.synthetic.seed.SeedSynthesizer"><code class="docutils literal notranslate"><span class="pre">SeedSynthesizer</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="riid.data.synthetic.seed.html#riid.data.synthetic.seed.SeedSynthesizer.generate"><code class="docutils literal notranslate"><span class="pre">SeedSynthesizer.generate()</span></code></a></li>
 </ul>
-<p>The static synthesizer is meant to capture various count rates from sources in a statically
-placed detector scenario where the background can be characterized (and usually subtracted).
-Effects related to pile-up, scattering, or other shape-changing outcomes must be represented
-in the seeds.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="riid.data.synthetic.static.StaticSynthesizer.generate">
-<span class="sig-name descname"><span class="pre">generate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fg_seeds_ss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="riid.data.sampleset.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">bg_seeds_ss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="riid.data.sampleset.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="riid.data.sampleset.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="riid.data.sampleset.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="riid.data.sampleset.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#riid.data.synthetic.static.StaticSynthesizer.generate" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generate a sample set of gamma spectra from the given config.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>fg_seeds_ss</strong> – spectra normalized by total counts to be used
-as the source component(s) of spectra.</p></li>
-<li><p><strong>bg_seeds_ss</strong> – spectra normalized by total counts to be used
-as the background components of gross spectra.</p></li>
-<li><p><strong>fixed_bg_ss</strong> – a single spectrum to be used as a fixed (or intrinsic)
-background source; live time information must be present.
-This spectrum is used to represent things like:
-- cosmic background (which is location-specific);
-- one or more calibration sources; or
-- intrinsic counts from the detector material (e.g., LaBr3).
-This spectrum will form the base of each background spectrum where seeds in
-<cite>bg_seeds_ss</cite>, which represent mixtures of K-U-T, get added on top.
-Note: this spectrum is not considered part of the <cite>bg_cps</cite> parameter,
-but is instead added on top of it. This parameter is optional.</p></li>
-<li><p><strong>verbose</strong> – whether to display output from synthesis.</p></li>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="riid.data.synthetic.seed.html#riid.data.synthetic.seed.bidict"><code class="docutils literal notranslate"><span class="pre">bidict</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="riid.data.synthetic.seed.html#riid.data.synthetic.seed.get_choices"><code class="docutils literal notranslate"><span class="pre">get_choices()</span></code></a></li>
 </ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>A tuple of synthetic foreground, background, and gross spectra.</p>
-</dd>
-<dt class="field-odd">Raises<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – Raised when a seed spectrum does not sum close to 1.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="riid.data.synthetic.static.StaticSynthesizer.live_time_function">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">live_time_function</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#riid.data.synthetic.static.StaticSynthesizer.live_time_function" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get or set the function used to randomly sample the desired live time space.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Raises<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – Raised when an unsupported function type is provided.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="riid.data.synthetic.static.StaticSynthesizer.live_time_function_args">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">live_time_function_args</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span></em><a class="headerlink" href="#riid.data.synthetic.static.StaticSynthesizer.live_time_function_args" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get or set the live time space to be randomly sampled.</p>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="riid.data.synthetic.static.StaticSynthesizer.samples_per_seed">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">samples_per_seed</span></span><a class="headerlink" href="#riid.data.synthetic.static.StaticSynthesizer.samples_per_seed" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get or set the number of samples to create per seed (excluding the background seed).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Raises<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>TypeError</strong> – Raised if provided samples_per_seed is not an integer.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="riid.data.synthetic.static.StaticSynthesizer.snr_function">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">snr_function</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#riid.data.synthetic.static.StaticSynthesizer.snr_function" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get or set the function used to randomly sample the desired signal-to-noise (SNR)
-ratio space.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Raises<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – Raised when an unsupported function type is provided.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="riid.data.synthetic.static.StaticSynthesizer.snr_function_args">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">snr_function_args</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span></em><a class="headerlink" href="#riid.data.synthetic.static.StaticSynthesizer.snr_function_args" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get or set the signal-to-noise (SNR) space to be randomly sampled.</p>
-</dd></dl>
-
-</dd></dl>
-
+</li>
+<li class="toctree-l1"><a class="reference internal" href="riid.data.synthetic.static.html">riid.data.synthetic.static module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="riid.data.synthetic.static.html#riid.data.synthetic.static.NoSeedError"><code class="docutils literal notranslate"><span class="pre">NoSeedError</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="riid.data.synthetic.static.html#riid.data.synthetic.static.StaticSynthesizer"><code class="docutils literal notranslate"><span class="pre">StaticSynthesizer</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="riid.data.synthetic.static.html#riid.data.synthetic.static.StaticSynthesizer.generate"><code class="docutils literal notranslate"><span class="pre">StaticSynthesizer.generate()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="riid.data.synthetic.static.html#riid.data.synthetic.static.StaticSynthesizer.live_time_function"><code class="docutils literal notranslate"><span class="pre">StaticSynthesizer.live_time_function</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="riid.data.synthetic.static.html#riid.data.synthetic.static.StaticSynthesizer.live_time_function_args"><code class="docutils literal notranslate"><span class="pre">StaticSynthesizer.live_time_function_args</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="riid.data.synthetic.static.html#riid.data.synthetic.static.StaticSynthesizer.samples_per_seed"><code class="docutils literal notranslate"><span class="pre">StaticSynthesizer.samples_per_seed</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="riid.data.synthetic.static.html#riid.data.synthetic.static.StaticSynthesizer.snr_function"><code class="docutils literal notranslate"><span class="pre">StaticSynthesizer.snr_function</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="riid.data.synthetic.static.html#riid.data.synthetic.static.StaticSynthesizer.snr_function_args"><code class="docutils literal notranslate"><span class="pre">StaticSynthesizer.snr_function_args</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
 </section>
 <section id="module-riid.data.synthetic">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-riid.data.synthetic" title="Permalink to this heading">¶</a></h2>
@@ -505,7 +200,7 @@ ratio space.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="riid.data.synthetic.Synthesizer">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">riid.data.synthetic.</span></span><span class="sig-name descname"><span class="pre">Synthesizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bg_cps:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">300.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">apply_poisson_noise:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize_sources:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_fg:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_bg:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_gross:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rng:</span> <span class="pre">~numpy.random._generator.Generator</span> <span class="pre">=</span> <span class="pre">Generator(PCG64)</span> <span class="pre">at</span> <span class="pre">0x23F14F14740</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.data.synthetic.Synthesizer" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">riid.data.synthetic.</span></span><span class="sig-name descname"><span class="pre">Synthesizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bg_cps:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">300.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">apply_poisson_noise:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize_sources:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_fg:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_bg:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_gross:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rng:</span> <span class="pre">~numpy.random._generator.Generator</span> <span class="pre">=</span> <span class="pre">Generator(PCG64)</span> <span class="pre">at</span> <span class="pre">0x166DD68C900</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.data.synthetic.Synthesizer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Base synthesizer.</p>
 <dl class="py attribute">
@@ -527,7 +222,7 @@ ratio space.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="riid.data.synthetic.get_distribution_values">
-<span class="sig-prename descclassname"><span class="pre">riid.data.synthetic.</span></span><span class="sig-name descname"><span class="pre">get_distribution_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">function:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">function_args:</span> <span class="pre">~typing.Any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_values:</span> <span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rng:</span> <span class="pre">~numpy.random._generator.Generator</span> <span class="pre">=</span> <span class="pre">Generator(PCG64)</span> <span class="pre">at</span> <span class="pre">0x23F14F14900</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.data.synthetic.get_distribution_values" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">riid.data.synthetic.</span></span><span class="sig-name descname"><span class="pre">get_distribution_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">function:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">function_args:</span> <span class="pre">~typing.Any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_values:</span> <span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rng:</span> <span class="pre">~numpy.random._generator.Generator</span> <span class="pre">=</span> <span class="pre">Generator(PCG64)</span> <span class="pre">at</span> <span class="pre">0x166DD68DE00</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.data.synthetic.get_distribution_values" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the values for the synthetic data distribution based
 on the sampling type used.</p>
 <dl class="field-list simple">
@@ -551,7 +246,7 @@ passed to the function, if any.</p></li>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="riid.data.synthetic.get_dummy_seeds">
-<span class="sig-prename descclassname"><span class="pre">riid.data.synthetic.</span></span><span class="sig-name descname"><span class="pre">get_dummy_seeds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_channels:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">512</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">live_time:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">count_rate:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rng:</span> <span class="pre">~numpy.random._generator.Generator</span> <span class="pre">=</span> <span class="pre">Generator(PCG64)</span> <span class="pre">at</span> <span class="pre">0x23F14F143C0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="riid.data.sampleset.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a></span></span><a class="headerlink" href="#riid.data.synthetic.get_dummy_seeds" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">riid.data.synthetic.</span></span><span class="sig-name descname"><span class="pre">get_dummy_seeds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_channels:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">512</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">live_time:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">count_rate:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rng:</span> <span class="pre">~numpy.random._generator.Generator</span> <span class="pre">=</span> <span class="pre">Generator(PCG64)</span> <span class="pre">at</span> <span class="pre">0x166DD68E180</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="riid.data.sampleset.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a></span></span><a class="headerlink" href="#riid.data.synthetic.get_dummy_seeds" title="Permalink to this definition">¶</a></dt>
 <dd><p>Builds a random, dummy SampleSet for demonstration or test purposes.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>

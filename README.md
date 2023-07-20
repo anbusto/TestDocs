@@ -9,7 +9,8 @@ sphinx_bootstrap_theme
 
 ```
 pip install -U sphinx
-pip install sphinx_bootstrap_theme      
+pip install sphinx_bootstrap_theme  
+pip install myst-parser    
 
 ```
 

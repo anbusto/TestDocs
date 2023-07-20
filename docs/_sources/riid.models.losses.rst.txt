@@ -4,13 +4,10 @@ riid.models.losses package
 Submodules
 ----------
 
-riid.models.losses.sparsemax module
------------------------------------
+.. toctree::
+   :maxdepth: 4
 
-.. automodule:: riid.models.losses.sparsemax
-   :members:
-   :undoc-members:
-   :show-inheritance:
+   riid.models.losses.sparsemax
 
 Module contents
 ---------------

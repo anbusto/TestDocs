@@ -13,6 +13,8 @@
     <script src="_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="riid.data.synthetic.seed module" href="riid.data.synthetic.seed.html" />
+    <link rel="prev" title="riid.data.synthetic package" href="riid.data.synthetic.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -50,10 +52,10 @@
      href="index.html">Site <b class="caret"></b></a>
   <ul class="dropdown-menu globaltoc"
       role="menu"
-      aria-labelledby="dLabelGlobalToc"><ul>
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage.html#installation">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="riid.html">riid package</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="riid.html">riid package</a></li>
 </ul>
 </ul>
 </li>
@@ -91,6 +93,14 @@
             
               
                 
+  <li>
+    <a href="riid.data.synthetic.html" title="Previous Chapter: riid.data.synthetic package"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; riid.data.syn...</span>
+    </a>
+  </li>
+  <li>
+    <a href="riid.data.synthetic.seed.html" title="Next Chapter: riid.data.synthetic.seed module"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">riid.data.syn... &raquo;</span>
+    </a>
+  </li>
               
             
             
@@ -128,7 +138,7 @@
 detector.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="riid.data.synthetic.passby.PassbySynthesizer">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">riid.data.synthetic.passby.</span></span><span class="sig-name descname"><span class="pre">PassbySynthesizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">events_per_seed:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_interval:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.125</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dwell_time_function:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'uniform'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dwell_time_function_args=(0.25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">8.0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fwhm_function:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'discrete'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fwhm_function_args=(1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">snr_function:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'uniform'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">snr_function_args=(1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">10.0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_fraction:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.005</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize_sources:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bg_cps:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">300.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">apply_poisson_noise:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_fg:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_bg:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_gross:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rng:</span> <span class="pre">~numpy.random._generator.Generator</span> <span class="pre">=</span> <span class="pre">Generator(PCG64)</span> <span class="pre">at</span> <span class="pre">0x23F14F14C80</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.data.synthetic.passby.PassbySynthesizer" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">riid.data.synthetic.passby.</span></span><span class="sig-name descname"><span class="pre">PassbySynthesizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">events_per_seed:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_interval:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.125</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dwell_time_function:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'uniform'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dwell_time_function_args=(0.25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">8.0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fwhm_function:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'discrete'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fwhm_function_args=(1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">snr_function:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'uniform'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">snr_function_args=(1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">10.0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_fraction:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.005</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize_sources:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bg_cps:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">300.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">apply_poisson_noise:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_fg:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_bg:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_gross:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rng:</span> <span class="pre">~numpy.random._generator.Generator</span> <span class="pre">=</span> <span class="pre">Generator(PCG64)</span> <span class="pre">at</span> <span class="pre">0x1668E983220</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.data.synthetic.passby.PassbySynthesizer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="riid.data.synthetic.html#riid.data.synthetic.Synthesizer" title="riid.data.synthetic.Synthesizer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Synthesizer</span></code></a></p>
 <p>Creates synthetic pass-by events as sequences of gamma spectra.</p>
 <dl class="py property">

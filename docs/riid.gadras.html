@@ -13,8 +13,8 @@
     <script src="_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="riid.models package" href="riid.models.html" />
-    <link rel="prev" title="riid.data.synthetic package" href="riid.data.synthetic.html" />
+    <link rel="next" title="riid.gadras.api module" href="riid.gadras.api.html" />
+    <link rel="prev" title="riid.data.sampleset module" href="riid.data.sampleset.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -71,20 +71,6 @@
       aria-labelledby="dLabelLocalToc"><ul>
 <li><a class="reference internal" href="#">riid.gadras package</a><ul>
 <li><a class="reference internal" href="#submodules">Submodules</a></li>
-<li><a class="reference internal" href="#module-riid.gadras.api">riid.gadras.api module</a><ul>
-<li><a class="reference internal" href="#riid.gadras.api.BaseInjector"><code class="docutils literal notranslate"><span class="pre">BaseInjector</span></code></a></li>
-<li><a class="reference internal" href="#riid.gadras.api.GadrasNotInstalledError"><code class="docutils literal notranslate"><span class="pre">GadrasNotInstalledError</span></code></a></li>
-<li><a class="reference internal" href="#riid.gadras.api.SourceInjector"><code class="docutils literal notranslate"><span class="pre">SourceInjector</span></code></a><ul>
-<li><a class="reference internal" href="#riid.gadras.api.SourceInjector.generate"><code class="docutils literal notranslate"><span class="pre">SourceInjector.generate()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#riid.gadras.api.get_gadras_api"><code class="docutils literal notranslate"><span class="pre">get_gadras_api()</span></code></a></li>
-<li><a class="reference internal" href="#riid.gadras.api.get_inject_setup"><code class="docutils literal notranslate"><span class="pre">get_inject_setup()</span></code></a></li>
-<li><a class="reference internal" href="#riid.gadras.api.get_source_cps"><code class="docutils literal notranslate"><span class="pre">get_source_cps()</span></code></a></li>
-<li><a class="reference internal" href="#riid.gadras.api.validate_inject_config"><code class="docutils literal notranslate"><span class="pre">validate_inject_config()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-riid.gadras.pcf">riid.gadras.pcf module</a></li>
 <li><a class="reference internal" href="#module-riid.gadras">Module contents</a></li>
 </ul>
 </li>
@@ -97,11 +83,11 @@
               
                 
   <li>
-    <a href="riid.data.synthetic.html" title="Previous Chapter: riid.data.synthetic package"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; riid.data.syn...</span>
+    <a href="riid.data.sampleset.html" title="Previous Chapter: riid.data.sampleset module"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; riid.data.sam...</span>
     </a>
   </li>
   <li>
-    <a href="riid.models.html" title="Next Chapter: riid.models package"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">riid.models package &raquo;</span>
+    <a href="riid.gadras.api.html" title="Next Chapter: riid.gadras.api module"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">riid.gadras.a... &raquo;</span>
     </a>
   </li>
               
@@ -139,75 +125,24 @@
 <h1>riid.gadras package<a class="headerlink" href="#riid-gadras-package" title="Permalink to this heading">¶</a></h1>
 <section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">¶</a></h2>
-</section>
-<section id="module-riid.gadras.api">
-<span id="riid-gadras-api-module"></span><h2>riid.gadras.api module<a class="headerlink" href="#module-riid.gadras.api" title="Permalink to this heading">¶</a></h2>
-<p>This module contains utilities for working with the GADRAS API.</p>
-<dl class="py class">
-<dt class="sig sig-object py" id="riid.gadras.api.BaseInjector">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">riid.gadras.api.</span></span><span class="sig-name descname"><span class="pre">BaseInjector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gadras_api</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.gadras.api.BaseInjector" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-</dd></dl>
-
-<dl class="py exception">
-<dt class="sig sig-object py" id="riid.gadras.api.GadrasNotInstalledError">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">riid.gadras.api.</span></span><span class="sig-name descname"><span class="pre">GadrasNotInstalledError</span></span><a class="headerlink" href="#riid.gadras.api.GadrasNotInstalledError" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="riid.gadras.api.SourceInjector">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">riid.gadras.api.</span></span><span class="sig-name descname"><span class="pre">SourceInjector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gadras_api</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.gadras.api.SourceInjector" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="riid.gadras.api.html#riid.gadras.api.BaseInjector" title="riid.gadras.api.BaseInjector"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseInjector</span></code></a></p>
-<p>Synthesizes total counts-normalized source gamma spectra using the GADRAS API,
-the purpose of which is to seed other synthesizers.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="riid.gadras.api.SourceInjector.generate">
-<span class="sig-name descname"><span class="pre">generate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rel_output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="riid.data.sampleset.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a></span></span><a class="headerlink" href="#riid.gadras.api.SourceInjector.generate" title="Permalink to this definition">¶</a></dt>
-<dd><p>Produces a SampleSet containing foreground and/or background seeds using GADRAS based
-on the given inject configuration.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>config</strong> – a dictionary containing the needed information to perform injects
-via the GADRAS API</p></li>
-<li><p><strong>verbose</strong> – when True, displays extra output.</p></li>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="riid.gadras.api.html">riid.gadras.api module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="riid.gadras.api.html#riid.gadras.api.BaseInjector"><code class="docutils literal notranslate"><span class="pre">BaseInjector</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="riid.gadras.api.html#riid.gadras.api.GadrasNotInstalledError"><code class="docutils literal notranslate"><span class="pre">GadrasNotInstalledError</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="riid.gadras.api.html#riid.gadras.api.SourceInjector"><code class="docutils literal notranslate"><span class="pre">SourceInjector</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="riid.gadras.api.html#riid.gadras.api.SourceInjector.generate"><code class="docutils literal notranslate"><span class="pre">SourceInjector.generate()</span></code></a></li>
 </ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>A SampleSet containing foreground and/or background seeds generated by GADRAS.</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="riid.gadras.api.get_gadras_api">
-<span class="sig-prename descclassname"><span class="pre">riid.gadras.api.</span></span><span class="sig-name descname"><span class="pre">get_gadras_api</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">instance_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initialize_transport</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.gadras.api.get_gadras_api" title="Permalink to this definition">¶</a></dt>
-<dd><p>Sets up and initializes the GADRAS API object.</p>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="riid.gadras.api.get_inject_setup">
-<span class="sig-prename descclassname"><span class="pre">riid.gadras.api.</span></span><span class="sig-name descname"><span class="pre">get_inject_setup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gadras_api</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">record_num</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">detector_distance_to_source_cm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">detector_height_cm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">detector_dead_time_usecs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">detector_elevation_m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">detector_latitude_deg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">detector_longitude_deg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">detector_overburden</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">detector_dwell_time_secs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">detector_dwell_time_is_live_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">detector_contains_internal_source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_poisson_variations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">background_include_cosmic</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">background_include_terrestrial</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">background_K40_percent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">background_U_ppm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">background_Th232_ppm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">background_attenuation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">background_low_energy_continuum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">background_high_energy_continuum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">background_suppression_scalar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.gadras.api.get_inject_setup" title="Permalink to this definition">¶</a></dt>
-<dd><p>Builds a GADRAS InjectSetup object.</p>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="riid.gadras.api.get_source_cps">
-<span class="sig-prename descclassname"><span class="pre">riid.gadras.api.</span></span><span class="sig-name descname"><span class="pre">get_source_cps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gadras_api</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">detector</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">worker</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.gadras.api.get_source_cps" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="riid.gadras.api.validate_inject_config">
-<span class="sig-prename descclassname"><span class="pre">riid.gadras.api.</span></span><span class="sig-name descname"><span class="pre">validate_inject_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.gadras.api.validate_inject_config" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</section>
-<section id="module-riid.gadras.pcf">
-<span id="riid-gadras-pcf-module"></span><h2>riid.gadras.pcf module<a class="headerlink" href="#module-riid.gadras.pcf" title="Permalink to this heading">¶</a></h2>
-<p>This module contains utilities for working with GADRAS PCF files.</p>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="riid.gadras.api.html#riid.gadras.api.get_gadras_api"><code class="docutils literal notranslate"><span class="pre">get_gadras_api()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="riid.gadras.api.html#riid.gadras.api.get_inject_setup"><code class="docutils literal notranslate"><span class="pre">get_inject_setup()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="riid.gadras.api.html#riid.gadras.api.get_source_cps"><code class="docutils literal notranslate"><span class="pre">get_source_cps()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="riid.gadras.api.html#riid.gadras.api.validate_inject_config"><code class="docutils literal notranslate"><span class="pre">validate_inject_config()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="riid.gadras.pcf.html">riid.gadras.pcf module</a></li>
+</ul>
+</div>
 </section>
 <section id="module-riid.gadras">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-riid.gadras" title="Permalink to this heading">¶</a></h2>
