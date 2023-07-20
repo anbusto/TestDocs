@@ -1,7 +1,7 @@
 Usage
 ==================
 
-Here some information about PyRIID!
+Here is some information about PyRIID!
 
 Installation
 ==================

@@ -9,7 +9,7 @@ Welcome to PyRIID's documentation!
 This is my test PyRIID website for information on the module.
 
 Check out the :doc:`usage` section for further information, including
-how to :ref:`install` the project.
+how to install the project.
 
 .. note::
 
