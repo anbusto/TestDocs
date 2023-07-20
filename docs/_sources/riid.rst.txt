@@ -20,6 +20,7 @@ riid.anomaly module
 .. automodule:: riid.anomaly
    :members:
    :undoc-members:
+   :inherited-members:
    :show-inheritance:
 
 riid.test module
@@ -28,6 +29,7 @@ riid.test module
 .. automodule:: riid.test
    :members:
    :undoc-members:
+   :inherited-members:
    :show-inheritance:
 
 riid.visualize module
@@ -36,6 +38,7 @@ riid.visualize module
 .. automodule:: riid.visualize
    :members:
    :undoc-members:
+   :inherited-members:
    :show-inheritance:
 
 Module contents
@@ -44,4 +47,5 @@ Module contents
 .. automodule:: riid
    :members:
    :undoc-members:
+   :inherited-members:
    :show-inheritance:

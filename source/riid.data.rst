@@ -18,15 +18,16 @@ riid.data.labeling module
 .. automodule:: riid.data.labeling
    :members:
    :undoc-members:
+   :inherited-members:
    :show-inheritance:
 
 riid.data.sampleset module
 --------------------------
 
 .. automodule:: riid.data.sampleset
-.. autofunction:: square
    :members:
    :undoc-members:
+   :inherited-members:
    :show-inheritance:
 
 Module contents
@@ -35,4 +36,5 @@ Module contents
 .. automodule:: riid.data
    :members:
    :undoc-members:
+   :inherited-members:
    :show-inheritance:
