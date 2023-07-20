@@ -1,19 +1,22 @@
+Welcome to Lumache's documentation!
+===================================
 
-Welcome to My Awesome Project's documentation!
-==============================================
+This is my test PyRIID website for information on the module.
 
-.. automodule:: riid
-    :members:
+It pulls data from the `Open Food Facts database <https://world.openfoodfacts.org/>`_
+and offers a *simple* and *intuitive* API.
+
+Check out the :doc:`usage` section for further information, including
+how to :ref:`installation` the project.
+
+.. note::
+
+   This project is under active development.
+
+Contents
+--------
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
 
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   usage
+   api

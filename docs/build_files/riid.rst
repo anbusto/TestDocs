@@ -30,14 +30,6 @@ riid.test module
    :undoc-members:
    :show-inheritance:
 
-riid.test copy module
----------------------
-
-.. automodule:: riid.test copy
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 riid.visualize module
 ---------------------
 
