@@ -16,7 +16,9 @@ A virtual environment is recommended.
 Tests and examples are ran via Actions on many combinations of Python version and operating system.
 You can verify support for your platform by checking the workflow files.
 
-### For Use
+########
+For Use
+########
 
 To use the latest version on PyPI (note: changes are currently slower to appear here), run:
 
@@ -30,7 +32,9 @@ pip install riid
 pip install git+https://github.com/sandialabs/pyriid.git@main
 ```
 
-### For Development
+################
+For Development
+################
 
 If you are developing PyRIID, clone this repository and run:
 
