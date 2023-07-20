@@ -41,13 +41,14 @@ jobs:
         run: |
           ls
           sphinx-apidoc -o source riid
+          sphinx-build -b html source docs
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
           # Upload entire repository
-          path: '.'
+          path: './docs'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
