@@ -23,7 +23,6 @@ For Use
 To use the latest version on PyPI (note: changes are currently slower to appear here), run:
 
 .. code-block:: 
-   :linenos:
 
     pip install riid
 
@@ -31,7 +30,6 @@ To use the latest version on PyPI (note: changes are currently slower to appear 
 **For the latest features, run:**
 
 .. code-block:: 
-   :linenos:
 
     pip install git+https://github.com/sandialabs/pyriid.git@main
 
@@ -43,7 +41,6 @@ For Development
 If you are developing PyRIID, clone this repository and run:
 
 .. code-block:: 
-   :linenos:
 
     pip install -e ".[dev]"
 
@@ -51,6 +48,5 @@ If you are developing PyRIID, clone this repository and run:
 **If you have trouble with Pylance resolving imports for an editable install, try this:**
 
 .. code-block:: 
-   :linenos:
-   
+
     pip install -e ".[dev]" --config-settings editable_mode=compat
