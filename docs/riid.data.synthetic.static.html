@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>riid.data.synthetic.static module &#8212; PyRIID Docs 1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap-sphinx.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          PyRIID Docs</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html#installation">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="riid.html">riid package</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">riid.data.synthetic.static module</a><ul>
+<li><a class="reference internal" href="#riid.data.synthetic.static.NoSeedError"><code class="docutils literal notranslate"><span class="pre">NoSeedError</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.synthetic.static.StaticSynthesizer"><code class="docutils literal notranslate"><span class="pre">StaticSynthesizer</span></code></a><ul>
+<li><a class="reference internal" href="#riid.data.synthetic.static.StaticSynthesizer.generate"><code class="docutils literal notranslate"><span class="pre">StaticSynthesizer.generate()</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.synthetic.static.StaticSynthesizer.live_time_function"><code class="docutils literal notranslate"><span class="pre">StaticSynthesizer.live_time_function</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.synthetic.static.StaticSynthesizer.live_time_function_args"><code class="docutils literal notranslate"><span class="pre">StaticSynthesizer.live_time_function_args</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.synthetic.static.StaticSynthesizer.samples_per_seed"><code class="docutils literal notranslate"><span class="pre">StaticSynthesizer.samples_per_seed</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.synthetic.static.StaticSynthesizer.snr_function"><code class="docutils literal notranslate"><span class="pre">StaticSynthesizer.snr_function</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.synthetic.static.StaticSynthesizer.snr_function_args"><code class="docutils literal notranslate"><span class="pre">StaticSynthesizer.snr_function_args</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="_sources/riid.data.synthetic.static.rst.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <section id="module-riid.data.synthetic.static">
+<span id="riid-data-synthetic-static-module"></span><h1>riid.data.synthetic.static module<a class="headerlink" href="#module-riid.data.synthetic.static" title="Permalink to this heading">¶</a></h1>
+<p>This modules contains utilities for synthesizing gamma spectra as static collections.</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="riid.data.synthetic.static.NoSeedError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">riid.data.synthetic.static.</span></span><span class="sig-name descname"><span class="pre">NoSeedError</span></span><a class="headerlink" href="#riid.data.synthetic.static.NoSeedError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="riid.data.synthetic.static.StaticSynthesizer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">riid.data.synthetic.static.</span></span><span class="sig-name descname"><span class="pre">StaticSynthesizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">samples_per_seed:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">live_time_function:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'uniform'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">live_time_function_args=(0.25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">8.0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">snr_function:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'uniform'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">snr_function_args=(0.01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">100.0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bg_cps:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">300.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">apply_poisson_noise:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize_sources:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_fg:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_bg:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_gross:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rng:</span> <span class="pre">~numpy.random._generator.Generator</span> <span class="pre">=</span> <span class="pre">Generator(PCG64)</span> <span class="pre">at</span> <span class="pre">0x20A1CDB7840</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.data.synthetic.static.StaticSynthesizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="riid.data.synthetic.html#riid.data.synthetic.Synthesizer" title="riid.data.synthetic.Synthesizer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Synthesizer</span></code></a></p>
+<p>Creates a set of synthetic gamma spectra from seed templates.</p>
+<p>The “seed” templates are count-normalized spectra representing signature shapes of interest.
+The static synthesizer takes the seeds you have chosen and scales them up in terms of three
+components:
+- live time (the amount of time over which the spectrum was collected/integrated)
+- signal-to-noise ratio (SNR) (source counts divided by the square root of background counts,</p>
+<blockquote>
+<div><p>i.e., the number of standard deviations above background)</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>a fixed background rate (as a reference point)</p></li>
+</ul>
+<p>The static synthesizer is meant to capture various count rates from sources in a statically
+placed detector scenario where the background can be characterized (and usually subtracted).
+Effects related to pile-up, scattering, or other shape-changing outcomes must be represented
+in the seeds.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.data.synthetic.static.StaticSynthesizer.generate">
+<span class="sig-name descname"><span class="pre">generate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fg_seeds_ss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="riid.data.sampleset.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">bg_seeds_ss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="riid.data.sampleset.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="riid.data.sampleset.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="riid.data.sampleset.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="riid.data.sampleset.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#riid.data.synthetic.static.StaticSynthesizer.generate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a sample set of gamma spectra from the given config.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fg_seeds_ss</strong> – spectra normalized by total counts to be used
+as the source component(s) of spectra.</p></li>
+<li><p><strong>bg_seeds_ss</strong> – spectra normalized by total counts to be used
+as the background components of gross spectra.</p></li>
+<li><p><strong>fixed_bg_ss</strong> – a single spectrum to be used as a fixed (or intrinsic)
+background source; live time information must be present.
+This spectrum is used to represent things like:
+- cosmic background (which is location-specific);
+- one or more calibration sources; or
+- intrinsic counts from the detector material (e.g., LaBr3).
+This spectrum will form the base of each background spectrum where seeds in
+<cite>bg_seeds_ss</cite>, which represent mixtures of K-U-T, get added on top.
+Note: this spectrum is not considered part of the <cite>bg_cps</cite> parameter,
+but is instead added on top of it. This parameter is optional.</p></li>
+<li><p><strong>verbose</strong> – whether to display output from synthesis.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A tuple of synthetic foreground, background, and gross spectra.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – Raised when a seed spectrum does not sum close to 1.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="riid.data.synthetic.static.StaticSynthesizer.live_time_function">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">live_time_function</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#riid.data.synthetic.static.StaticSynthesizer.live_time_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get or set the function used to randomly sample the desired live time space.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – Raised when an unsupported function type is provided.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="riid.data.synthetic.static.StaticSynthesizer.live_time_function_args">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">live_time_function_args</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span></em><a class="headerlink" href="#riid.data.synthetic.static.StaticSynthesizer.live_time_function_args" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get or set the live time space to be randomly sampled.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="riid.data.synthetic.static.StaticSynthesizer.samples_per_seed">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">samples_per_seed</span></span><a class="headerlink" href="#riid.data.synthetic.static.StaticSynthesizer.samples_per_seed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get or set the number of samples to create per seed (excluding the background seed).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>TypeError</strong> – Raised if provided samples_per_seed is not an integer.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="riid.data.synthetic.static.StaticSynthesizer.snr_function">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">snr_function</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#riid.data.synthetic.static.StaticSynthesizer.snr_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get or set the function used to randomly sample the desired signal-to-noise (SNR)
+ratio space.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – Raised when an unsupported function type is provided.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="riid.data.synthetic.static.StaticSynthesizer.snr_function_args">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">snr_function_args</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span></em><a class="headerlink" href="#riid.data.synthetic.static.StaticSynthesizer.snr_function_args" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get or set the signal-to-noise (SNR) space to be randomly sampled.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2023, author name.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.2.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

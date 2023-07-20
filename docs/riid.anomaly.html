@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>riid.anomaly module &#8212; PyRIID Docs 1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap-sphinx.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          PyRIID Docs</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html#installation">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="riid.html">riid package</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">riid.anomaly module</a><ul>
+<li><a class="reference internal" href="#riid.anomaly.PoissonNChannelEventDetector"><code class="docutils literal notranslate"><span class="pre">PoissonNChannelEventDetector</span></code></a><ul>
+<li><a class="reference internal" href="#riid.anomaly.PoissonNChannelEventDetector.add_measurement"><code class="docutils literal notranslate"><span class="pre">PoissonNChannelEventDetector.add_measurement()</span></code></a></li>
+<li><a class="reference internal" href="#riid.anomaly.PoissonNChannelEventDetector.background_percent_complete"><code class="docutils literal notranslate"><span class="pre">PoissonNChannelEventDetector.background_percent_complete</span></code></a></li>
+<li><a class="reference internal" href="#riid.anomaly.PoissonNChannelEventDetector.clear_background"><code class="docutils literal notranslate"><span class="pre">PoissonNChannelEventDetector.clear_background()</span></code></a></li>
+<li><a class="reference internal" href="#riid.anomaly.PoissonNChannelEventDetector.event_in_progress"><code class="docutils literal notranslate"><span class="pre">PoissonNChannelEventDetector.event_in_progress</span></code></a></li>
+<li><a class="reference internal" href="#riid.anomaly.PoissonNChannelEventDetector.limit_update_frequency"><code class="docutils literal notranslate"><span class="pre">PoissonNChannelEventDetector.limit_update_frequency</span></code></a></li>
+<li><a class="reference internal" href="#riid.anomaly.PoissonNChannelEventDetector.long_term_duration"><code class="docutils literal notranslate"><span class="pre">PoissonNChannelEventDetector.long_term_duration</span></code></a></li>
+<li><a class="reference internal" href="#riid.anomaly.PoissonNChannelEventDetector.long_term_sum_norm"><code class="docutils literal notranslate"><span class="pre">PoissonNChannelEventDetector.long_term_sum_norm</span></code></a></li>
+<li><a class="reference internal" href="#riid.anomaly.PoissonNChannelEventDetector.max_event_duration"><code class="docutils literal notranslate"><span class="pre">PoissonNChannelEventDetector.max_event_duration</span></code></a></li>
+<li><a class="reference internal" href="#riid.anomaly.PoissonNChannelEventDetector.post_event_duration"><code class="docutils literal notranslate"><span class="pre">PoissonNChannelEventDetector.post_event_duration</span></code></a></li>
+<li><a class="reference internal" href="#riid.anomaly.PoissonNChannelEventDetector.pre_event_duration"><code class="docutils literal notranslate"><span class="pre">PoissonNChannelEventDetector.pre_event_duration</span></code></a></li>
+<li><a class="reference internal" href="#riid.anomaly.PoissonNChannelEventDetector.short_term_buffer_length"><code class="docutils literal notranslate"><span class="pre">PoissonNChannelEventDetector.short_term_buffer_length</span></code></a></li>
+<li><a class="reference internal" href="#riid.anomaly.PoissonNChannelEventDetector.short_term_duration"><code class="docutils literal notranslate"><span class="pre">PoissonNChannelEventDetector.short_term_duration</span></code></a></li>
+<li><a class="reference internal" href="#riid.anomaly.PoissonNChannelEventDetector.tolerable_false_alarms_per_day"><code class="docutils literal notranslate"><span class="pre">PoissonNChannelEventDetector.tolerable_false_alarms_per_day</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#riid.anomaly.RunningStats"><code class="docutils literal notranslate"><span class="pre">RunningStats</span></code></a><ul>
+<li><a class="reference internal" href="#riid.anomaly.RunningStats.update"><code class="docutils literal notranslate"><span class="pre">RunningStats.update()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="_sources/riid.anomaly.rst.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <section id="module-riid.anomaly">
+<span id="riid-anomaly-module"></span><h1>riid.anomaly module<a class="headerlink" href="#module-riid.anomaly" title="Permalink to this heading">¶</a></h1>
+<p>This module contains an algorithm for detecting statistical anomalies from
+sequences of gamma spectra.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="riid.anomaly.PoissonNChannelEventDetector">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">riid.anomaly.</span></span><span class="sig-name descname"><span class="pre">PoissonNChannelEventDetector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">long_term_duration</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">120</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">short_term_duration</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pre_event_duration</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_event_duration</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">120</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">post_event_duration</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tolerable_false_alarms_per_day</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">anomaly_threshold_update_interval</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">60</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.anomaly.PoissonNChannelEventDetector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This class identifies sequences of anomalous spectra.</p>
+<p>This algorithm assumes that the background environment will be consistent over known timescales.
+I.e., this algorithm is only intended for static detector, mobile source scenarios.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.anomaly.PoissonNChannelEventDetector.add_measurement">
+<span class="sig-name descname"><span class="pre">add_measurement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">measurement_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">measurement</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">array</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">duration</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.anomaly.PoissonNChannelEventDetector.add_measurement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds the next measurement to the event detector.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>measurement_id</strong> – a unique identifier for the measurement.</p></li>
+<li><p><strong>measurement</strong> (<em>array-like</em>) – a 1D array-like object containing one or more
+channels of measured data.</p></li>
+<li><p><strong>duration</strong> – a float representing the length of time over which the
+measurement was taken.</p></li>
+<li><p><strong>verbose</strong> – whether to print log messages.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><dl class="simple">
+<dt>the channel-wise sum of all spectra that were part of the event</dt><dd><ul>
+<li><dl class="simple">
+<dt>the channel-wise sum of all spectra in the background buffer,</dt><dd><p>normalized to match the duration of the event</p>
+</dd>
+</dl>
+</li>
+<li><p>the duration (in seconds) of the event</p></li>
+<li><p>list of measurement IDs that comprise the event</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>else if adding a spectrum does not conclude event, return None</p>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>if adding a spectrum concludes an event, a tuple is returned containing</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="riid.anomaly.PoissonNChannelEventDetector.background_percent_complete">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">background_percent_complete</span></span><a class="headerlink" href="#riid.anomaly.PoissonNChannelEventDetector.background_percent_complete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the percent fullness as a percent (not decimal).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.anomaly.PoissonNChannelEventDetector.clear_background">
+<span class="sig-name descname"><span class="pre">clear_background</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#riid.anomaly.PoissonNChannelEventDetector.clear_background" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clears the short-term buffer, long-term buffer, and stats.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="riid.anomaly.PoissonNChannelEventDetector.event_in_progress">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">event_in_progress</span></span><a class="headerlink" href="#riid.anomaly.PoissonNChannelEventDetector.event_in_progress" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether or not an event is in progress.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="riid.anomaly.PoissonNChannelEventDetector.limit_update_frequency">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">limit_update_frequency</span></span><a class="headerlink" href="#riid.anomaly.PoissonNChannelEventDetector.limit_update_frequency" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get or set the frequency (in Hz) which which to recompute anomaly thresholds.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="riid.anomaly.PoissonNChannelEventDetector.long_term_duration">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">long_term_duration</span></span><a class="headerlink" href="#riid.anomaly.PoissonNChannelEventDetector.long_term_duration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get or set the duration (in seconds) of the long term buffer (background).</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="riid.anomaly.PoissonNChannelEventDetector.long_term_sum_norm">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">long_term_sum_norm</span></span><a class="headerlink" href="#riid.anomaly.PoissonNChannelEventDetector.long_term_sum_norm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the normalized long term buffer sum (background).</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="riid.anomaly.PoissonNChannelEventDetector.max_event_duration">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">max_event_duration</span></span><a class="headerlink" href="#riid.anomaly.PoissonNChannelEventDetector.max_event_duration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get or set the maximum event duration.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="riid.anomaly.PoissonNChannelEventDetector.post_event_duration">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">post_event_duration</span></span><a class="headerlink" href="#riid.anomaly.PoissonNChannelEventDetector.post_event_duration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get or set the post-event duration, e.g. the allowable time after an event
+occurs that is still considered part of the event.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="riid.anomaly.PoissonNChannelEventDetector.pre_event_duration">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pre_event_duration</span></span><a class="headerlink" href="#riid.anomaly.PoissonNChannelEventDetector.pre_event_duration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get or set the pre-event duration, e.g. the allowable time before an event
+occurs that is considered a part of the event.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="riid.anomaly.PoissonNChannelEventDetector.short_term_buffer_length">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">short_term_buffer_length</span></span><a class="headerlink" href="#riid.anomaly.PoissonNChannelEventDetector.short_term_buffer_length" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of measurements in the short term buffer (foreground).</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="riid.anomaly.PoissonNChannelEventDetector.short_term_duration">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">short_term_duration</span></span><a class="headerlink" href="#riid.anomaly.PoissonNChannelEventDetector.short_term_duration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get or set the duration (in seconds) of the short term buffer.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="riid.anomaly.PoissonNChannelEventDetector.tolerable_false_alarms_per_day">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tolerable_false_alarms_per_day</span></span><a class="headerlink" href="#riid.anomaly.PoissonNChannelEventDetector.tolerable_false_alarms_per_day" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get or set the number of tolerable false alarms per day.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="riid.anomaly.RunningStats">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">riid.anomaly.</span></span><span class="sig-name descname"><span class="pre">RunningStats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">window_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">average</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variance</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.anomaly.RunningStats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Helper for calculating stats in a rolling fashion.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.anomaly.RunningStats.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">old</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.anomaly.RunningStats.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the average, variance, and stddev for the RunningStats.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>new</strong> – the new probability</p></li>
+<li><p><strong>old</strong> – the old probability</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2023, author name.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.2.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

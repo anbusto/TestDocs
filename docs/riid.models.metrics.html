@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>riid.models.metrics module &#8212; PyRIID Docs 1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap-sphinx.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          PyRIID Docs</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html#installation">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="riid.html">riid package</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">riid.models.metrics module</a><ul>
+<li><a class="reference internal" href="#riid.models.metrics.RunningAverage"><code class="docutils literal notranslate"><span class="pre">RunningAverage</span></code></a><ul>
+<li><a class="reference internal" href="#riid.models.metrics.RunningAverage.add_sample"><code class="docutils literal notranslate"><span class="pre">RunningAverage.add_sample()</span></code></a></li>
+<li><a class="reference internal" href="#riid.models.metrics.RunningAverage.is_empty"><code class="docutils literal notranslate"><span class="pre">RunningAverage.is_empty</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#riid.models.metrics.average_precision_score"><code class="docutils literal notranslate"><span class="pre">average_precision_score()</span></code></a></li>
+<li><a class="reference internal" href="#riid.models.metrics.harmonic_mean"><code class="docutils literal notranslate"><span class="pre">harmonic_mean()</span></code></a></li>
+<li><a class="reference internal" href="#riid.models.metrics.multi_f1"><code class="docutils literal notranslate"><span class="pre">multi_f1()</span></code></a></li>
+<li><a class="reference internal" href="#riid.models.metrics.precision_recall_curve"><code class="docutils literal notranslate"><span class="pre">precision_recall_curve()</span></code></a></li>
+<li><a class="reference internal" href="#riid.models.metrics.single_f1"><code class="docutils literal notranslate"><span class="pre">single_f1()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="_sources/riid.models.metrics.rst.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <section id="module-riid.models.metrics">
+<span id="riid-models-metrics-module"></span><h1>riid.models.metrics module<a class="headerlink" href="#module-riid.models.metrics" title="Permalink to this heading">¶</a></h1>
+<p>This module provides custom model metrics.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="riid.models.metrics.RunningAverage">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">riid.models.metrics.</span></span><span class="sig-name descname"><span class="pre">RunningAverage</span></span><a class="headerlink" href="#riid.models.metrics.RunningAverage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Helper for calculating average in a rolling fashion.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.models.metrics.RunningAverage.add_sample">
+<span class="sig-name descname"><span class="pre">add_sample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.metrics.RunningAverage.add_sample" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the average.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>new_value</strong> – the new value</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="riid.models.metrics.RunningAverage.is_empty">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_empty</span></span><a class="headerlink" href="#riid.models.metrics.RunningAverage.is_empty" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="riid.models.metrics.average_precision_score">
+<span class="sig-prename descclassname"><span class="pre">riid.models.metrics.</span></span><span class="sig-name descname"><span class="pre">average_precision_score</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">precision</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recall</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.metrics.average_precision_score" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the average precision (area under the curve) for each precision/recall
+pair.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>precision</strong> (<em>dict</em>) – return value of <cite>ctutil.evaluation.precision_recall_curve()</cite></p></li>
+<li><p><strong>recall</strong> (<em>dict</em>) – return value of <cite>ctutil.evaluation.precision_recall_curve()</cite></p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>average precision values (float) for each label in precision/recall</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(dict)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="riid.models.metrics.harmonic_mean">
+<span class="sig-prename descclassname"><span class="pre">riid.models.metrics.</span></span><span class="sig-name descname"><span class="pre">harmonic_mean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.metrics.harmonic_mean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the harmonic mean of two same-dim arrays.</p>
+<p>Used to compute F1 score:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">f1_score</span> <span class="pre">=</span> <span class="pre">harmonic_mean(precision,</span> <span class="pre">recall)</span>
+<span class="pre">`</span></code></p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>array-like</em>) – numeric or array_like of numerics</p></li>
+<li><p><strong>y</strong> (<em>array-like</em>) – numeric or array_like of numerics matching the shape/type of <cite>x</cite></p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the harmonic mean of <cite>x</cite> and <cite>y</cite></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(array-like)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="riid.models.metrics.multi_f1">
+<span class="sig-prename descclassname"><span class="pre">riid.models.metrics.</span></span><span class="sig-name descname"><span class="pre">multi_f1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y_true</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_pred</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.metrics.multi_f1" title="Permalink to this definition">¶</a></dt>
+<dd><p>This metric provides a measure of the F1 score of two tensors.
+Values for y_true and y_pred are assumed to sum to 1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>y_true</strong> – Defines a list of ground truth.</p></li>
+<li><p><strong>y_pred</strong> – Defines a list of predictions to compare against the ground truth.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The custom loss score for two tensors.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="riid.models.metrics.precision_recall_curve">
+<span class="sig-prename descclassname"><span class="pre">riid.models.metrics.</span></span><span class="sig-name descname"><span class="pre">precision_recall_curve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="riid.data.sampleset.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">smooth</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multiclass</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_micro</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Isotope'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minimum_contribution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.01</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.metrics.precision_recall_curve" title="Permalink to this definition">¶</a></dt>
+<dd><p>Similar to <cite>sklearn.metrics.precision_recall_curve</cite>, however, this function
+computes the precision and recall for each class, and supports both multi-class
+and multi-label problems.</p>
+<p>The reason this is necessary is that in multi-class problems, for a single sample,
+all predictions are discarded except for the argmax.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ss</strong> – a SampleSet that predictions were generated on</p></li>
+<li><p><strong>smooth</strong> – if True, precision is smoothing is applied to make a monotonically
+decreasing precision function</p></li>
+<li><p><strong>multiclass</strong> – set to True if this is a multi-class (i.e. y_true is one-hot) as
+opposed to multi-label (i.e. labels are not mutually exclusive). Ff True,
+predictions will be masked such that non-argmax predictions are set to zero
+(this prevents inflating the precision by continuing past a point that could
+be pragmatically useful). Furthermore, in the multiclass case the recall is
+not guaranteed to reach 1.0.</p></li>
+<li><p><strong>include_micro</strong> – if True, compute an additional precision and recall for the
+micro-average across all labels and put it under entry <cite>“micro”</cite></p></li>
+<li><p><strong>target_level</strong> – true labels are extracted from <cite>ss.sources</cite> at the target column index level
+(“Category”, “Isotope”, “Seed”, …)</p></li>
+<li><p><strong>minimum_contribution</strong> – threshold for a source to be considered a ground truth positive
+label. if this is set to <cite>None</cite> the raw mixture ratios will be used as y_true.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>a dict with keys for each label and values that are the</dt><dd><p>monotonically increasing precision values at each threshold</p>
+</dd>
+<dt>recall (dict): a dict with keys for each label and values that are the</dt><dd><p>monotonically decreasing recall values at each threshold</p>
+</dd>
+<dt>thresholds (dict): a dict with keys for each label and values that are the</dt><dd><p>monotonically increasing thresholds on the decision function used to compute
+precision and recall</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>precision (dict)</p>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>[Precision smoothing](</dt><dd><p><a class="reference external" href="https://jonathan-hui.medium.com/map-mean-average-precision-for-object-detection-45c121a31173">https://jonathan-hui.medium.com/map-mean-average-precision-for-object-detection-45c121a31173</a>)</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="riid.models.metrics.single_f1">
+<span class="sig-prename descclassname"><span class="pre">riid.models.metrics.</span></span><span class="sig-name descname"><span class="pre">single_f1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y_true</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_pred</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.metrics.single_f1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the weighted F1 score for the maximum prediction and maximum
+ground truth. Values for y_true and y_pred are assumed to sum to 1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>y_true</strong> – Defines a list of ground truth.</p></li>
+<li><p><strong>y_pred</strong> – Defines a list of predictions to compare against the ground truth.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns the custom loss score.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2023, author name.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.2.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

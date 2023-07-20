@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>riid.models.losses.sparsemax module &#8212; PyRIID Docs 1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap-sphinx.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          PyRIID Docs</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html#installation">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="riid.html">riid package</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">riid.models.losses.sparsemax module</a><ul>
+<li><a class="reference internal" href="#riid.models.losses.sparsemax.SparsemaxLoss"><code class="docutils literal notranslate"><span class="pre">SparsemaxLoss</span></code></a><ul>
+<li><a class="reference internal" href="#riid.models.losses.sparsemax.SparsemaxLoss.call"><code class="docutils literal notranslate"><span class="pre">SparsemaxLoss.call()</span></code></a></li>
+<li><a class="reference internal" href="#riid.models.losses.sparsemax.SparsemaxLoss.get_config"><code class="docutils literal notranslate"><span class="pre">SparsemaxLoss.get_config()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#riid.models.losses.sparsemax.sparsemax"><code class="docutils literal notranslate"><span class="pre">sparsemax()</span></code></a></li>
+<li><a class="reference internal" href="#riid.models.losses.sparsemax.sparsemax_loss"><code class="docutils literal notranslate"><span class="pre">sparsemax_loss()</span></code></a></li>
+<li><a class="reference internal" href="#riid.models.losses.sparsemax.sparsemax_loss_from_logits"><code class="docutils literal notranslate"><span class="pre">sparsemax_loss_from_logits()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="_sources/riid.models.losses.sparsemax.rst.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <section id="module-riid.models.losses.sparsemax">
+<span id="riid-models-losses-sparsemax-module"></span><h1>riid.models.losses.sparsemax module<a class="headerlink" href="#module-riid.models.losses.sparsemax" title="Permalink to this heading">¶</a></h1>
+<p>This module contains sparsemax-related functions.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="riid.models.losses.sparsemax.SparsemaxLoss">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">riid.models.losses.sparsemax.</span></span><span class="sig-name descname"><span class="pre">SparsemaxLoss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">from_logits</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reduction</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'sum_over_batch_size'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'sparsemax_loss'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.losses.sparsemax.SparsemaxLoss" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Loss</span></code></p>
+<p>Sparsemax loss function.</p>
+<p>Computes the generalized multi-label classification loss for the sparsemax
+function.</p>
+<p>Because the sparsemax loss function needs both the probability output and
+the logits to compute the loss value, <cite>from_logits</cite> must be <cite>True</cite>.</p>
+<p>Because it computes the generalized multi-label loss, the shape of both
+<cite>y_pred</cite> and <cite>y_true</cite> must be <cite>[batch_size, num_classes]</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>from_logits</strong> – Whether <cite>y_pred</cite> is expected to be a logits tensor. Default
+is <cite>True</cite>, meaning <cite>y_pred</cite> is the logits.</p></li>
+<li><p><strong>reduction</strong> – (Optional) Type of <cite>tf.keras.losses.Reduction</cite> to apply to
+loss. Default value is <cite>SUM_OVER_BATCH_SIZE</cite>.</p></li>
+<li><p><strong>name</strong> – Optional name for the op.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.models.losses.sparsemax.SparsemaxLoss.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y_true</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_pred</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.losses.sparsemax.SparsemaxLoss.call" title="Permalink to this definition">¶</a></dt>
+<dd><p>Invokes the <cite>Loss</cite> instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>y_true</strong> – Ground truth values. shape = <cite>[batch_size, d0, .. dN]</cite>, except
+sparse loss functions such as sparse categorical crossentropy where
+shape = <cite>[batch_size, d0, .. dN-1]</cite></p></li>
+<li><p><strong>y_pred</strong> – The predicted values. shape = <cite>[batch_size, d0, .. dN]</cite></p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Loss values with the shape <cite>[batch_size, d0, .. dN-1]</cite>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.models.losses.sparsemax.SparsemaxLoss.get_config">
+<span class="sig-name descname"><span class="pre">get_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.losses.sparsemax.SparsemaxLoss.get_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the config dictionary for a <cite>Loss</cite> instance.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="riid.models.losses.sparsemax.sparsemax">
+<span class="sig-prename descclassname"><span class="pre">riid.models.losses.sparsemax.</span></span><span class="sig-name descname"><span class="pre">sparsemax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">-1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tensor</span></span></span><a class="headerlink" href="#riid.models.losses.sparsemax.sparsemax" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sparsemax activation function.</p>
+<p>For each batch $i$, and class $j$,
+compute sparsemax activation function:</p>
+<p>$$
+mathrm{sparsemax}(x)[i, j] = max(mathrm{logits}[i, j] - tau(mathrm{logits}[i, :]), 0).
+$$</p>
+<p>See [From Softmax to Sparsemax: A Sparse Model of Attention and Multi-Label Classification]
+(<a class="reference external" href="https://arxiv.org/abs/1602.02068">https://arxiv.org/abs/1602.02068</a>).</p>
+<p>Usage:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">([[</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tfa</span><span class="o">.</span><span class="n">activations</span><span class="o">.</span><span class="n">sparsemax</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="go">&lt;tf.Tensor: shape=(2, 3), dtype=float32, numpy=</span>
+<span class="go">array([[0., 0., 1.],</span>
+<span class="go">       [0., 0., 1.]], dtype=float32)&gt;</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>logits</strong> – A <cite>Tensor</cite>.</p></li>
+<li><p><strong>axis</strong> – <cite>int</cite>, axis along which the sparsemax operation is applied.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A <cite>Tensor</cite>, output of sparsemax transformation. Has the same type and
+shape as <cite>logits</cite>.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – In case <cite>dim(logits) == 1</cite>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="riid.models.losses.sparsemax.sparsemax_loss">
+<span class="sig-prename descclassname"><span class="pre">riid.models.losses.sparsemax.</span></span><span class="sig-name descname"><span class="pre">sparsemax_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sparsemax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tensor</span></span></span><a class="headerlink" href="#riid.models.losses.sparsemax.sparsemax_loss" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sparsemax loss function [1].</p>
+<p>Computes the generalized multi-label classification loss for the sparsemax
+function. The implementation is a reformulation of the original loss
+function such that it uses the sparsemax probability output instead of the
+internal $  au $ variable. However, the output is identical to the original
+loss function.</p>
+<p>[1]: <a class="reference external" href="https://arxiv.org/abs/1602.02068">https://arxiv.org/abs/1602.02068</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>logits</strong> – A <cite>Tensor</cite>. Must be one of the following types: <cite>float32</cite>,
+<cite>float64</cite>.</p></li>
+<li><p><strong>sparsemax</strong> – A <cite>Tensor</cite>. Must have the same type as <cite>logits</cite>.</p></li>
+<li><p><strong>labels</strong> – A <cite>Tensor</cite>. Must have the same type as <cite>logits</cite>.</p></li>
+<li><p><strong>name</strong> – A name for the operation (optional).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A <cite>Tensor</cite>. Has the same type as <cite>logits</cite>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="riid.models.losses.sparsemax.sparsemax_loss_from_logits">
+<span class="sig-prename descclassname"><span class="pre">riid.models.losses.sparsemax.</span></span><span class="sig-name descname"><span class="pre">sparsemax_loss_from_logits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y_true</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logits_pred</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tensor</span></span></span><a class="headerlink" href="#riid.models.losses.sparsemax.sparsemax_loss_from_logits" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2023, author name.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.2.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

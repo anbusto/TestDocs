@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>riid.data.labeling module &#8212; PyRIID Docs 1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap-sphinx.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          PyRIID Docs</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html#installation">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="riid.html">riid package</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">riid.data.labeling module</a><ul>
+<li><a class="reference internal" href="#riid.data.labeling.isotope_name_is_valid"><code class="docutils literal notranslate"><span class="pre">isotope_name_is_valid()</span></code></a></li>
+<li><a class="reference internal" href="#riid.data.labeling.label_to_index_element"><code class="docutils literal notranslate"><span class="pre">label_to_index_element()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="_sources/riid.data.labeling.rst.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <section id="module-riid.data.labeling">
+<span id="riid-data-labeling-module"></span><h1>riid.data.labeling module<a class="headerlink" href="#module-riid.data.labeling" title="Permalink to this heading">¶</a></h1>
+<p>This module contains utility functions for managing ground truth information.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="riid.data.labeling.isotope_name_is_valid">
+<span class="sig-prename descclassname"><span class="pre">riid.data.labeling.</span></span><span class="sig-name descname"><span class="pre">isotope_name_is_valid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">isotope</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.data.labeling.isotope_name_is_valid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Validates whether or not the given string contains a properly formatted
+radioisotope name.</p>
+<p>Note that this function does NOT look up a string
+to determine if the string corresponds to a
+radioisotope that actually exists, it just checks
+the format.</p>
+<p>The regular expression used by this function
+looks for the following (in order):
+- 1 capital letter
+- 0 to 1 lowercase letters
+- 1 to 3 numbers
+- an optional “m” for metastable</p>
+<p>Examples of properly formatted isotope names:
+- Y88
+- Ba133
+- Ho166m</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>isotope</strong> – a string containing the isotope name</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A bool representing whether or not the name string is valid.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="riid.data.labeling.label_to_index_element">
+<span class="sig-prename descclassname"><span class="pre">riid.data.labeling.</span></span><span class="sig-name descname"><span class="pre">label_to_index_element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_val</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label_level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Isotope'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#riid.data.labeling.label_to_index_element" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tries to map a label to a tuple for use in DataFrame MultiIndex columns.</p>
+<p>Depending on the level of the label value, you will get different tuple:
+<a href="#id13"><span class="problematic" id="id14">|`label_level` |Resulting Tuple           |
+|--------------|</span></a>————————–|
+<a href="#id1"><span class="problematic" id="id2">|</span></a>Seed          <a href="#id3"><span class="problematic" id="id4">|</span></a>(Category, Isotope, Seed) |
+<a href="#id5"><span class="problematic" id="id6">|</span></a>Isotope       <a href="#id7"><span class="problematic" id="id8">|</span></a>(Category, Isotope)       |
+<a href="#id9"><span class="problematic" id="id10">|</span></a>Category      <a href="#id11"><span class="problematic" id="id12">|</span></a>(Category,)               |</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>label_val</strong> – The part of the label (Category, Isotope, Seed)
+from which to map the other two label values, if possible.</p></li>
+<li><p><strong>label_level</strong> – The level of the part of the label provided, e.g.
+“Category”, “Isotope”, or “Seed.”</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>An n-tuple containing the Category, Isotope, Seed values identified</dt><dd><p>for the old label format.</p>
+</dd>
+</dl>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2023, author name.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.2.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>riid.models.bayes module &#8212; PyRIID Docs 1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap-sphinx.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          PyRIID Docs</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html#installation">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="riid.html">riid package</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">riid.models.bayes module</a><ul>
+<li><a class="reference internal" href="#riid.models.bayes.NegativeSpectrumError"><code class="docutils literal notranslate"><span class="pre">NegativeSpectrumError</span></code></a></li>
+<li><a class="reference internal" href="#riid.models.bayes.PoissonBayesClassifier"><code class="docutils literal notranslate"><span class="pre">PoissonBayesClassifier</span></code></a><ul>
+<li><a class="reference internal" href="#riid.models.bayes.PoissonBayesClassifier.fit"><code class="docutils literal notranslate"><span class="pre">PoissonBayesClassifier.fit()</span></code></a></li>
+<li><a class="reference internal" href="#riid.models.bayes.PoissonBayesClassifier.predict"><code class="docutils literal notranslate"><span class="pre">PoissonBayesClassifier.predict()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#riid.models.bayes.ZeroTotalCountsError"><code class="docutils literal notranslate"><span class="pre">ZeroTotalCountsError</span></code></a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="_sources/riid.models.bayes.rst.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <section id="module-riid.models.bayes">
+<span id="riid-models-bayes-module"></span><h1>riid.models.bayes module<a class="headerlink" href="#module-riid.models.bayes" title="Permalink to this heading">¶</a></h1>
+<p>This module contains a Poisson-Bayes classifier.</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="riid.models.bayes.NegativeSpectrumError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">riid.models.bayes.</span></span><span class="sig-name descname"><span class="pre">NegativeSpectrumError</span></span><a class="headerlink" href="#riid.models.bayes.NegativeSpectrumError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ValueError</span></code></p>
+<p>An exception that indicates that a negative spectrum value has
+been found, which means that the model statistics cannot be calculated.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="riid.models.bayes.PoissonBayesClassifier">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">riid.models.bayes.</span></span><span class="sig-name descname"><span class="pre">PoissonBayesClassifier</span></span><a class="headerlink" href="#riid.models.bayes.PoissonBayesClassifier" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="riid.models.html#riid.models.TFModelBase" title="riid.models.TFModelBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">TFModelBase</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.models.bayes.PoissonBayesClassifier.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seeds_ss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="riid.data.sampleset.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.bayes.PoissonBayesClassifier.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructs a TF-based implementation of a poisson-bayes classifier in terms
+of the given seeds.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>seeds_ss</strong> (<a class="reference internal" href="riid.data.sampleset.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><em>SampleSet</em></a>) – Defines a SampleSet of <cite>n</cite> foreground
+seed spectra where <cite>n</cite> &gt;= 1.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – Raised when no seeds are provided.</p></li>
+<li><p><a class="reference internal" href="#riid.models.bayes.NegativeSpectrumError" title="riid.models.bayes.NegativeSpectrumError"><strong>NegativeSpectrumError</strong></a> – raised if any seed spectrum has negative counts in any bin.</p></li>
+<li><p><a class="reference internal" href="#riid.models.bayes.ZeroTotalCountsError" title="riid.models.bayes.ZeroTotalCountsError"><strong>ZeroTotalCountsError</strong></a> – raised if any seed spectrum contains zero total counts.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="riid.models.bayes.PoissonBayesClassifier.predict">
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gross_ss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="riid.data.sampleset.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bg_ss</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="riid.data.sampleset.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><span class="pre">SampleSet</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize_scores</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#riid.models.bayes.PoissonBayesClassifier.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Uses the Poisson-Bayes model to output prediction
+probabilities for every spectra in gross_ss SampleSet
+(and optional background Sample Set)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>gross_ss</strong> (<a class="reference internal" href="riid.data.sampleset.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><em>SampleSet</em></a>) – Defines a SampleSet of <cite>n</cite> gross spectra where <cite>n</cite> &gt;= 1.</p></li>
+<li><p><strong>bg_ss</strong> (<a class="reference internal" href="riid.data.sampleset.html#riid.data.sampleset.SampleSet" title="riid.data.sampleset.SampleSet"><em>SampleSet</em></a>) – Defines a SampleSet of <cite>n</cite> background spectra where <cite>n</cite> &gt;= 1.</p></li>
+<li><p><strong>normalize_scores</strong> (<em>bool</em>) – normalize prediction probabilities.
+When True, this makes the probabilities positive and rescales them
+by the minimum value present in given the dataset.
+While this can be helpful in terms of visualizing probabilities in log scale,
+it can adversely affects one’s ability to detect significantly anomalous signatures.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="riid.models.bayes.ZeroTotalCountsError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">riid.models.bayes.</span></span><span class="sig-name descname"><span class="pre">ZeroTotalCountsError</span></span><a class="headerlink" href="#riid.models.bayes.ZeroTotalCountsError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ValueError</span></code></p>
+<p>An exception that indicates that a total count of zero has
+been found, which means the model statistics cannot be calculated.</p>
+</dd></dl>
+
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2023, author name.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 6.2.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
